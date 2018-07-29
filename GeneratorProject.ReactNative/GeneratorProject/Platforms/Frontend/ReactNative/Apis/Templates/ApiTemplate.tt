@@ -1,0 +1,140 @@
+﻿<#@ include file="..\..\Base\Templates\Include.tt"#><#var model = (SmartAppInfo)Model;#>
+import RestApi from './RestApi';
+
+export default class <#=_api.Id#>Api{
+
+<# if(_api.Actions != null && _api.Actions.Count > 0)
+   {
+       foreach(ApiActionInfo action in _api.Actions)
+       {
+           if (action.Id != null && action.Url != null && action.Type != null)
+            {
+#>
+    <#= TextConverter.CamelCase(action.Id) #>(
+<#
+            if (action.Parameters.AsEnumerable() != null && action.Parameters.AsEnumerable().Count() > 0)
+                    {
+                        ApiParameterInfo last = action.Parameters.AsEnumerable().Last();
+                        foreach (ApiParameterInfo apiParameter in action.Parameters.AsEnumerable())
+                        {
+                            if (apiParameter.Id != null)
+                            {
+                                if (apiParameter.Equals(last))
+                                {
+#>
+        <#= TextConverter.CamelCase(apiParameter.Id) #>
+<#
+                                }
+                                else
+                                {
+#>
+        <#= TextConverter.CamelCase(apiParameter.Id) #>,
+<#
+                                }
+                            }
+                        }
+                    }
+                   
+#>
+    ) {
+<#
+                    switch (action.Type)
+                    {
+                        case "dataget": case "datalist":
+    
+                            if (action.Parameters.AsEnumerable() != null && action.Parameters.AsEnumerable().Count() > 0)
+                            {
+#>
+        let urlSearchParams = {};
+<#
+                             foreach (ApiParameterInfo apiParameter in action.Parameters.AsEnumerable())
+                                {
+                                    if (apiParameter.Id != null)
+                                    {
+#>
+        urlSearchParams['<#=TextConverter.CamelCase(apiParameter.Id)#>'] = JSON.stringify(<#=TextConverter.CamelCase(apiParameter.Id)#>);
+<#
+                                    }
+                                }
+#>
+        return RestApi.get('<#=action.Url#>', urlSearchParams) ;
+<#
+                            }
+                            else
+                            {
+#>
+        return RestApi.get('<#=action.Url#>');
+<#
+                            }
+                        break;
+                        case "datacreate":
+#>
+        let postData = {};
+<#
+                            if (action.Parameters.AsEnumerable() != null && action.Parameters.AsEnumerable().Count() > 0)
+                            {
+                                foreach (ApiParameterInfo apiParameter in action.Parameters.AsEnumerable())
+                                {
+                                    if (apiParameter.Id != null)
+                                    {
+#>
+        postData['<#=TextConverter.CamelCase(apiParameter.Id)#>'] = <#=TextConverter.CamelCase(apiParameter.Id)#>;
+<#
+                                    }
+                                }
+                            }
+#>
+        return RestApi.post('<#=action.Url#>', postData);
+<#
+                        break;
+                        case "dataupdate":
+#>
+         let putData = {};
+<#
+                            if (action.Parameters.AsEnumerable() != null && action.Parameters.AsEnumerable().Count() > 0)
+                            {
+                                foreach (ApiParameterInfo apiParameter in action.Parameters.AsEnumerable())
+                                {
+                                    if (apiParameter.Id != null)
+                                    {
+#>
+        putData['<#=TextConverter.CamelCase(apiParameter.Id)#>'] = <#=TextConverter.CamelCase(apiParameter.Id)#>;
+<#
+                                    }
+                                }
+                            }
+#>
+        return RestApi.put('<#=action.Url#>', putData);
+<#
+                        break;
+                        case "datadelete":
+#>
+        let urlSearchParams = {};
+<#
+                            if (action.Parameters.AsEnumerable() != null && action.Parameters.AsEnumerable().Count() > 0)
+                            {
+                                foreach (ApiParameterInfo apiParameter in action.Parameters.AsEnumerable())
+                                {
+                                    if (apiParameter.Id != null)
+                                    {
+#>
+        urlSearchParams['<#= TextConverter.CamelCase(apiParameter.Id) #>'] = JSON.stringify(<#= TextConverter.CamelCase(apiParameter.Id) #>);
+<#
+                                    }
+                                }
+                            }
+#>
+         return RestApi.delete('<#=action.Url#>', urlSearchParams);
+<#
+                        break;
+                        default: break;
+                    }
+#>
+    }
+
+<#
+            }
+       }
+   }
+#>
+}

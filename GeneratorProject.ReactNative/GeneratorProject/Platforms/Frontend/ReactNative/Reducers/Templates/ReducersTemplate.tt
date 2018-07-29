@@ -1,0 +1,62 @@
+﻿<#@ include file="..\..\Base\Templates\Include.tt"#>
+import initialState from '../InitialState';
+<# 
+    if(_concern != null && _layout != null &&  _layout.Actions != null && _layout.Actions.Count > 0)
+    {
+#>
+import {
+<#
+        foreach(ActionInfo action in _layout.Actions.AsEnumerable())
+        {
+            if (action.Id != null && action.Type != null)
+            {
+                if(!action.Type.ToLower().Equals("navigation"))
+                {
+#>
+    <#=_concern.Id.ToUpper()#>_<#=action.Id.ToUpper()#>_REQUEST,
+    <#=_concern.Id.ToUpper()#>_<#=action.Id.ToUpper()#>_SUCCESS,
+    <#=_concern.Id.ToUpper()#>_<#=action.Id.ToUpper()#>_FAILURE,
+<#
+                }
+            }
+        }
+#>
+} from '../../Actions/<#=TextConverter.PascalCase(_concern.Id)#>/<#=TextConverter.PascalCase(_layout.Id)#>Actions';
+
+export default function <#=TextConverter.CamelCase(_layout.Id)#>Reducer(state = null, action) {
+    switch (action.type) {
+<#
+        foreach(ActionInfo action in _layout.Actions.AsEnumerable())
+        {
+            if (action.Id != null && action.Type != null)
+            {
+                if(!action.Type.ToLower().Equals("navigation"))
+                {
+#>
+        case <#=_concern.Id.ToUpper()#>_<#=action.Id.ToUpper()#>_REQUEST:
+            return action.isLoading;
+
+        case <#=_concern.Id.ToUpper()#>_<#=action.Id.ToUpper()#>_SUCCESS:
+            return[
+                ...state,
+                Object.assign({}, action.<#=TextConverter.CamelCase(_layout.Id)#>)
+            ];
+
+        case <#=_concern.Id.ToUpper()#>_<#=action.Id.ToUpper()#>_FAILURE:
+             return [
+                ...state,
+                Object.assign({}, { isLoading: false }, action.error)
+            ];
+
+<#
+                }
+            }
+        }
+#>
+        default:
+            return state;
+    }
+}
+<#
+    }
+#>

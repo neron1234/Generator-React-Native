@@ -1,0 +1,123 @@
+﻿<#@ include file="..\..\Base\Templates\Include.tt" #><# var model = (EntityInfo)Model; #>
+<# 
+    if(model.BaseEntity != null)
+    {
+#>
+import <#=TextConverter.PascalCase(model.Extends)#><#=_modelsuffix#> from './<#=TextConverter.CamelCase(model.Extends)#>.<#=_modelsuffix.ToLower()#>';
+<#
+    }
+#>
+<#
+    foreach (ReferenceInfo reference in model.References.AsEnumerable())
+    {
+#>
+import <#=reference.Type#><#=_modelsuffix#> from './<#=TextConverter.CamelCase(reference.Type)#>.<#=_modelsuffix.ToLower()#>';
+<#
+    }
+#>
+
+export default <# if (model.IsAbstract) {#>abstract<#}#>class <#=TextConverter.PascalCase(model.Id)#><#=_modelsuffix#><#if(model.BaseEntity != null){#> extends <#=TextConverter.PascalCase(model.Extends)#><#=_modelsuffix#><#}#>{
+
+    constructor(
+<#
+    var count=model.AllProperties().Count(); 
+    var counter = 0;
+    foreach(var property in model.AllProperties())
+    {
+      if(counter<count-1)
+      {
+#>
+        <#=property.Id#>1,
+<#
+      }
+      else
+      {
+#>
+        <#=property.Id#>1<#if(model.References.Count() > 0){#>,<#}#>
+<#
+      }
+    counter++;
+   }
+
+    if(model.References.Count() > 0)
+    {
+#>
+
+<#
+        counter = 0;
+        foreach (ReferenceInfo reference in model.References.AsEnumerable())
+        {
+            if(counter < model.References.Count() -1)
+              {
+#>
+        <#=reference.Id#><#=_modelsuffix#>1,
+<#
+              }
+              else
+              {
+#>
+        <#=reference.Id#><#=_modelsuffix#>1
+<#
+            }
+     counter++;
+        }
+    }
+#>
+
+    ){
+<#
+    foreach(var property in model.AllProperties())
+    {
+        if(property.IsKey && model.BaseEntity != null)
+        {
+#>
+        super(
+<#
+            if(_superProperties.Count == 0)
+            {
+#>
+            <#=property.Id#>1
+<#
+            }
+            else
+            {
+            counter = 0;
+            foreach(var reference in _superProperties)
+            {
+                if(counter < _superProperties.Count -1)
+                {
+#>
+            <#=reference.Id#>1,
+<#
+                }
+                else
+                {
+#>
+            <#=reference.Id#>1
+<#
+                }
+                counter++;
+            }
+            }
+#>
+        );
+
+<#
+        }
+        else
+        {
+#>
+        this.<#=property.Id#> = <#=property.Id#>1;
+<#
+        }
+    }
+
+    foreach (ReferenceInfo reference in model.References.AsEnumerable())
+    {
+#>
+        this.<#=reference.Id#> = <#=reference.Id#><#=_modelsuffix#>1;
+<#
+    }
+#>
+    }
+}

@@ -1,0 +1,276 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!--/-:cnd -->
+  <PropertyGroup>
+    <TargetFramework>net461</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="Platforms\Frontend\ReactNative\Common\Templates\App.js" />
+    <None Remove="Platforms\Frontend\ReactNative\Common\Templates\App\Navigation\AppNavigator.js" />
+    <None Remove="Platforms\Frontend\ReactNative\Common\Templates\App\Screens\Auth\AuthLoadingScreen.js" />
+    <None Remove="Platforms\Frontend\ReactNative\Common\Templates\App\Store\ConfigureStore.js" />
+    <None Remove="Platforms\Frontend\ReactNative\Common\Templates\App\Themes\ApplicationStyles.js" />
+    <None Remove="Platforms\Frontend\ReactNative\Common\Templates\App\Themes\Colors.js" />
+    <None Remove="Platforms\Frontend\ReactNative\Common\Templates\App\Themes\Fonts.js" />
+    <None Remove="Platforms\Frontend\ReactNative\Common\Templates\App\Themes\Images.js" />
+    <None Remove="Platforms\Frontend\ReactNative\Common\Templates\App\Themes\index.js" />
+    <None Remove="Platforms\Frontend\ReactNative\Common\Templates\App\Themes\Metrics.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Platforms\Frontend\ReactNative\Common\Templates\App\Navigation\AppNavigator.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Platforms\Frontend\ReactNative\Common\Templates\App\App.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Platforms\Frontend\ReactNative\Common\Templates\App\Screens\Auth\AuthLoadingScreen.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Platforms\Frontend\ReactNative\Common\Templates\App\Store\ConfigureStore.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Platforms\Frontend\ReactNative\Common\Templates\App\Themes\ApplicationStyles.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Platforms\Frontend\ReactNative\Common\Templates\App\Themes\Colors.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Platforms\Frontend\ReactNative\Common\Templates\App\Themes\Fonts.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Platforms\Frontend\ReactNative\Common\Templates\App\Themes\Images.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Platforms\Frontend\ReactNative\Common\Templates\App\Themes\index.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Platforms\Frontend\ReactNative\Common\Templates\App\Themes\Metrics.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Mobioos.Foundation.Jade" Version="0.9.3" />
+    <PackageReference Include="Mobioos.Foundation.Prompts" Version="0.9.7" />
+    <PackageReference Include="Mobioos.Foundation.Prompts.Interfaces" Version="0.9.3" />
+    <PackageReference Include="Mobioos.Scaffold" Version="0.9.7" />
+    <PackageReference Include="Mobioos.Scaffold.Infrastructure" Version="0.9.3" />
+    <PackageReference Include="Mobioos.Scaffold.Models" Version="0.9.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="mscorlib" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Platforms\Frontend\ReactNative\Actions\Templates\ActionsTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>ActionsTemplate.cs</LastGenOutput>
+      <CustomToolNamespace>GeneratorProject.Platforms.Frontend.ReactNative</CustomToolNamespace>
+    </None>
+    <None Update="Platforms\Frontend\ReactNative\Actions\Templates\ActionTypesTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>ActionTypesTemplate.cs</LastGenOutput>
+      <CustomToolNamespace>GeneratorProject.Platforms.Frontend.ReactNative</CustomToolNamespace>
+    </None>
+    <None Update="Platforms\Frontend\ReactNative\Base\Templates\Include.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>Include.cs</LastGenOutput>
+      <CustomToolNamespace>GeneratorProject.Platforms.Frontend.Example</CustomToolNamespace>
+    </None>
+    <None Update="Platforms\Frontend\ReactNative\Common\Templates\AppJsonTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>AppJsonTemplate.cs</LastGenOutput>
+      <CustomToolNamespace>GeneratorProject.Platforms.Frontend.ReactNative</CustomToolNamespace>
+    </None>
+    <None Update="Platforms\Frontend\ReactNative\Common\Templates\IndexTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>IndexTemplate.cs</LastGenOutput>
+      <CustomToolNamespace>GeneratorProject.Platforms.Frontend.ReactNative</CustomToolNamespace>
+    </None>
+    <None Update="Platforms\Frontend\ReactNative\Common\Templates\PackageJsonTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>PackageJsonTemplate.cs</LastGenOutput>
+      <CustomToolNamespace>GeneratorProject.Platforms.Frontend.ReactNative</CustomToolNamespace>
+    </None>
+    <None Update="Platforms\Frontend\ReactNative\Containers\Templates\ContainerTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>ContainerTemplate.cs</LastGenOutput>
+      <CustomToolNamespace>GeneratorProject.Platforms.Frontend.ReactNative</CustomToolNamespace>
+    </None>
+    <None Update="Platforms\Frontend\ReactNative\Models\Templates\DataModelTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>DataModelTemplate.cs</LastGenOutput>
+      <CustomToolNamespace>GeneratorProject.Platforms.Frontend.ReactNative</CustomToolNamespace>
+    </None>
+    <None Update="Platforms\Frontend\ReactNative\Navigation\Templates\AppMainStackNavigator.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>AppMainStackNavigator.cs</LastGenOutput>
+      <CustomToolNamespace>GeneratorProject.Platforms.Frontend.ReactNative</CustomToolNamespace>
+    </None>
+    <None Update="Platforms\Frontend\ReactNative\Navigation\Templates\AuthStackNavigator.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>AuthStackNavigator.cs</LastGenOutput>
+      <CustomToolNamespace>GeneratorProject.Platforms.Frontend.ReactNative</CustomToolNamespace>
+    </None>
+    <None Update="Platforms\Frontend\ReactNative\Navigation\Templates\NavigationTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>NavigationTemplate.cs</LastGenOutput>
+      <CustomToolNamespace>GeneratorProject.Platforms.Frontend.ReactNative</CustomToolNamespace>
+    </None>
+    <None Update="Platforms\Frontend\ReactNative\Reducers\Templates\CombineReducerTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>CombineReducerTemplate.cs</LastGenOutput>
+      <CustomToolNamespace>GeneratorProject.Platforms.Frontend.ReactNative</CustomToolNamespace>
+    </None>
+    <None Update="Platforms\Frontend\ReactNative\Reducers\Templates\InitialStateTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>InitialStateTemplate.cs</LastGenOutput>
+      <CustomToolNamespace>GeneratorProject.Platforms.Frontend.ReactNative</CustomToolNamespace>
+    </None>
+    <None Update="Platforms\Frontend\ReactNative\Reducers\Templates\InitialStateTemplate_old.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>InitialStateTemplate_old.cs</LastGenOutput>
+      <CustomToolNamespace>GeneratorProject.Platforms.Frontend.ReactNative</CustomToolNamespace>
+    </None>
+    <None Update="Platforms\Frontend\ReactNative\Reducers\Templates\ReducersTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>ReducersTemplate.cs</LastGenOutput>
+      <CustomToolNamespace>GeneratorProject.Platforms.Frontend.ReactNative</CustomToolNamespace>
+    </None>
+    <None Update="Platforms\Frontend\ReactNative\Apis\Templates\RestApiTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>RestApiTemplate.cs</LastGenOutput>
+      <CustomToolNamespace>GeneratorProject.Platforms.Frontend.ReactNative</CustomToolNamespace>
+    </None>
+    <None Update="Platforms\Frontend\ReactNative\Apis\Templates\ApiTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>ApiTemplate.cs</LastGenOutput>
+      <CustomToolNamespace>GeneratorProject.Platforms.Frontend.ReactNative</CustomToolNamespace>
+    </None>
+    <None Update="Platforms\Frontend\ReactNative\ViewModels\Templates\ViewModelTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>ViewModelTemplate.cs</LastGenOutput>
+      <CustomToolNamespace>GeneratorProject.Platforms.Frontend.ReactNative</CustomToolNamespace>
+    </None>
+    <None Update="Platforms\Frontend\ReactNative\Views\Templates\ViewStyleTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>ViewStyleTemplate.cs</LastGenOutput>
+      <CustomToolNamespace>GeneratorProject.Platforms.Frontend.ReactNative</CustomToolNamespace>
+    </None>
+    <None Update="Platforms\Frontend\ReactNative\Views\Templates\ViewTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>ViewTemplate.cs</LastGenOutput>
+      <CustomToolNamespace>GeneratorProject.Platforms.Frontend.ReactNative</CustomToolNamespace>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Platforms\Frontend\ReactNative\Actions\Templates\ActionsTemplate.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ActionsTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Platforms\Frontend\ReactNative\Actions\Templates\ActionTypesTemplate.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ActionTypesTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Platforms\Frontend\ReactNative\Base\Templates\Include.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Include.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Platforms\Frontend\ReactNative\Common\Templates\AppJsonTemplate.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>AppJsonTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Platforms\Frontend\ReactNative\Common\Templates\IndexTemplate.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>IndexTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Platforms\Frontend\ReactNative\Common\Templates\PackageJsonTemplate.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>PackageJsonTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Platforms\Frontend\ReactNative\Containers\Templates\ContainerTemplate.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ContainerTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Platforms\Frontend\ReactNative\Models\Templates\DataModelTemplate.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>DataModelTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Platforms\Frontend\ReactNative\Navigation\Templates\AppMainStackNavigator.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>AppMainStackNavigator.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Platforms\Frontend\ReactNative\Navigation\Templates\AuthStackNavigator.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>AuthStackNavigator.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Platforms\Frontend\ReactNative\Navigation\Templates\NavigationTemplate.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>NavigationTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Platforms\Frontend\ReactNative\Reducers\Templates\CombineReducerTemplate.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>CombineReducerTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Platforms\Frontend\ReactNative\Reducers\Templates\InitialStateTemplate.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>InitialStateTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Platforms\Frontend\ReactNative\Reducers\Templates\InitialStateTemplate_old.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>InitialStateTemplate_old.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Platforms\Frontend\ReactNative\Reducers\Templates\ReducersTemplate.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ReducersTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Platforms\Frontend\ReactNative\Apis\Templates\RestApiTemplate.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>RestApiTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Platforms\Frontend\ReactNative\Apis\Templates\ApiTemplate.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ApiTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Platforms\Frontend\ReactNative\ViewModels\Templates\ViewModelTemplate.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ViewModelTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Platforms\Frontend\ReactNative\Views\Templates\ViewStyleTemplate.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ViewStyleTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Platforms\Frontend\ReactNative\Views\Templates\ViewTemplate.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ViewTemplate.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,8 @@
+﻿<#@ include file="..\..\Base\Templates\Include.tt"#>
+import { createStackNavigator } from 'react-navigation';
+
+import MainScreen from '../Screens/Login/MainScreen';
+
+export default AuthStackNavigator = createStackNavigator({
+    LoginMainScreen: MainScreen
+});

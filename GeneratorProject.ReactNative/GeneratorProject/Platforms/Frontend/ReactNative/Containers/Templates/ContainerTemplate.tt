@@ -1,0 +1,120 @@
+﻿<#@ include file="..\..\Base\Templates\Include.tt"#>
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+
+import * as <#=TextConverter.PascalCase(_layout.Id)#>Actions from '../../Actions/<#=TextConverter.PascalCase(_concern.Id)#>/<#=TextConverter.PascalCase(_layout.Id)#>Actions'; 
+/*import {
+<#
+    foreach(var action in _layout.Actions.AsEnumerable())
+    {
+        if(!action.Type.ToLower().Equals("navigation"))
+        {
+            if(action.Id.ToLower().Equals("delete"))
+            {
+                action.Id = TextConverter.CamelCase(action.Id)+TextConverter.PascalCase(_concern.Id);
+            }
+#>
+    <#=TextConverter.CamelCase(action.Id)#>,
+<#
+        }
+    }
+#>
+    } from '../../Actions/<#=TextConverter.PascalCase(_concern.Id)#>/<#=TextConverter.PascalCase(_layout.Id)#>Actions';*/
+
+<#
+    if(_layout != null)
+    {
+#>
+class <#=TextConverter.PascalCase(_layout.Id)#>Container extends Component {
+    componentDidMount() {
+<#
+    foreach(var action in _layout.Actions.AsEnumerable())
+    {
+        if(action.Type.ToLower().Equals("datalist"))
+        {
+#>
+        this.props.<#=TextConverter.CamelCase(action.Id)#>();
+<#
+        }
+    }
+#>
+    }
+
+<#
+    if(_navigationActions != null && _navigationActions.Count > 0)
+    {
+        foreach(var action in _layout.Actions.AsEnumerable())
+        {
+            if(action.Type.ToLower().Equals("navigation"))
+            {
+#>
+    on<#=TextConverter.PascalCase(action.Id)#> = () => {
+        this.props.navigation.navigate('<#=action.Target#>');
+    }
+<#
+            }
+        }
+    }
+#>
+
+    render() {
+        if (this.props.hasErrored) {
+            return <p>Sorry! There was an error loading the items</p>;
+        }
+
+        if (this.props.isLoading) {
+            return <p>Loading…</p>;
+        }
+
+        return (
+            <<#=TextConverter.PascalCase(_layout.Id)#>Screen items={this.props.data} 
+<#
+    if(_navigationActions != null && _navigationActions.Count > 0)
+    {
+        foreach(var action in _layout.Actions.AsEnumerable())
+        {
+            if(action.Type.ToLower().Equals("navigation"))
+            {
+#>
+                on<#=TextConverter.PascalCase(action.Id)#>={ this.on<#=TextConverter.PascalCase(action.Id)#> }
+<#
+            }
+        }
+    }
+#>
+            />
+        );
+  }
+}
+
+const mapStateToProps = (state) => {
+    return {
+        navigation: state.navigation,
+        data: state.data,
+        hasErrored: state.itemsHasErrored,
+        isLoading: state.itemsIsLoading
+    };
+};
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+<#
+    foreach(var action in _layout.Actions.AsEnumerable())
+    {
+        if(!action.Type.ToLower().Equals("navigation"))
+        {
+#>
+        //<#=TextConverter.CamelCase(action.Id)#>: () => dispatch(<#=TextConverter.CamelCase(action.Id)#>()),
+<#
+        }
+    }
+#>
+        actions:bindActionCreators(<#=TextConverter.PascalCase(_layout.Id)#>Actions, dispatch)
+    };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(<#=TextConverter.PascalCase(_layout.Id)#>Container);
+<#
+    }
+#>

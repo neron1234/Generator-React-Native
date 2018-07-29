@@ -1,0 +1,35 @@
+﻿<#@ include file="..\..\Base\Templates\Include.tt"#><#var model = (SmartAppInfo)Model;#>
+import { combineReducers } from 'redux';
+
+<# 
+    if(model !=null && model.Concerns != null && model.Concerns.Count > 0)
+    {
+        foreach(ConcernInfo concern in model.Concerns)
+        {
+            foreach(LayoutInfo layout in concern.Layouts)
+            {
+#>
+import <#=TextConverter.PascalCase(concern.Id)#><#=TextConverter.PascalCase(layout.Id)#> from './<#=TextConverter.PascalCase(concern.Id)#>/<#=TextConverter.PascalCase(layout.Id)#>Reducer';
+<#
+             }
+        }
+#>
+
+const RootReducer = combineReducers({
+<#
+       foreach(ConcernInfo concern in model.Concerns)
+        {
+            foreach(LayoutInfo layout in concern.Layouts)
+            {
+#>
+    <#=TextConverter.PascalCase(concern.Id)#><#=TextConverter.PascalCase(layout.Id)#>,
+<#
+            }
+        }
+#>
+});
+
+export default RootReducer;
+<#
+    }
+#>

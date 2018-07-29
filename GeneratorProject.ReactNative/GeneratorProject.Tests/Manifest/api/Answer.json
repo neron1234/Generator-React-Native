@@ -1,0 +1,242 @@
+{
+  "id": "Answer",
+  "description": "Answer Api",
+  "actions": [
+    {
+      "id": "list",
+      "parameters": [],
+      "type": "datalist",
+      "url": "/api/answer/list",
+      "allowAnonymous": false,
+      "allowedRoles": [],
+      "returnType": {
+        "id": "Answers",
+        "isAbstract": false,
+        "isEnum": false,
+        "properties": [],
+        "references": [
+          {
+            "id": "answers",
+            "foreignKey": "Id",
+            "type": "Answer",
+            "isCollection": false,
+            "isRequired": false
+          }
+        ],
+        "values": []
+      }
+    },
+    {
+      "id": "get",
+      "parameters": [],
+      "type": "dataget",
+      "url": "/api/answer/get",
+      "allowAnonymous": false,
+      "allowedRoles": [],
+      "returnType": {
+        "id": "Answer",
+        "isAbstract": false,
+        "isEnum": false,
+        "properties": [],
+        "references": [
+          {
+            "id": "answer",
+            "foreignKey": "Id",
+            "type": "Answer",
+            "isCollection": false,
+            "isRequired": false
+          }
+        ],
+        "values": []
+      }
+    },
+    {
+      "id": "update",
+      "parameters": [
+        {
+          "id": "answer",
+          "type": "Answer",
+          "dataModel": {
+            "id": "Answer",
+            "isAbstract": false,
+            "isEnum": false,
+            "properties": [],
+            "references": [
+              {
+                "id": "answer",
+                "foreignKey": "Id",
+                "type": "Answer",
+                "isCollection": false,
+                "isRequired": false
+              }
+            ],
+            "values": []
+          }
+        }
+      ],
+      "type": "dataupdate",
+      "url": "/api/answer/update",
+      "allowAnonymous": false,
+      "allowedRoles": []
+    },
+    {
+      "id": "listByCard",
+      "parameters": [
+        {
+          "id": "cardId",
+          "type": "integer"
+        }
+      ],
+      "type": "datalist",
+      "url": "/api/answer/listByCard",
+      "allowAnonymous": false,
+      "allowedRoles": [],
+      "returnType": {
+        "id": "Answers",
+        "isAbstract": false,
+        "isEnum": false,
+        "properties": [],
+        "references": [
+          {
+            "id": "answers",
+            "foreignKey": "Id",
+            "type": "Answer",
+            "isCollection": false,
+            "isRequired": false
+          }
+        ],
+        "values": []
+      }
+    },
+    {
+      "id": "listByChoice",
+      "parameters": [
+        {
+          "id": "choiceId",
+          "type": "integer"
+        }
+      ],
+      "type": "datalist",
+      "url": "/api/answer/listByChoice",
+      "allowAnonymous": false,
+      "allowedRoles": [],
+      "returnType": {
+        "id": "Answers",
+        "isAbstract": false,
+        "isEnum": false,
+        "properties": [],
+        "references": [
+          {
+            "id": "answers",
+            "foreignKey": "Id",
+            "type": "Answer",
+            "isCollection": false,
+            "isRequired": false
+          }
+        ],
+        "values": []
+      }
+    },
+    {
+      "id": "countByCard",
+      "parameters": [
+        {
+          "id": "cardId",
+          "type": "integer"
+        }
+      ],
+      "type": "dataget",
+      "url": "/api/answer/countByCard",
+      "allowAnonymous": false,
+      "allowedRoles": []
+    },
+    {
+      "id": "countByChoice",
+      "parameters": [
+        {
+          "id": "choiceId",
+          "type": "integer"
+        }
+      ],
+      "type": "dataget",
+      "url": "/api/answer/countByChoice",
+      "allowAnonymous": false,
+      "allowedRoles": []
+    },
+    {
+      "id": "create",
+      "parameters": [
+        {
+          "id": "answer",
+          "type": "Answer",
+          "dataModel": {
+            "id": "Answer",
+            "isAbstract": false,
+            "isEnum": false,
+            "properties": [],
+            "references": [
+              {
+                "id": "answer",
+                "foreignKey": "Id",
+                "type": "Answer",
+                "isCollection": false,
+                "isRequired": false
+              }
+            ],
+            "values": []
+          }
+        }
+      ],
+      "type": "dataupdate",
+      "url": "/api/answer/create",
+      "allowAnonymous": false,
+      "allowedRoles": []
+    },
+    {
+      "id": "discard",
+      "parameters": [
+        {
+          "id": "answer",
+          "type": "Answer",
+          "dataModel": {
+            "id": "Answer",
+            "isAbstract": false,
+            "isEnum": false,
+            "properties": [],
+            "references": [
+              {
+                "id": "answer",
+                "foreignKey": "Id",
+                "type": "Answer",
+                "isCollection": false,
+                "isRequired": false
+              }
+            ],
+            "values": []
+          }
+        }
+      ],
+      "type": "datacreate",
+      "url": "/api/answer/discard",
+      "allowAnonymous": false,
+      "allowedRoles": []
+    },
+    {
+      "id": "AnsweredCard",
+      "parameters": [
+        {
+          "id": "idCard",
+          "type": "integer"
+        },
+        {
+          "id": "idUser",
+          "type": "string"
+        }
+      ],
+      "type": "dataget",
+      "url": "/api/answer/answeredCard",
+      "allowAnonymous": false,
+      "allowedRoles": []
+    }
+  ]
+}

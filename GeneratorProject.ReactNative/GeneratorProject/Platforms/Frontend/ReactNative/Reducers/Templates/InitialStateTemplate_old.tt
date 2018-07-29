@@ -1,0 +1,29 @@
+﻿<#@ include file="..\..\Base\Templates\Include.tt"#><#var model = (SmartAppInfo)Model;#>
+<#
+    if(model !=null && model.Concerns != null && model.Concerns.Count > 0)
+    {
+#>
+export default {
+<#
+        List<string> addModels = new List<string>();
+        foreach(ConcernInfo concern in model.Concerns)
+        {
+            foreach(LayoutInfo layout in concern.Layouts)
+            {
+                if(layout != null && layout.DataModel != null && !addModels.Contains(layout.DataModel.Id))
+                {
+                    addModels.Add(layout.DataModel.Id);
+#>
+    <#=TextConverter.CamelCase(layout.DataModel.Id)#><#if(layout.DataModel.References != null && layout.DataModel.References.Count > 0 && layout.DataModel.References[0].IsCollection){#>: []<#} else {#>: {}<#}#>,
+<#
+                }
+            }
+        }
+#>
+
+    //If layout does not define any datamodel then return empty object as initial state
+    emptyModel: {}
+}
+<#
+    }
+#>

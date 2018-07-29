@@ -1,0 +1,25 @@
+﻿<#@ include file="..\..\Base\Templates\Include.tt" #><# var model = (SmartAppInfo)Model; #>
+{
+  "name": "<#=model.Id#>",
+<#
+    if(model.Title != null)
+    {
+#>
+  "displayName": "<#=TextConverter.PascalCase(model.Title)#>",
+<#
+    }
+    else
+    {
+#>
+  "displayName": "<#=model.Id#>",
+<#
+    }
+#>
+  "orientation": "portrait",
+  "icon": "./assets/icon.png",
+  "splash":{
+    "image":"./assets/splash.png",
+    "resizeMode":"contain",
+    "backgroundColor":"#ffffff"
+  }
+}

@@ -1,0 +1,49 @@
+﻿<#@ include file="..\..\Base\Templates\Include.tt"#>
+import { createStackNavigator } from 'react-navigation';
+
+<#
+if(_concernInfo != null)
+{
+    string concernId = TextConverter.PascalCase(_concernInfo.Id);
+    if(_concernInfo.Layouts != null &&  _concernInfo.Layouts.Count > 0)
+    {
+        foreach(var layout in _concernInfo.Layouts)
+        {
+            string containerName = string.Format("{0}Container", TextConverter.PascalCase(layout.Id));
+            //string navName = string.Format("{0}{1}", concernId, TextConverter.PascalCase(layout.Id));
+#>
+import <#=containerName#> from '../Containers/<#=_concernInfo.Id#>/<#=containerName#>';
+<#
+        }
+    }
+#>
+
+export default <#=_concernInfo.Id#>StackNavigator = createStackNavigator({
+<#
+    if(_concernInfo.Layouts != null &&  _concernInfo.Layouts.Count > 0)
+    {
+        foreach(var layout in _concernInfo.Layouts)
+        {
+            string containerName = string.Format("{0}Container", TextConverter.PascalCase(layout.Id));
+             string navName = string.Format("{0}{1}", concernId, TextConverter.PascalCase(layout.Id));
+#>
+        <#=navName#>: <#=containerName#>,
+<#
+        }
+    }
+#>
+},
+{
+    navigationOptions: {
+        headerStyle: {
+            backgroundColor: '#f4511e',
+        },
+        headerTintColor: '#fff',
+        headerTitleStyle: {
+            fontWeight: 'bold',
+        }
+    }
+});
+<#
+}
+#>

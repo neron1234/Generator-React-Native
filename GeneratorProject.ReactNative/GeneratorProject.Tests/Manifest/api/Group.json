@@ -1,0 +1,290 @@
+{
+  "id": "Group",
+  "description": "Group Api",
+  "actions": [
+    {
+      "id": "create",
+      "parameters": [
+        {
+          "id": "group",
+          "type": "Group",
+          "dataModel": {
+            "id": "Group",
+            "isAbstract": false,
+            "isEnum": false,
+            "properties": [],
+            "references": [
+              {
+                "id": "group",
+                "foreignKey": "Id",
+                "type": "Group",
+                "isCollection": false,
+                "isRequired": false
+              }
+            ],
+            "values": []
+          }
+        }
+      ],
+      "type": "datacreate",
+      "url": "/api/group/create",
+      "allowAnonymous": false,
+      "allowedRoles": []
+    },
+    {
+      "id": "update",
+      "parameters": [
+        {
+          "id": "group",
+          "type": "Group",
+          "dataModel": {
+            "id": "Group",
+            "isAbstract": false,
+            "isEnum": false,
+            "properties": [],
+            "references": [
+              {
+                "id": "group",
+                "foreignKey": "Id",
+                "type": "Group",
+                "isCollection": false,
+                "isRequired": false
+              }
+            ],
+            "values": []
+          }
+        }
+      ],
+      "type": "dataupdate",
+      "url": "/api/group/update",
+      "allowAnonymous": false,
+      "allowedRoles": []
+    },
+    {
+      "id": "delete",
+      "parameters": [
+        {
+          "id": "idGroup",
+          "type": "integer"
+        }
+      ],
+      "type": "datadelete",
+      "url": "/api/group/delete",
+      "allowAnonymous": false,
+      "allowedRoles": []
+    },
+    {
+      "id": "list",
+      "parameters": [
+        {
+          "id": "idUser",
+          "type": "integer"
+        }
+      ],
+      "type": "datalist",
+      "url": "/api/group/list",
+      "allowAnonymous": false,
+      "allowedRoles": [],
+      "returnType": {
+        "id": "Groups",
+        "isAbstract": false,
+        "isEnum": false,
+        "properties": [],
+        "references": [
+          {
+            "id": "groups",
+            "foreignKey": "Id",
+            "type": "Group",
+            "isCollection": true,
+            "isRequired": false
+          }
+        ],
+        "values": []
+      }
+    },
+    {
+      "id": "addMembers",
+      "parameters": [
+        {
+          "id": "addUser",
+          "type": "AddUsers",
+          "dataModel": {
+            "id": "AddUsers",
+            "isAbstract": false,
+            "isEnum": false,
+            "properties": [
+              {
+                "id": "id",
+                "type": "integer",
+                "isKey": false,
+                "isCollection": false,
+                "isRequired": false,
+                "minimum": 0,
+                "maximum": 0,
+                "modelProperty": "Group.Id"
+              },
+              {
+                "id": "idUsers",
+                "type": "integer",
+                "isKey": false,
+                "isCollection": true,
+                "isRequired": false,
+                "minimum": 0,
+                "maximum": 0,
+                "modelProperty": "UserProfile.Id"
+              }
+            ],
+            "references": [],
+            "values": []
+          }
+        }
+      ],
+      "type": "dataupdate",
+      "url": "/api/group/addMember",
+      "allowAnonymous": false,
+      "allowedRoles": []
+    },
+    {
+      "id": "removeMembers",
+      "parameters": [
+        {
+          "id": "removeUser",
+          "type": "AddUsers",
+          "dataModel": {
+            "id": "AddUsers",
+            "isAbstract": false,
+            "isEnum": false,
+            "properties": [
+              {
+                "id": "id",
+                "type": "integer",
+                "isKey": false,
+                "isCollection": false,
+                "isRequired": false,
+                "minimum": 0,
+                "maximum": 0,
+                "modelProperty": "Group.Id"
+              },
+              {
+                "id": "idUsers",
+                "type": "integer",
+                "isKey": false,
+                "isCollection": true,
+                "isRequired": false,
+                "minimum": 0,
+                "maximum": 0,
+                "modelProperty": "UserProfile.Id"
+              }
+            ],
+            "references": [],
+            "values": []
+          }
+        }
+      ],
+      "type": "dataupdate",
+      "url": "/api/group/removeMembers",
+      "allowAnonymous": false,
+      "allowedRoles": []
+    },
+    {
+      "id": "getGroup",
+      "parameters": [
+        {
+          "id": "idGroup",
+          "type": "integer"
+        }
+      ],
+      "type": "dataget",
+      "url": "/api/group/getGroup",
+      "allowAnonymous": false,
+      "allowedRoles": [],
+      "returnType": {
+        "id": "Groups",
+        "isAbstract": false,
+        "isEnum": false,
+        "properties": [],
+        "references": [
+          {
+            "id": "groups",
+            "foreignKey": "Id",
+            "type": "Group",
+            "isCollection": true,
+            "isRequired": false
+          }
+        ],
+        "values": []
+      }
+    },
+    {
+      "id": "leaveGroup",
+      "parameters": [
+        {
+          "id": "userGroup",
+          "type": "UserGroup",
+          "dataModel": {
+            "id": "UserGroup",
+            "isAbstract": false,
+            "isEnum": false,
+            "properties": [
+              {
+                "id": "id",
+                "type": "integer",
+                "isKey": false,
+                "isCollection": false,
+                "isRequired": false,
+                "minimum": 0,
+                "maximum": 0,
+                "modelProperty": "Group.Id"
+              },
+              {
+                "id": "idUser",
+                "type": "integer",
+                "isKey": false,
+                "isCollection": false,
+                "isRequired": false,
+                "minimum": 0,
+                "maximum": 0,
+                "modelProperty": "UserProfile.Id"
+              }
+            ],
+            "references": [],
+            "values": []
+          }
+        }
+      ],
+      "type": "dataupdate",
+      "url": "/api/group/leaveGroup",
+      "allowAnonymous": false,
+      "allowedRoles": []
+    },
+    {
+      "id": "getUserProfile",
+      "parameters": [
+        {
+          "id": "idUser",
+          "type": "integer"
+        }
+      ],
+      "type": "dataget",
+      "url": "/api/group/getUserProfile",
+      "allowAnonymous": false,
+      "allowedRoles": [],
+      "returnType": {
+        "id": "Users",
+        "isAbstract": false,
+        "isEnum": false,
+        "properties": [],
+        "references": [
+          {
+            "id": "users",
+            "foreignKey": "Id",
+            "type": "UserProfile",
+            "isCollection": true,
+            "isRequired": false
+          }
+        ],
+        "values": []
+      }
+    }
+  ]
+}
