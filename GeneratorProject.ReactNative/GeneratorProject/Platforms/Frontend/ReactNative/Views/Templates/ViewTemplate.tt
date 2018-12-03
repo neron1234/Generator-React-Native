@@ -1,4 +1,4 @@
-﻿<#@ include file="..\..\Base\Templates\Include.tt"#>
+﻿<#@ include file="..\..\Base\Templates\Include.tt" #>
 import React from 'react';
 import { 
   Image,
@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 
 // Styles
-//import styles from './Styles/<#=TextConverter.PascalCase(_layout.Id)#>ScreenStyle';
+import styles from '../Styles/StyleSheet';
 
 export default class <#=TextConverter.PascalCase(_layout.Id)#>Screen extends React.Component {
     static navigationOptions = {

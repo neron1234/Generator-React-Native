@@ -1,0 +1,21 @@
+﻿<#@ include file="..\..\..\Base\Templates\Include.tt" #>
+<#
+    var model = (SmartAppInfo)Model;
+#>
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name><#=TextConverter.PascalCase(model.Id)#></name>
+	<comment>Project <#=TextConverter.PascalCase(model.Id)#> created by Buildship.</comment>
+	<projects>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>org.eclipse.buildship.core.gradleprojectbuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>org.eclipse.buildship.core.gradleprojectnature</nature>
+	</natures>
+</projectDescription>

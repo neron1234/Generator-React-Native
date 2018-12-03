@@ -1,4 +1,4 @@
-﻿<#@ include file="..\..\Base\Templates\Include.tt"#>
+﻿<#@ include file="..\..\Base\Templates\Include.tt" #>
 import initialState from '../InitialState';
 <# 
     if(_concern != null && _layout != null &&  _layout.Actions != null && _layout.Actions.Count > 0)

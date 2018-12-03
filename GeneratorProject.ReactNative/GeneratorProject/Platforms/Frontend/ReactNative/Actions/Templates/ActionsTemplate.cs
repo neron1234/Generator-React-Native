@@ -12,8 +12,8 @@ namespace GeneratorProject.Platforms.Frontend.ReactNative
     using System.Linq;
     using System.Text;
     using System.Collections.Generic;
-    using Mobioos.Scaffold.TextTemplating;
-    using Mobioos.Scaffold.Generators.Helpers;
+    using Mobioos.Scaffold.BaseGenerators.TextTemplating;
+    using Mobioos.Scaffold.BaseGenerators.Helpers;
     using Mobioos.Foundation.Jade.Models;
     using Mobioos.Foundation.Jade.Extensions;
     using System;
@@ -22,7 +22,7 @@ namespace GeneratorProject.Platforms.Frontend.ReactNative
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Actions\Templates\ActionsTemplate.tt"
+    #line 1 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Actions\Templates\ActionsTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
     public partial class ActionsTemplate : TemplateBase
     {
@@ -32,8 +32,9 @@ namespace GeneratorProject.Platforms.Frontend.ReactNative
         /// </summary>
         public override string TransformText()
         {
+            this.Write("\r\n");
             
-            #line 2 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Actions\Templates\ActionsTemplate.tt"
+            #line 2 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Actions\Templates\ActionsTemplate.tt"
  if(_concern != null && _layout != null &&  _layout.Actions != null && _layout.Actions.Count > 0)
    {
 
@@ -42,14 +43,14 @@ namespace GeneratorProject.Platforms.Frontend.ReactNative
             #line hidden
             this.Write("/**\r\n * Constants for action: ");
             
-            #line 6 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Actions\Templates\ActionsTemplate.tt"
+            #line 6 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Actions\Templates\ActionsTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_concern.Id));
             
             #line default
             #line hidden
             this.Write("Actions\r\n*/\r\n");
             
-            #line 8 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Actions\Templates\ActionsTemplate.tt"
+            #line 8 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Actions\Templates\ActionsTemplate.tt"
 
         foreach(ActionInfo action in _layout.Actions.AsEnumerable())
         {
@@ -61,93 +62,93 @@ namespace GeneratorProject.Platforms.Frontend.ReactNative
             
             #line default
             #line hidden
-            this.Write("    ");
+            this.Write("    const ");
             
-            #line 16 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Actions\Templates\ActionsTemplate.tt"
+            #line 16 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Actions\Templates\ActionsTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_concern.Id.ToUpper()));
             
             #line default
             #line hidden
             this.Write("_");
             
-            #line 16 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Actions\Templates\ActionsTemplate.tt"
+            #line 16 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Actions\Templates\ActionsTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(action.Id.ToUpper()));
             
             #line default
             #line hidden
             this.Write("_REQUEST = \'");
             
-            #line 16 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Actions\Templates\ActionsTemplate.tt"
+            #line 16 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Actions\Templates\ActionsTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_concern.Id.ToUpper()));
             
             #line default
             #line hidden
             this.Write("_");
             
-            #line 16 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Actions\Templates\ActionsTemplate.tt"
+            #line 16 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Actions\Templates\ActionsTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(action.Id.ToUpper()));
             
             #line default
             #line hidden
-            this.Write("_REQUEST1\';\r\n    ");
+            this.Write("_REQUEST1\';\r\n    const ");
             
-            #line 17 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Actions\Templates\ActionsTemplate.tt"
+            #line 17 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Actions\Templates\ActionsTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_concern.Id.ToUpper()));
             
             #line default
             #line hidden
             this.Write("_");
             
-            #line 17 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Actions\Templates\ActionsTemplate.tt"
+            #line 17 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Actions\Templates\ActionsTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(action.Id.ToUpper()));
             
             #line default
             #line hidden
             this.Write("_SUCCESS = \'");
             
-            #line 17 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Actions\Templates\ActionsTemplate.tt"
+            #line 17 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Actions\Templates\ActionsTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_concern.Id.ToUpper()));
             
             #line default
             #line hidden
             this.Write("_");
             
-            #line 17 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Actions\Templates\ActionsTemplate.tt"
+            #line 17 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Actions\Templates\ActionsTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(action.Id.ToUpper()));
             
             #line default
             #line hidden
-            this.Write("_SUCCESS1\';\r\n    ");
+            this.Write("_SUCCESS1\';\r\n    const ");
             
-            #line 18 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Actions\Templates\ActionsTemplate.tt"
+            #line 18 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Actions\Templates\ActionsTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_concern.Id.ToUpper()));
             
             #line default
             #line hidden
             this.Write("_");
             
-            #line 18 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Actions\Templates\ActionsTemplate.tt"
+            #line 18 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Actions\Templates\ActionsTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(action.Id.ToUpper()));
             
             #line default
             #line hidden
             this.Write("_FAILURE = \'");
             
-            #line 18 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Actions\Templates\ActionsTemplate.tt"
+            #line 18 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Actions\Templates\ActionsTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_concern.Id.ToUpper()));
             
             #line default
             #line hidden
             this.Write("_");
             
-            #line 18 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Actions\Templates\ActionsTemplate.tt"
+            #line 18 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Actions\Templates\ActionsTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(action.Id.ToUpper()));
             
             #line default
             #line hidden
             this.Write("_FAILURE1\';\r\n\r\n");
             
-            #line 20 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Actions\Templates\ActionsTemplate.tt"
+            #line 20 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Actions\Templates\ActionsTemplate.tt"
 
                 }
                 else
@@ -173,35 +174,35 @@ namespace GeneratorProject.Platforms.Frontend.ReactNative
             #line hidden
             this.Write("export function ");
             
-            #line 40 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Actions\Templates\ActionsTemplate.tt"
+            #line 40 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Actions\Templates\ActionsTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TextConverter.CamelCase(action.Id)));
             
             #line default
             #line hidden
             this.Write("(){\r\n    return function(dispatch){\r\n        dispatch({ type:  ");
             
-            #line 42 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Actions\Templates\ActionsTemplate.tt"
+            #line 42 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Actions\Templates\ActionsTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_concern.Id.ToUpper()));
             
             #line default
             #line hidden
             this.Write("_");
             
-            #line 42 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Actions\Templates\ActionsTemplate.tt"
+            #line 42 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Actions\Templates\ActionsTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(action.Id.ToUpper()));
             
             #line default
             #line hidden
             this.Write("_REQUEST, isLoading: true});\r\n\r\n        return ");
             
-            #line 44 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Actions\Templates\ActionsTemplate.tt"
+            #line 44 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Actions\Templates\ActionsTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TextConverter.PascalCase(_concern.Id)));
             
             #line default
             #line hidden
             this.Write("Api.");
             
-            #line 44 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Actions\Templates\ActionsTemplate.tt"
+            #line 44 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Actions\Templates\ActionsTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TextConverter.CamelCase(action.Id)));
             
             #line default
@@ -209,21 +210,21 @@ namespace GeneratorProject.Platforms.Frontend.ReactNative
             this.Write("()\r\n            .then(response => response.json())\r\n            .then(data =>{\r\n " +
                     "               dispatch({ type: ");
             
-            #line 47 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Actions\Templates\ActionsTemplate.tt"
+            #line 47 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Actions\Templates\ActionsTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_concern.Id.ToUpper()));
             
             #line default
             #line hidden
             this.Write("_");
             
-            #line 47 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Actions\Templates\ActionsTemplate.tt"
+            #line 47 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Actions\Templates\ActionsTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(action.Id.ToUpper()));
             
             #line default
             #line hidden
             this.Write("_SUCCESS, ");
             
-            #line 47 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Actions\Templates\ActionsTemplate.tt"
+            #line 47 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Actions\Templates\ActionsTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TextConverter.CamelCase(_layout.Id)));
             
             #line default
@@ -231,21 +232,21 @@ namespace GeneratorProject.Platforms.Frontend.ReactNative
             this.Write(": data, isLoading: false });\r\n            })\r\n            .catch(error => {\r\n    " +
                     "            dispatch({ type: ");
             
-            #line 50 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Actions\Templates\ActionsTemplate.tt"
+            #line 50 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Actions\Templates\ActionsTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_concern.Id.ToUpper()));
             
             #line default
             #line hidden
             this.Write("_");
             
-            #line 50 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Actions\Templates\ActionsTemplate.tt"
+            #line 50 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Actions\Templates\ActionsTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(action.Id.ToUpper()));
             
             #line default
             #line hidden
             this.Write("_FAILURE, error: error, isLoading: false });\r\n            });\r\n    };\r\n}\r\n");
             
-            #line 54 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Actions\Templates\ActionsTemplate.tt"
+            #line 54 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Actions\Templates\ActionsTemplate.tt"
 
                 }
             }

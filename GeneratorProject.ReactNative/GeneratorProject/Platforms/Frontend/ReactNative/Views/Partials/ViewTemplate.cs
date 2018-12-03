@@ -1,15 +1,12 @@
-﻿using System.Linq;
-using System.Collections.Generic;
-
-using Mobioos.Scaffold.Core.Runtime.Attributes;
+﻿using Mobioos.Foundation.Jade.Extensions;
 using Mobioos.Foundation.Jade.Models;
-using Mobioos.Scaffold.TextTemplating;
-using Mobioos.Scaffold.Generators.Helpers;
-using Mobioos.Foundation.Jade.Extensions;
+using Mobioos.Scaffold.BaseGenerators.Helpers;
+using Mobioos.Scaffold.BaseGenerators.TextTemplating;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace GeneratorProject.Platforms.Frontend.ReactNative
 {
-    [Generator(ActivityName = Constants.FeaturesActivityName, Order = 24)]
     public partial class ViewTemplate : TemplateBase
     {
         private string _smartAppTitle { get; set; }
@@ -69,9 +66,7 @@ namespace GeneratorProject.Platforms.Frontend.ReactNative
             if (layout != null && layout.Actions.AsEnumerable() != null)
                 getApiViewModels(apis, layout.Actions);
 
-            //if (layout != null && layout.DataModel != null && layout.DataModel.Id != null && !_viewModels.AsEnumerable().Contains(PascalCase(layout.DataModel.Id)))
-            //    _viewModels.Add(TextConverter.PascalCase(layout.DataModel.Id));
-        }
+         }
 
         /// <summary>
         /// Retrieve services from api defined in the api domain.
@@ -88,12 +83,10 @@ namespace GeneratorProject.Platforms.Frontend.ReactNative
                         char delimiter = '.';
                         string[] actionSplitted = action.Api.Split(delimiter);
                         string apiService = actionSplitted[0];
-                        string apiAction = actionSplitted[1];
-
+                        
                         foreach (ApiInfo api in apis.AsEnumerable())
                         {
-                            if (api.Id.ToLower().Equals(apiService.ToLower()))
-                                if (!result.AsEnumerable().Contains(TextConverter.PascalCase(apiService)))
+                            if (api.Id.ToLower().Equals(apiService.ToLower()) && !result.AsEnumerable().Contains(TextConverter.PascalCase(apiService)))
                                     result.Add(TextConverter.PascalCase(apiService));
                         }
                     }
@@ -114,7 +107,6 @@ namespace GeneratorProject.Platforms.Frontend.ReactNative
                     {
                         char delimiter = '.';
                         string[] actionSplitted = action.Api.Split(delimiter);
-                        string apiService = actionSplitted[0];
                         string apiAction = actionSplitted[1];
 
                         foreach (ApiInfo api in apis.AsEnumerable())

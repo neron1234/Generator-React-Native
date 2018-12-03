@@ -1,6 +1,6 @@
 ﻿namespace GeneratorProject.Platforms.Frontend.ReactNative
 {
-    public class Constants
+    public static class Constants
     {
         public const string CommonActivityName = "ReactNativeCommonActivity";
         public const string ModelActivityName = "ReactNativeModelActivity";

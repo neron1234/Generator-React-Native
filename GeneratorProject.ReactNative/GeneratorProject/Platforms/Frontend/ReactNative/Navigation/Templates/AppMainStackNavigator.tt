@@ -1,4 +1,7 @@
-﻿<#@ include file="..\..\Base\Templates\Include.tt"#><#SmartAppInfo smartApp = (SmartAppInfo)Model;#>
+﻿<#@ include file="..\..\Base\Templates\Include.tt"#>
+<#
+    SmartAppInfo smartApp = (SmartAppInfo)Model;
+#>
 import { createStackNavigator} from 'react-navigation';
 
 <#

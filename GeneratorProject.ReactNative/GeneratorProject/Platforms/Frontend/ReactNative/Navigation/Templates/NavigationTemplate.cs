@@ -12,8 +12,8 @@ namespace GeneratorProject.Platforms.Frontend.ReactNative
     using System.Linq;
     using System.Text;
     using System.Collections.Generic;
-    using Mobioos.Scaffold.TextTemplating;
-    using Mobioos.Scaffold.Generators.Helpers;
+    using Mobioos.Scaffold.BaseGenerators.TextTemplating;
+    using Mobioos.Scaffold.BaseGenerators.Helpers;
     using Mobioos.Foundation.Jade.Models;
     using Mobioos.Foundation.Jade.Extensions;
     using System;
@@ -22,7 +22,7 @@ namespace GeneratorProject.Platforms.Frontend.ReactNative
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Navigation\Templates\NavigationTemplate.tt"
+    #line 1 "D:\01 Working\01 RedFabriq\01 working\new_generators\React-Native\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Navigation\Templates\NavigationTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
     public partial class NavigationTemplate : TemplateBase
     {
@@ -32,9 +32,9 @@ namespace GeneratorProject.Platforms.Frontend.ReactNative
         /// </summary>
         public override string TransformText()
         {
-            this.Write("import { createStackNavigator } from \'react-navigation\';\r\n\r\n");
+            this.Write("\r\nimport { createStackNavigator } from \'react-navigation\';\r\n\r\n");
             
-            #line 4 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Navigation\Templates\NavigationTemplate.tt"
+            #line 4 "D:\01 Working\01 RedFabriq\01 working\new_generators\React-Native\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Navigation\Templates\NavigationTemplate.tt"
 
 if(_concernInfo != null)
 {
@@ -51,28 +51,28 @@ if(_concernInfo != null)
             #line hidden
             this.Write("import ");
             
-            #line 15 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Navigation\Templates\NavigationTemplate.tt"
+            #line 15 "D:\01 Working\01 RedFabriq\01 working\new_generators\React-Native\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Navigation\Templates\NavigationTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(containerName));
             
             #line default
             #line hidden
             this.Write(" from \'../Containers/");
             
-            #line 15 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Navigation\Templates\NavigationTemplate.tt"
+            #line 15 "D:\01 Working\01 RedFabriq\01 working\new_generators\React-Native\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Navigation\Templates\NavigationTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_concernInfo.Id));
             
             #line default
             #line hidden
             this.Write("/");
             
-            #line 15 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Navigation\Templates\NavigationTemplate.tt"
+            #line 15 "D:\01 Working\01 RedFabriq\01 working\new_generators\React-Native\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Navigation\Templates\NavigationTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(containerName));
             
             #line default
             #line hidden
             this.Write("\';\r\n");
             
-            #line 16 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Navigation\Templates\NavigationTemplate.tt"
+            #line 16 "D:\01 Working\01 RedFabriq\01 working\new_generators\React-Native\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Navigation\Templates\NavigationTemplate.tt"
 
         }
     }
@@ -82,14 +82,14 @@ if(_concernInfo != null)
             #line hidden
             this.Write("\r\nexport default ");
             
-            #line 21 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Navigation\Templates\NavigationTemplate.tt"
+            #line 21 "D:\01 Working\01 RedFabriq\01 working\new_generators\React-Native\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Navigation\Templates\NavigationTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_concernInfo.Id));
             
             #line default
             #line hidden
             this.Write("StackNavigator = createStackNavigator({\r\n");
             
-            #line 22 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Navigation\Templates\NavigationTemplate.tt"
+            #line 22 "D:\01 Working\01 RedFabriq\01 working\new_generators\React-Native\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Navigation\Templates\NavigationTemplate.tt"
 
     if(_concernInfo.Layouts != null &&  _concernInfo.Layouts.Count > 0)
     {
@@ -103,21 +103,21 @@ if(_concernInfo != null)
             #line hidden
             this.Write("        ");
             
-            #line 30 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Navigation\Templates\NavigationTemplate.tt"
+            #line 30 "D:\01 Working\01 RedFabriq\01 working\new_generators\React-Native\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Navigation\Templates\NavigationTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(navName));
             
             #line default
             #line hidden
             this.Write(": ");
             
-            #line 30 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Navigation\Templates\NavigationTemplate.tt"
+            #line 30 "D:\01 Working\01 RedFabriq\01 working\new_generators\React-Native\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Navigation\Templates\NavigationTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(containerName));
             
             #line default
             #line hidden
             this.Write(",\r\n");
             
-            #line 31 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Navigation\Templates\NavigationTemplate.tt"
+            #line 31 "D:\01 Working\01 RedFabriq\01 working\new_generators\React-Native\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Navigation\Templates\NavigationTemplate.tt"
 
         }
     }
@@ -129,7 +129,7 @@ if(_concernInfo != null)
                     "lor: \'#f4511e\',\r\n        },\r\n        headerTintColor: \'#fff\',\r\n        headerTit" +
                     "leStyle: {\r\n            fontWeight: \'bold\',\r\n        }\r\n    }\r\n});\r\n");
             
-            #line 47 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Navigation\Templates\NavigationTemplate.tt"
+            #line 47 "D:\01 Working\01 RedFabriq\01 working\new_generators\React-Native\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Navigation\Templates\NavigationTemplate.tt"
 
 }
 

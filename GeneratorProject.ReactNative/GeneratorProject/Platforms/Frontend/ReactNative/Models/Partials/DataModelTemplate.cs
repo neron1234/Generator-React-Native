@@ -1,14 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using Mobioos.Foundation.Jade.Models;
+using Mobioos.Scaffold.BaseGenerators.Helpers;
+using Mobioos.Scaffold.BaseGenerators.TextTemplating;
+using System.Collections.Generic;
 using System.Linq;
-
-using Mobioos.Scaffold.Core.Runtime.Attributes;
-using Mobioos.Foundation.Jade.Models;
-using Mobioos.Scaffold.TextTemplating;
-using Mobioos.Scaffold.Generators.Helpers;
 
 namespace GeneratorProject.Platforms.Frontend.ReactNative
 {
-    [Generator(ActivityName = Constants.ModelActivityName, Order = 1)]
     public partial class DataModelTemplate : TemplateBase
     {
         private List<PropertyInfo> _superProperties { get; set; }

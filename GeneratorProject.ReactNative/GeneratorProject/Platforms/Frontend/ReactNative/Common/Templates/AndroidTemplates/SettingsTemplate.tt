@@ -1,0 +1,7 @@
+﻿<#@ include file="..\..\..\Base\Templates\Include.tt" #>
+<#
+    var model = (SmartAppInfo)Model;
+#>
+rootProject.name = '<#=TextConverter.PascalCase(model.Id)#>'
+
+include ':app'

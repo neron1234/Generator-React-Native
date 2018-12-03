@@ -12,8 +12,8 @@ namespace GeneratorProject.Platforms.Frontend.ReactNative
     using System.Linq;
     using System.Text;
     using System.Collections.Generic;
-    using Mobioos.Scaffold.TextTemplating;
-    using Mobioos.Scaffold.Generators.Helpers;
+    using Mobioos.Scaffold.BaseGenerators.TextTemplating;
+    using Mobioos.Scaffold.BaseGenerators.Helpers;
     using Mobioos.Foundation.Jade.Models;
     using Mobioos.Foundation.Jade.Extensions;
     using System;
@@ -22,7 +22,7 @@ namespace GeneratorProject.Platforms.Frontend.ReactNative
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Models\Templates\DataModelTemplate.tt"
+    #line 1 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Models\Templates\DataModelTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
     public partial class DataModelTemplate : TemplateBase
     {
@@ -32,14 +32,17 @@ namespace GeneratorProject.Platforms.Frontend.ReactNative
         /// </summary>
         public override string TransformText()
         {
+            this.Write("\r\n");
             
-            #line 1 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Models\Templates\DataModelTemplate.tt"
- var model = (EntityInfo)Model; 
+            #line 2 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Models\Templates\DataModelTemplate.tt"
+
+    var model = (EntityInfo)Model;
+
             
             #line default
             #line hidden
             
-            #line 2 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Models\Templates\DataModelTemplate.tt"
+            #line 5 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Models\Templates\DataModelTemplate.tt"
  
     if(model.BaseEntity != null)
     {
@@ -49,34 +52,34 @@ namespace GeneratorProject.Platforms.Frontend.ReactNative
             #line hidden
             this.Write("import ");
             
-            #line 6 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Models\Templates\DataModelTemplate.tt"
+            #line 9 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Models\Templates\DataModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TextConverter.PascalCase(model.Extends)));
             
             #line default
             #line hidden
             
-            #line 6 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Models\Templates\DataModelTemplate.tt"
+            #line 9 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Models\Templates\DataModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_modelsuffix));
             
             #line default
             #line hidden
             this.Write(" from \'./");
             
-            #line 6 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Models\Templates\DataModelTemplate.tt"
+            #line 9 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Models\Templates\DataModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TextConverter.CamelCase(model.Extends)));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 6 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Models\Templates\DataModelTemplate.tt"
+            #line 9 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Models\Templates\DataModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_modelsuffix.ToLower()));
             
             #line default
             #line hidden
             this.Write("\';\r\n");
             
-            #line 7 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Models\Templates\DataModelTemplate.tt"
+            #line 10 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Models\Templates\DataModelTemplate.tt"
 
     }
 
@@ -84,7 +87,7 @@ namespace GeneratorProject.Platforms.Frontend.ReactNative
             #line default
             #line hidden
             
-            #line 10 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Models\Templates\DataModelTemplate.tt"
+            #line 13 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Models\Templates\DataModelTemplate.tt"
 
     foreach (ReferenceInfo reference in model.References.AsEnumerable())
     {
@@ -94,34 +97,34 @@ namespace GeneratorProject.Platforms.Frontend.ReactNative
             #line hidden
             this.Write("import ");
             
-            #line 14 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Models\Templates\DataModelTemplate.tt"
+            #line 17 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Models\Templates\DataModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(reference.Type));
             
             #line default
             #line hidden
             
-            #line 14 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Models\Templates\DataModelTemplate.tt"
+            #line 17 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Models\Templates\DataModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_modelsuffix));
             
             #line default
             #line hidden
             this.Write(" from \'./");
             
-            #line 14 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Models\Templates\DataModelTemplate.tt"
+            #line 17 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Models\Templates\DataModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TextConverter.CamelCase(reference.Type)));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 14 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Models\Templates\DataModelTemplate.tt"
+            #line 17 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Models\Templates\DataModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_modelsuffix.ToLower()));
             
             #line default
             #line hidden
             this.Write("\';\r\n");
             
-            #line 15 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Models\Templates\DataModelTemplate.tt"
+            #line 18 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Models\Templates\DataModelTemplate.tt"
 
     }
 
@@ -130,59 +133,59 @@ namespace GeneratorProject.Platforms.Frontend.ReactNative
             #line hidden
             this.Write("\r\nexport default ");
             
-            #line 19 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Models\Templates\DataModelTemplate.tt"
+            #line 22 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Models\Templates\DataModelTemplate.tt"
  if (model.IsAbstract) {
             
             #line default
             #line hidden
             this.Write("abstract");
             
-            #line 19 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Models\Templates\DataModelTemplate.tt"
+            #line 22 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Models\Templates\DataModelTemplate.tt"
 }
             
             #line default
             #line hidden
             this.Write("class ");
             
-            #line 19 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Models\Templates\DataModelTemplate.tt"
+            #line 22 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Models\Templates\DataModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TextConverter.PascalCase(model.Id)));
             
             #line default
             #line hidden
             
-            #line 19 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Models\Templates\DataModelTemplate.tt"
+            #line 22 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Models\Templates\DataModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_modelsuffix));
             
             #line default
             #line hidden
             
-            #line 19 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Models\Templates\DataModelTemplate.tt"
+            #line 22 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Models\Templates\DataModelTemplate.tt"
 if(model.BaseEntity != null){
             
             #line default
             #line hidden
             this.Write(" extends ");
             
-            #line 19 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Models\Templates\DataModelTemplate.tt"
+            #line 22 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Models\Templates\DataModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TextConverter.PascalCase(model.Extends)));
             
             #line default
             #line hidden
             
-            #line 19 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Models\Templates\DataModelTemplate.tt"
+            #line 22 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Models\Templates\DataModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_modelsuffix));
             
             #line default
             #line hidden
             
-            #line 19 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Models\Templates\DataModelTemplate.tt"
+            #line 22 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Models\Templates\DataModelTemplate.tt"
 }
             
             #line default
             #line hidden
             this.Write("{\r\n\r\n    constructor(\r\n");
             
-            #line 22 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Models\Templates\DataModelTemplate.tt"
+            #line 25 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Models\Templates\DataModelTemplate.tt"
 
     var count=model.AllProperties().Count(); 
     var counter = 0;
@@ -196,14 +199,14 @@ if(model.BaseEntity != null){
             #line hidden
             this.Write("        ");
             
-            #line 30 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Models\Templates\DataModelTemplate.tt"
+            #line 33 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Models\Templates\DataModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(property.Id));
             
             #line default
             #line hidden
             this.Write("1,\r\n");
             
-            #line 31 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Models\Templates\DataModelTemplate.tt"
+            #line 34 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Models\Templates\DataModelTemplate.tt"
 
       }
       else
@@ -214,27 +217,27 @@ if(model.BaseEntity != null){
             #line hidden
             this.Write("        ");
             
-            #line 36 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Models\Templates\DataModelTemplate.tt"
+            #line 39 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Models\Templates\DataModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(property.Id));
             
             #line default
             #line hidden
             this.Write("1");
             
-            #line 36 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Models\Templates\DataModelTemplate.tt"
+            #line 39 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Models\Templates\DataModelTemplate.tt"
 if(model.References.Count() > 0){
             
             #line default
             #line hidden
             this.Write(",");
             
-            #line 36 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Models\Templates\DataModelTemplate.tt"
+            #line 39 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Models\Templates\DataModelTemplate.tt"
 }
             
             #line default
             #line hidden
             
-            #line 37 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Models\Templates\DataModelTemplate.tt"
+            #line 40 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Models\Templates\DataModelTemplate.tt"
 
       }
     counter++;
@@ -248,7 +251,7 @@ if(model.References.Count() > 0){
             #line hidden
             this.Write("\r\n");
             
-            #line 46 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Models\Templates\DataModelTemplate.tt"
+            #line 49 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Models\Templates\DataModelTemplate.tt"
 
         counter = 0;
         foreach (ReferenceInfo reference in model.References.AsEnumerable())
@@ -261,20 +264,20 @@ if(model.References.Count() > 0){
             #line hidden
             this.Write("        ");
             
-            #line 53 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Models\Templates\DataModelTemplate.tt"
+            #line 56 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Models\Templates\DataModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(reference.Id));
             
             #line default
             #line hidden
             
-            #line 53 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Models\Templates\DataModelTemplate.tt"
+            #line 56 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Models\Templates\DataModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_modelsuffix));
             
             #line default
             #line hidden
             this.Write("1,\r\n");
             
-            #line 54 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Models\Templates\DataModelTemplate.tt"
+            #line 57 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Models\Templates\DataModelTemplate.tt"
 
               }
               else
@@ -285,20 +288,20 @@ if(model.References.Count() > 0){
             #line hidden
             this.Write("        ");
             
-            #line 59 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Models\Templates\DataModelTemplate.tt"
+            #line 62 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Models\Templates\DataModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(reference.Id));
             
             #line default
             #line hidden
             
-            #line 59 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Models\Templates\DataModelTemplate.tt"
+            #line 62 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Models\Templates\DataModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_modelsuffix));
             
             #line default
             #line hidden
             this.Write("1\r\n");
             
-            #line 60 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Models\Templates\DataModelTemplate.tt"
+            #line 63 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Models\Templates\DataModelTemplate.tt"
 
             }
      counter++;
@@ -310,7 +313,7 @@ if(model.References.Count() > 0){
             #line hidden
             this.Write("\r\n    ){\r\n");
             
-            #line 68 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Models\Templates\DataModelTemplate.tt"
+            #line 71 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Models\Templates\DataModelTemplate.tt"
 
     foreach(var property in model.AllProperties())
     {
@@ -322,7 +325,7 @@ if(model.References.Count() > 0){
             #line hidden
             this.Write("        super(\r\n");
             
-            #line 75 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Models\Templates\DataModelTemplate.tt"
+            #line 78 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Models\Templates\DataModelTemplate.tt"
 
             if(_superProperties.Count == 0)
             {
@@ -332,14 +335,14 @@ if(model.References.Count() > 0){
             #line hidden
             this.Write("            ");
             
-            #line 79 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Models\Templates\DataModelTemplate.tt"
+            #line 82 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Models\Templates\DataModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(property.Id));
             
             #line default
             #line hidden
             this.Write("1\r\n");
             
-            #line 80 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Models\Templates\DataModelTemplate.tt"
+            #line 83 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Models\Templates\DataModelTemplate.tt"
 
             }
             else
@@ -355,14 +358,14 @@ if(model.References.Count() > 0){
             #line hidden
             this.Write("            ");
             
-            #line 90 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Models\Templates\DataModelTemplate.tt"
+            #line 93 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Models\Templates\DataModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(reference.Id));
             
             #line default
             #line hidden
             this.Write("1,\r\n");
             
-            #line 91 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Models\Templates\DataModelTemplate.tt"
+            #line 94 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Models\Templates\DataModelTemplate.tt"
 
                 }
                 else
@@ -373,14 +376,14 @@ if(model.References.Count() > 0){
             #line hidden
             this.Write("            ");
             
-            #line 96 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Models\Templates\DataModelTemplate.tt"
+            #line 99 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Models\Templates\DataModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(reference.Id));
             
             #line default
             #line hidden
             this.Write("1\r\n");
             
-            #line 97 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Models\Templates\DataModelTemplate.tt"
+            #line 100 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Models\Templates\DataModelTemplate.tt"
 
                 }
                 counter++;
@@ -392,7 +395,7 @@ if(model.References.Count() > 0){
             #line hidden
             this.Write("        );\r\n\r\n");
             
-            #line 105 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Models\Templates\DataModelTemplate.tt"
+            #line 108 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Models\Templates\DataModelTemplate.tt"
 
         }
         else
@@ -403,21 +406,21 @@ if(model.References.Count() > 0){
             #line hidden
             this.Write("        this.");
             
-            #line 110 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Models\Templates\DataModelTemplate.tt"
+            #line 113 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Models\Templates\DataModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(property.Id));
             
             #line default
             #line hidden
             this.Write(" = ");
             
-            #line 110 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Models\Templates\DataModelTemplate.tt"
+            #line 113 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Models\Templates\DataModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(property.Id));
             
             #line default
             #line hidden
             this.Write("1;\r\n");
             
-            #line 111 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Models\Templates\DataModelTemplate.tt"
+            #line 114 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Models\Templates\DataModelTemplate.tt"
 
         }
     }
@@ -430,27 +433,27 @@ if(model.References.Count() > 0){
             #line hidden
             this.Write("        this.");
             
-            #line 118 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Models\Templates\DataModelTemplate.tt"
+            #line 121 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Models\Templates\DataModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(reference.Id));
             
             #line default
             #line hidden
             this.Write(" = ");
             
-            #line 118 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Models\Templates\DataModelTemplate.tt"
+            #line 121 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Models\Templates\DataModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(reference.Id));
             
             #line default
             #line hidden
             
-            #line 118 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Models\Templates\DataModelTemplate.tt"
+            #line 121 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Models\Templates\DataModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_modelsuffix));
             
             #line default
             #line hidden
             this.Write("1;\r\n");
             
-            #line 119 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Models\Templates\DataModelTemplate.tt"
+            #line 122 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Models\Templates\DataModelTemplate.tt"
 
     }
 

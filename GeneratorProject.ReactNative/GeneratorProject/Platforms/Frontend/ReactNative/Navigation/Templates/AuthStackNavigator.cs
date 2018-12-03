@@ -12,8 +12,8 @@ namespace GeneratorProject.Platforms.Frontend.ReactNative
     using System.Linq;
     using System.Text;
     using System.Collections.Generic;
-    using Mobioos.Scaffold.TextTemplating;
-    using Mobioos.Scaffold.Generators.Helpers;
+    using Mobioos.Scaffold.BaseGenerators.TextTemplating;
+    using Mobioos.Scaffold.BaseGenerators.Helpers;
     using Mobioos.Foundation.Jade.Models;
     using Mobioos.Foundation.Jade.Extensions;
     using System;
@@ -22,7 +22,7 @@ namespace GeneratorProject.Platforms.Frontend.ReactNative
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Navigation\Templates\AuthStackNavigator.tt"
+    #line 1 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Navigation\Templates\AuthStackNavigator.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
     public partial class AuthStackNavigator : TemplateBase
     {
@@ -32,9 +32,52 @@ namespace GeneratorProject.Platforms.Frontend.ReactNative
         /// </summary>
         public override string TransformText()
         {
-            this.Write("import { createStackNavigator } from \'react-navigation\';\r\n\r\nimport MainScreen fro" +
-                    "m \'../Screens/Login/MainScreen\';\r\n\r\nexport default AuthStackNavigator = createSt" +
-                    "ackNavigator({\r\n    LoginMainScreen: MainScreen\r\n});\r\n");
+            this.Write("import { createStackNavigator } from \'react-navigation\';\r\n");
+            
+            #line 3 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Navigation\Templates\AuthStackNavigator.tt"
+
+    if(_rootScreen == string.Empty || _rootScreenFolder == string.Empty)
+    {
+
+            
+            #line default
+            #line hidden
+            this.Write("import MainScreen from \'../Screens/SignIn/MainScreen\';\r\n");
+            
+            #line 8 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Navigation\Templates\AuthStackNavigator.tt"
+
+    }
+    else
+    {
+
+            
+            #line default
+            #line hidden
+            this.Write("import MainScreen from \'../Screens/");
+            
+            #line 13 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Navigation\Templates\AuthStackNavigator.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(TextConverter.PascalCase(_rootScreenFolder)));
+            
+            #line default
+            #line hidden
+            this.Write("/");
+            
+            #line 13 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Navigation\Templates\AuthStackNavigator.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(TextConverter.PascalCase(_rootScreen)));
+            
+            #line default
+            #line hidden
+            this.Write("Screen\';\r\n");
+            
+            #line 14 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Navigation\Templates\AuthStackNavigator.tt"
+
+    }
+
+            
+            #line default
+            #line hidden
+            this.Write("\r\nexport default AuthStackNavigator = createStackNavigator({\r\n    LoginMainScreen" +
+                    ": MainScreen\r\n});\r\n");
             return this.GenerationEnvironment.ToString();
         }
     }

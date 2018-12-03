@@ -12,8 +12,8 @@ namespace GeneratorProject.Platforms.Frontend.ReactNative
     using System.Linq;
     using System.Text;
     using System.Collections.Generic;
-    using Mobioos.Scaffold.TextTemplating;
-    using Mobioos.Scaffold.Generators.Helpers;
+    using Mobioos.Scaffold.BaseGenerators.TextTemplating;
+    using Mobioos.Scaffold.BaseGenerators.Helpers;
     using Mobioos.Foundation.Jade.Models;
     using Mobioos.Foundation.Jade.Extensions;
     using System;
@@ -22,7 +22,7 @@ namespace GeneratorProject.Platforms.Frontend.ReactNative
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Common\Templates\AppJsonTemplate.tt"
+    #line 1 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Common\Templates\AppJsonTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
     public partial class AppJsonTemplate : TemplateBase
     {
@@ -32,22 +32,25 @@ namespace GeneratorProject.Platforms.Frontend.ReactNative
         /// </summary>
         public override string TransformText()
         {
+            this.Write("\r\n");
             
-            #line 1 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Common\Templates\AppJsonTemplate.tt"
- var model = (SmartAppInfo)Model; 
+            #line 2 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Common\Templates\AppJsonTemplate.tt"
+
+    var model = (SmartAppInfo)Model;
+
             
             #line default
             #line hidden
-            this.Write("{\n  \"name\": \"");
+            this.Write("{\r\n  \"name\": \"");
             
-            #line 2 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Common\Templates\AppJsonTemplate.tt"
+            #line 6 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Common\Templates\AppJsonTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(model.Id));
             
             #line default
             #line hidden
-            this.Write("\",\n");
+            this.Write("\",\r\n");
             
-            #line 2 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Common\Templates\AppJsonTemplate.tt"
+            #line 7 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Common\Templates\AppJsonTemplate.tt"
 
     if(model.Title != null)
     {
@@ -55,16 +58,16 @@ namespace GeneratorProject.Platforms.Frontend.ReactNative
             
             #line default
             #line hidden
-            this.Write("\n  \"displayName\": \"");
+            this.Write("  \"displayName\": \"");
             
-            #line 2 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Common\Templates\AppJsonTemplate.tt"
+            #line 11 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Common\Templates\AppJsonTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TextConverter.PascalCase(model.Title)));
             
             #line default
             #line hidden
-            this.Write("\",\n");
+            this.Write("\",\r\n");
             
-            #line 2 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Common\Templates\AppJsonTemplate.tt"
+            #line 12 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Common\Templates\AppJsonTemplate.tt"
 
     }
     else
@@ -73,25 +76,25 @@ namespace GeneratorProject.Platforms.Frontend.ReactNative
             
             #line default
             #line hidden
-            this.Write("\n  \"displayName\": \"");
+            this.Write("  \"displayName\": \"");
             
-            #line 2 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Common\Templates\AppJsonTemplate.tt"
+            #line 17 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Common\Templates\AppJsonTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(model.Id));
             
             #line default
             #line hidden
-            this.Write("\",\n");
+            this.Write("\",\r\n");
             
-            #line 2 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Common\Templates\AppJsonTemplate.tt"
+            #line 18 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Common\Templates\AppJsonTemplate.tt"
 
     }
 
             
             #line default
             #line hidden
-            this.Write("\n  \"orientation\": \"portrait\",\n  \"icon\": \"./assets/icon.png\",\n  \"splash\":{\n    \"im" +
-                    "age\":\"./assets/splash.png\",\n    \"resizeMode\":\"contain\",\n    \"backgroundColor\":\"#" +
-                    "ffffff\"\n  }\n}");
+            this.Write("  \"orientation\": \"portrait\",\r\n  \"icon\": \"./assets/icon.png\",\r\n  \"splash\":{\r\n    \"" +
+                    "image\":\"./assets/splash.png\",\r\n    \"resizeMode\":\"contain\",\r\n    \"backgroundColor" +
+                    "\":\"#ffffff\"\r\n  }\r\n}");
             return this.GenerationEnvironment.ToString();
         }
     }

@@ -1,4 +1,4 @@
-﻿<#@ include file="..\..\Base\Templates\Include.tt"#>
+﻿<#@ include file="..\..\Base\Templates\Include.tt" #>
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';

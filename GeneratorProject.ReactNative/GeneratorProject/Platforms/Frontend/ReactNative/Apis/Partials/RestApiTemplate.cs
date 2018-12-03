@@ -1,10 +1,8 @@
 ﻿using Mobioos.Foundation.Jade.Models;
-using Mobioos.Scaffold.Core.Runtime.Attributes;
-using Mobioos.Scaffold.TextTemplating;
+using Mobioos.Scaffold.BaseGenerators.TextTemplating;
 
 namespace GeneratorProject.Platforms.Frontend.ReactNative
 {
-    [Generator(ActivityName = Constants.FeaturesActivityName, Order = 24)]
     public partial class RestApiTemplate : TemplateBase
     {
         public RestApiTemplate(SmartAppInfo smartApp): base(smartApp)

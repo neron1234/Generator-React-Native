@@ -1,4 +1,7 @@
-﻿<#@ include file="..\..\Base\Templates\Include.tt"#><#var model = (SmartAppInfo)Model;#>
+﻿<#@ include file="..\..\Base\Templates\Include.tt"#>
+<#
+    var model = (SmartAppInfo)Model;
+#>
 <#
     if(model !=null && model.Concerns != null && model.Concerns.Count > 0)
     {

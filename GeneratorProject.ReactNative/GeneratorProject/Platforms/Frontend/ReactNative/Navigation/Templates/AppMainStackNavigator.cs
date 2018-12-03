@@ -12,8 +12,8 @@ namespace GeneratorProject.Platforms.Frontend.ReactNative
     using System.Linq;
     using System.Text;
     using System.Collections.Generic;
-    using Mobioos.Scaffold.TextTemplating;
-    using Mobioos.Scaffold.Generators.Helpers;
+    using Mobioos.Scaffold.BaseGenerators.TextTemplating;
+    using Mobioos.Scaffold.BaseGenerators.Helpers;
     using Mobioos.Foundation.Jade.Models;
     using Mobioos.Foundation.Jade.Extensions;
     using System;
@@ -22,7 +22,7 @@ namespace GeneratorProject.Platforms.Frontend.ReactNative
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Navigation\Templates\AppMainStackNavigator.tt"
+    #line 1 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Navigation\Templates\AppMainStackNavigator.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
     public partial class AppMainStackNavigator : TemplateBase
     {
@@ -32,15 +32,18 @@ namespace GeneratorProject.Platforms.Frontend.ReactNative
         /// </summary>
         public override string TransformText()
         {
+            this.Write("\r\n");
             
-            #line 1 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Navigation\Templates\AppMainStackNavigator.tt"
-SmartAppInfo smartApp = (SmartAppInfo)Model;
+            #line 2 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Navigation\Templates\AppMainStackNavigator.tt"
+
+    SmartAppInfo smartApp = (SmartAppInfo)Model;
+
             
             #line default
             #line hidden
             this.Write("import { createStackNavigator} from \'react-navigation\';\r\n\r\n");
             
-            #line 4 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Navigation\Templates\AppMainStackNavigator.tt"
+            #line 7 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Navigation\Templates\AppMainStackNavigator.tt"
 
 if(smartApp != null && smartApp.Concerns != null && smartApp.Concerns.Count > 0)
 {
@@ -52,21 +55,21 @@ if(smartApp != null && smartApp.Concerns != null && smartApp.Concerns.Count > 0)
             #line hidden
             this.Write("import ");
             
-            #line 10 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Navigation\Templates\AppMainStackNavigator.tt"
+            #line 13 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Navigation\Templates\AppMainStackNavigator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TextConverter.PascalCase(concern.Id)));
             
             #line default
             #line hidden
             this.Write("StackNavigator from \'./");
             
-            #line 10 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Navigation\Templates\AppMainStackNavigator.tt"
+            #line 13 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Navigation\Templates\AppMainStackNavigator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TextConverter.PascalCase(concern.Id)));
             
             #line default
             #line hidden
             this.Write("StackNavigator\';\r\n");
             
-            #line 11 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Navigation\Templates\AppMainStackNavigator.tt"
+            #line 14 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Navigation\Templates\AppMainStackNavigator.tt"
 
     }
 
@@ -75,7 +78,7 @@ if(smartApp != null && smartApp.Concerns != null && smartApp.Concerns.Count > 0)
             #line hidden
             this.Write("\r\nexport default createStackNavigator({\r\n");
             
-            #line 16 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Navigation\Templates\AppMainStackNavigator.tt"
+            #line 19 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Navigation\Templates\AppMainStackNavigator.tt"
 
     foreach(ConcernInfo concern in smartApp.Concerns)
     {
@@ -85,21 +88,21 @@ if(smartApp != null && smartApp.Concerns != null && smartApp.Concerns.Count > 0)
             #line hidden
             this.Write("    ");
             
-            #line 20 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Navigation\Templates\AppMainStackNavigator.tt"
+            #line 23 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Navigation\Templates\AppMainStackNavigator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TextConverter.PascalCase(concern.Id)));
             
             #line default
             #line hidden
             this.Write(": ");
             
-            #line 20 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Navigation\Templates\AppMainStackNavigator.tt"
+            #line 23 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Navigation\Templates\AppMainStackNavigator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TextConverter.PascalCase(concern.Id)));
             
             #line default
             #line hidden
             this.Write("StackNavigator,\r\n");
             
-            #line 21 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Navigation\Templates\AppMainStackNavigator.tt"
+            #line 24 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Navigation\Templates\AppMainStackNavigator.tt"
 
     }
 
@@ -110,7 +113,7 @@ if(smartApp != null && smartApp.Concerns != null && smartApp.Concerns.Count > 0)
                     "r: \'#f4511e\',\r\n        },\r\n        headerTintColor: \'#fff\',\r\n        headerTitle" +
                     "Style: {\r\n            fontWeight: \'bold\',\r\n        }\r\n    }\r\n  }\r\n);\r\n");
             
-            #line 37 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Navigation\Templates\AppMainStackNavigator.tt"
+            #line 40 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Navigation\Templates\AppMainStackNavigator.tt"
 
 }
 

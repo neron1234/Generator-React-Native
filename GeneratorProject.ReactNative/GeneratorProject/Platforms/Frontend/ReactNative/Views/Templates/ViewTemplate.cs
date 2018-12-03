@@ -12,8 +12,8 @@ namespace GeneratorProject.Platforms.Frontend.ReactNative
     using System.Linq;
     using System.Text;
     using System.Collections.Generic;
-    using Mobioos.Scaffold.TextTemplating;
-    using Mobioos.Scaffold.Generators.Helpers;
+    using Mobioos.Scaffold.BaseGenerators.TextTemplating;
+    using Mobioos.Scaffold.BaseGenerators.Helpers;
     using Mobioos.Foundation.Jade.Models;
     using Mobioos.Foundation.Jade.Extensions;
     using System;
@@ -22,7 +22,7 @@ namespace GeneratorProject.Platforms.Frontend.ReactNative
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Views\Templates\ViewTemplate.tt"
+    #line 1 "D:\01 Working\01 RedFabriq\01 working\new_generators\React-Native\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Views\Templates\ViewTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
     public partial class ViewTemplate : TemplateBase
     {
@@ -32,17 +32,11 @@ namespace GeneratorProject.Platforms.Frontend.ReactNative
         /// </summary>
         public override string TransformText()
         {
-            this.Write("import React from \'react\';\r\nimport { \r\n  Image,\r\n  Text,\r\n  Button,\r\n  View,\r\n  S" +
-                    "crollView\r\n} from \'react-native\';\r\n\r\n// Styles\r\n//import styles from \'./Styles/");
+            this.Write("\r\nimport React from \'react\';\r\nimport { \r\n  Image,\r\n  Text,\r\n  Button,\r\n  View,\r\n " +
+                    " ScrollView\r\n} from \'react-native\';\r\n\r\n// Styles\r\nimport styles from \'../Styles/" +
+                    "StyleSheet\';\r\n\r\nexport default class ");
             
-            #line 12 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Views\Templates\ViewTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(TextConverter.PascalCase(_layout.Id)));
-            
-            #line default
-            #line hidden
-            this.Write("ScreenStyle\';\r\n\r\nexport default class ");
-            
-            #line 14 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Views\Templates\ViewTemplate.tt"
+            #line 14 "D:\01 Working\01 RedFabriq\01 working\new_generators\React-Native\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Views\Templates\ViewTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TextConverter.PascalCase(_layout.Id)));
             
             #line default
@@ -50,14 +44,14 @@ namespace GeneratorProject.Platforms.Frontend.ReactNative
             this.Write("Screen extends React.Component {\r\n    static navigationOptions = {\r\n        title" +
                     ":\'");
             
-            #line 16 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Views\Templates\ViewTemplate.tt"
+            #line 16 "D:\01 Working\01 RedFabriq\01 working\new_generators\React-Native\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Views\Templates\ViewTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TextConverter.PascalCase(_layout.Title)));
             
             #line default
             #line hidden
             this.Write(" Screen\'\r\n    };\r\n\r\n    constructor(props) {\r\n        super(props);\r\n    }\r\n");
             
-            #line 22 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Views\Templates\ViewTemplate.tt"
+            #line 22 "D:\01 Working\01 RedFabriq\01 working\new_generators\React-Native\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Views\Templates\ViewTemplate.tt"
 
   if(_layout.Actions.AsEnumerable() != null)
   {
@@ -77,21 +71,21 @@ namespace GeneratorProject.Platforms.Frontend.ReactNative
             #line hidden
             this.Write("\r\n    ");
             
-            #line 37 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Views\Templates\ViewTemplate.tt"
+            #line 37 "D:\01 Working\01 RedFabriq\01 working\new_generators\React-Native\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Views\Templates\ViewTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TextConverter.CamelCase(action.Id)));
             
             #line default
             #line hidden
             this.Write(" = () => {\r\n        this.props.on");
             
-            #line 38 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Views\Templates\ViewTemplate.tt"
+            #line 38 "D:\01 Working\01 RedFabriq\01 working\new_generators\React-Native\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Views\Templates\ViewTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TextConverter.PascalCase(action.Id)));
             
             #line default
             #line hidden
             this.Write("();\r\n    }\r\n");
             
-            #line 40 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Views\Templates\ViewTemplate.tt"
+            #line 40 "D:\01 Working\01 RedFabriq\01 working\new_generators\React-Native\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Views\Templates\ViewTemplate.tt"
 
                         }
                         break;
@@ -102,14 +96,14 @@ namespace GeneratorProject.Platforms.Frontend.ReactNative
             #line hidden
             this.Write("\r\n    ");
             
-            #line 46 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Views\Templates\ViewTemplate.tt"
+            #line 46 "D:\01 Working\01 RedFabriq\01 working\new_generators\React-Native\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Views\Templates\ViewTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TextConverter.CamelCase(action.Id)));
             
             #line default
             #line hidden
             this.Write(" = () => {\r\n        //TODO\r\n    }\r\n");
             
-            #line 49 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Views\Templates\ViewTemplate.tt"
+            #line 49 "D:\01 Working\01 RedFabriq\01 working\new_generators\React-Native\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Views\Templates\ViewTemplate.tt"
 
                         break;
                     case "dataget": case "datalist": case "datacreate": case "dataupdate": case "datadelete":
@@ -133,14 +127,14 @@ namespace GeneratorProject.Platforms.Frontend.ReactNative
             #line hidden
             this.Write("\r\n    ");
             
-            #line 68 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Views\Templates\ViewTemplate.tt"
+            #line 68 "D:\01 Working\01 RedFabriq\01 working\new_generators\React-Native\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Views\Templates\ViewTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TextConverter.CamelCase(action.Id)));
             
             #line default
             #line hidden
             this.Write(" = (\r\n");
             
-            #line 69 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Views\Templates\ViewTemplate.tt"
+            #line 69 "D:\01 Working\01 RedFabriq\01 working\new_generators\React-Native\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Views\Templates\ViewTemplate.tt"
 
                                             if (apiA.Parameters.AsEnumerable() != null && apiA.Parameters.AsEnumerable().Count() > 0)
                                             {
@@ -159,14 +153,14 @@ namespace GeneratorProject.Platforms.Frontend.ReactNative
             #line hidden
             this.Write("        ");
             
-            #line 82 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Views\Templates\ViewTemplate.tt"
+            #line 82 "D:\01 Working\01 RedFabriq\01 working\new_generators\React-Native\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Views\Templates\ViewTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TextConverter.CamelCase(apiParameter.Id)));
             
             #line default
             #line hidden
             this.Write("\r\n");
             
-            #line 83 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Views\Templates\ViewTemplate.tt"
+            #line 83 "D:\01 Working\01 RedFabriq\01 working\new_generators\React-Native\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Views\Templates\ViewTemplate.tt"
 
                                                         }
                                                         else
@@ -177,14 +171,14 @@ namespace GeneratorProject.Platforms.Frontend.ReactNative
             #line hidden
             this.Write("        ");
             
-            #line 88 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Views\Templates\ViewTemplate.tt"
+            #line 88 "D:\01 Working\01 RedFabriq\01 working\new_generators\React-Native\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Views\Templates\ViewTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TextConverter.CamelCase(apiParameter.Id)));
             
             #line default
             #line hidden
             this.Write(",\r\n");
             
-            #line 89 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Views\Templates\ViewTemplate.tt"
+            #line 89 "D:\01 Working\01 RedFabriq\01 working\new_generators\React-Native\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Views\Templates\ViewTemplate.tt"
 
                                                         }
                                                     }
@@ -196,21 +190,21 @@ namespace GeneratorProject.Platforms.Frontend.ReactNative
             #line hidden
             this.Write("    ) => {\r\n        return this._");
             
-            #line 96 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Views\Templates\ViewTemplate.tt"
+            #line 96 "D:\01 Working\01 RedFabriq\01 working\new_generators\React-Native\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Views\Templates\ViewTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TextConverter.CamelCase(api.Id) + _apiSuffix));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 96 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Views\Templates\ViewTemplate.tt"
+            #line 96 "D:\01 Working\01 RedFabriq\01 working\new_generators\React-Native\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Views\Templates\ViewTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TextConverter.CamelCase(apiA.Id)));
             
             #line default
             #line hidden
             this.Write("(\r\n");
             
-            #line 97 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Views\Templates\ViewTemplate.tt"
+            #line 97 "D:\01 Working\01 RedFabriq\01 working\new_generators\React-Native\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Views\Templates\ViewTemplate.tt"
 
                                             if (apiA.Parameters.AsEnumerable() != null && apiA.Parameters.AsEnumerable().Count() > 0)
                                             {
@@ -225,14 +219,14 @@ namespace GeneratorProject.Platforms.Frontend.ReactNative
             #line hidden
             this.Write("            ");
             
-            #line 106 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Views\Templates\ViewTemplate.tt"
+            #line 106 "D:\01 Working\01 RedFabriq\01 working\new_generators\React-Native\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Views\Templates\ViewTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TextConverter.CamelCase(apiParameter.Id)));
             
             #line default
             #line hidden
             this.Write("\r\n");
             
-            #line 107 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Views\Templates\ViewTemplate.tt"
+            #line 107 "D:\01 Working\01 RedFabriq\01 working\new_generators\React-Native\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Views\Templates\ViewTemplate.tt"
 
                                                     }
                                                     else
@@ -243,14 +237,14 @@ namespace GeneratorProject.Platforms.Frontend.ReactNative
             #line hidden
             this.Write("            ");
             
-            #line 112 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Views\Templates\ViewTemplate.tt"
+            #line 112 "D:\01 Working\01 RedFabriq\01 working\new_generators\React-Native\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Views\Templates\ViewTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TextConverter.CamelCase(apiParameter.Id)));
             
             #line default
             #line hidden
             this.Write(",\r\n");
             
-            #line 113 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Views\Templates\ViewTemplate.tt"
+            #line 113 "D:\01 Working\01 RedFabriq\01 working\new_generators\React-Native\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Views\Templates\ViewTemplate.tt"
 
                                                     }
                                                 }
@@ -261,7 +255,7 @@ namespace GeneratorProject.Platforms.Frontend.ReactNative
             #line hidden
             this.Write("        );\r\n    }\r\n");
             
-            #line 120 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Views\Templates\ViewTemplate.tt"
+            #line 120 "D:\01 Working\01 RedFabriq\01 working\new_generators\React-Native\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Views\Templates\ViewTemplate.tt"
 
                                         }
                                     }
@@ -279,7 +273,7 @@ namespace GeneratorProject.Platforms.Frontend.ReactNative
             this.Write("\r\n    render() {\r\n        return (\r\n          <View style={styles.container}>\r\n  " +
                     "         <ScrollView>\r\n                <View>\r\n");
             
-            #line 137 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Views\Templates\ViewTemplate.tt"
+            #line 137 "D:\01 Working\01 RedFabriq\01 working\new_generators\React-Native\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Views\Templates\ViewTemplate.tt"
 
     foreach(var action in _layout.Actions.AsEnumerable())
     {
@@ -291,21 +285,21 @@ namespace GeneratorProject.Platforms.Frontend.ReactNative
             #line hidden
             this.Write("                    <Button title=\"");
             
-            #line 143 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Views\Templates\ViewTemplate.tt"
+            #line 143 "D:\01 Working\01 RedFabriq\01 working\new_generators\React-Native\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Views\Templates\ViewTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Helper.WordSeperator(TextConverter.PascalCase(action.Id))));
             
             #line default
             #line hidden
             this.Write("\" onPress={this.");
             
-            #line 143 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Views\Templates\ViewTemplate.tt"
+            #line 143 "D:\01 Working\01 RedFabriq\01 working\new_generators\React-Native\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Views\Templates\ViewTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TextConverter.CamelCase(action.Id)));
             
             #line default
             #line hidden
             this.Write("}/>\r\n");
             
-            #line 144 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Views\Templates\ViewTemplate.tt"
+            #line 144 "D:\01 Working\01 RedFabriq\01 working\new_generators\React-Native\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Views\Templates\ViewTemplate.tt"
 
         }
     }
@@ -315,7 +309,7 @@ namespace GeneratorProject.Platforms.Frontend.ReactNative
             #line hidden
             this.Write("                </View>\r\n                <View>\r\n");
             
-            #line 150 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Views\Templates\ViewTemplate.tt"
+            #line 150 "D:\01 Working\01 RedFabriq\01 working\new_generators\React-Native\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Views\Templates\ViewTemplate.tt"
 
     foreach(var action in _layout.Actions.AsEnumerable())
     {
@@ -327,21 +321,21 @@ namespace GeneratorProject.Platforms.Frontend.ReactNative
             #line hidden
             this.Write("                    <Button title=\"");
             
-            #line 156 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Views\Templates\ViewTemplate.tt"
+            #line 156 "D:\01 Working\01 RedFabriq\01 working\new_generators\React-Native\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Views\Templates\ViewTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Helper.WordSeperator(TextConverter.PascalCase(action.Id))));
             
             #line default
             #line hidden
             this.Write("\" onPress={this.");
             
-            #line 156 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Views\Templates\ViewTemplate.tt"
+            #line 156 "D:\01 Working\01 RedFabriq\01 working\new_generators\React-Native\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Views\Templates\ViewTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TextConverter.CamelCase(action.Id)));
             
             #line default
             #line hidden
             this.Write("}/>\r\n");
             
-            #line 157 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Views\Templates\ViewTemplate.tt"
+            #line 157 "D:\01 Working\01 RedFabriq\01 working\new_generators\React-Native\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Views\Templates\ViewTemplate.tt"
 
         }
     }

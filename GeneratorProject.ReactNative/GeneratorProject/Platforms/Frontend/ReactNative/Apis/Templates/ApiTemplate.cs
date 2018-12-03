@@ -12,8 +12,8 @@ namespace GeneratorProject.Platforms.Frontend.ReactNative
     using System.Linq;
     using System.Text;
     using System.Collections.Generic;
-    using Mobioos.Scaffold.TextTemplating;
-    using Mobioos.Scaffold.Generators.Helpers;
+    using Mobioos.Scaffold.BaseGenerators.TextTemplating;
+    using Mobioos.Scaffold.BaseGenerators.Helpers;
     using Mobioos.Foundation.Jade.Models;
     using Mobioos.Foundation.Jade.Extensions;
     using System;
@@ -22,7 +22,7 @@ namespace GeneratorProject.Platforms.Frontend.ReactNative
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Apis\Templates\ApiTemplate.tt"
+    #line 1 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Apis\Templates\ApiTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
     public partial class ApiTemplate : TemplateBase
     {
@@ -32,22 +32,25 @@ namespace GeneratorProject.Platforms.Frontend.ReactNative
         /// </summary>
         public override string TransformText()
         {
+            this.Write("\r\n");
             
-            #line 1 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Apis\Templates\ApiTemplate.tt"
-var model = (SmartAppInfo)Model;
+            #line 2 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Apis\Templates\ApiTemplate.tt"
+
+    var model = (SmartAppInfo)Model;
+
             
             #line default
             #line hidden
             this.Write("import RestApi from \'./RestApi\';\r\n\r\nexport default class ");
             
-            #line 4 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Apis\Templates\ApiTemplate.tt"
+            #line 7 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Apis\Templates\ApiTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_api.Id));
             
             #line default
             #line hidden
             this.Write("Api{\r\n\r\n");
             
-            #line 6 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Apis\Templates\ApiTemplate.tt"
+            #line 9 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Apis\Templates\ApiTemplate.tt"
  if(_api.Actions != null && _api.Actions.Count > 0)
    {
        foreach(ApiActionInfo action in _api.Actions)
@@ -60,14 +63,14 @@ var model = (SmartAppInfo)Model;
             #line hidden
             this.Write("    ");
             
-            #line 13 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Apis\Templates\ApiTemplate.tt"
+            #line 16 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Apis\Templates\ApiTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TextConverter.CamelCase(action.Id)));
             
             #line default
             #line hidden
             this.Write("(\r\n");
             
-            #line 14 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Apis\Templates\ApiTemplate.tt"
+            #line 17 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Apis\Templates\ApiTemplate.tt"
 
             if (action.Parameters.AsEnumerable() != null && action.Parameters.AsEnumerable().Count() > 0)
                     {
@@ -84,14 +87,14 @@ var model = (SmartAppInfo)Model;
             #line hidden
             this.Write("        ");
             
-            #line 25 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Apis\Templates\ApiTemplate.tt"
+            #line 28 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Apis\Templates\ApiTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TextConverter.CamelCase(apiParameter.Id)));
             
             #line default
             #line hidden
             this.Write("\r\n");
             
-            #line 26 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Apis\Templates\ApiTemplate.tt"
+            #line 29 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Apis\Templates\ApiTemplate.tt"
 
                                 }
                                 else
@@ -102,14 +105,14 @@ var model = (SmartAppInfo)Model;
             #line hidden
             this.Write("        ");
             
-            #line 31 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Apis\Templates\ApiTemplate.tt"
+            #line 34 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Apis\Templates\ApiTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TextConverter.CamelCase(apiParameter.Id)));
             
             #line default
             #line hidden
             this.Write(",\r\n");
             
-            #line 32 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Apis\Templates\ApiTemplate.tt"
+            #line 35 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Apis\Templates\ApiTemplate.tt"
 
                                 }
                             }
@@ -122,7 +125,7 @@ var model = (SmartAppInfo)Model;
             #line hidden
             this.Write("    ) {\r\n");
             
-            #line 40 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Apis\Templates\ApiTemplate.tt"
+            #line 43 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Apis\Templates\ApiTemplate.tt"
 
                     switch (action.Type)
                     {
@@ -136,7 +139,7 @@ var model = (SmartAppInfo)Model;
             #line hidden
             this.Write("        let urlSearchParams = {};\r\n");
             
-            #line 49 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Apis\Templates\ApiTemplate.tt"
+            #line 52 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Apis\Templates\ApiTemplate.tt"
 
                              foreach (ApiParameterInfo apiParameter in action.Parameters.AsEnumerable())
                                 {
@@ -148,21 +151,21 @@ var model = (SmartAppInfo)Model;
             #line hidden
             this.Write("        urlSearchParams[\'");
             
-            #line 55 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Apis\Templates\ApiTemplate.tt"
+            #line 58 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Apis\Templates\ApiTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TextConverter.CamelCase(apiParameter.Id)));
             
             #line default
             #line hidden
             this.Write("\'] = JSON.stringify(");
             
-            #line 55 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Apis\Templates\ApiTemplate.tt"
+            #line 58 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Apis\Templates\ApiTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TextConverter.CamelCase(apiParameter.Id)));
             
             #line default
             #line hidden
             this.Write(");\r\n");
             
-            #line 56 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Apis\Templates\ApiTemplate.tt"
+            #line 59 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Apis\Templates\ApiTemplate.tt"
 
                                     }
                                 }
@@ -172,14 +175,14 @@ var model = (SmartAppInfo)Model;
             #line hidden
             this.Write("        return RestApi.get(\'");
             
-            #line 60 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Apis\Templates\ApiTemplate.tt"
+            #line 63 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Apis\Templates\ApiTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(action.Url));
             
             #line default
             #line hidden
             this.Write("\', urlSearchParams) ;\r\n");
             
-            #line 61 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Apis\Templates\ApiTemplate.tt"
+            #line 64 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Apis\Templates\ApiTemplate.tt"
 
                             }
                             else
@@ -190,14 +193,14 @@ var model = (SmartAppInfo)Model;
             #line hidden
             this.Write("        return RestApi.get(\'");
             
-            #line 66 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Apis\Templates\ApiTemplate.tt"
+            #line 69 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Apis\Templates\ApiTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(action.Url));
             
             #line default
             #line hidden
             this.Write("\');\r\n");
             
-            #line 67 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Apis\Templates\ApiTemplate.tt"
+            #line 70 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Apis\Templates\ApiTemplate.tt"
 
                             }
                         break;
@@ -208,7 +211,7 @@ var model = (SmartAppInfo)Model;
             #line hidden
             this.Write("        let postData = {};\r\n");
             
-            #line 73 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Apis\Templates\ApiTemplate.tt"
+            #line 76 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Apis\Templates\ApiTemplate.tt"
 
                             if (action.Parameters.AsEnumerable() != null && action.Parameters.AsEnumerable().Count() > 0)
                             {
@@ -222,21 +225,21 @@ var model = (SmartAppInfo)Model;
             #line hidden
             this.Write("        postData[\'");
             
-            #line 81 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Apis\Templates\ApiTemplate.tt"
+            #line 84 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Apis\Templates\ApiTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TextConverter.CamelCase(apiParameter.Id)));
             
             #line default
             #line hidden
             this.Write("\'] = ");
             
-            #line 81 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Apis\Templates\ApiTemplate.tt"
+            #line 84 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Apis\Templates\ApiTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TextConverter.CamelCase(apiParameter.Id)));
             
             #line default
             #line hidden
             this.Write(";\r\n");
             
-            #line 82 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Apis\Templates\ApiTemplate.tt"
+            #line 85 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Apis\Templates\ApiTemplate.tt"
 
                                     }
                                 }
@@ -247,14 +250,14 @@ var model = (SmartAppInfo)Model;
             #line hidden
             this.Write("        return RestApi.post(\'");
             
-            #line 87 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Apis\Templates\ApiTemplate.tt"
+            #line 90 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Apis\Templates\ApiTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(action.Url));
             
             #line default
             #line hidden
             this.Write("\', postData);\r\n");
             
-            #line 88 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Apis\Templates\ApiTemplate.tt"
+            #line 91 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Apis\Templates\ApiTemplate.tt"
 
                         break;
                         case "dataupdate":
@@ -264,7 +267,7 @@ var model = (SmartAppInfo)Model;
             #line hidden
             this.Write("         let putData = {};\r\n");
             
-            #line 93 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Apis\Templates\ApiTemplate.tt"
+            #line 96 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Apis\Templates\ApiTemplate.tt"
 
                             if (action.Parameters.AsEnumerable() != null && action.Parameters.AsEnumerable().Count() > 0)
                             {
@@ -278,21 +281,21 @@ var model = (SmartAppInfo)Model;
             #line hidden
             this.Write("        putData[\'");
             
-            #line 101 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Apis\Templates\ApiTemplate.tt"
+            #line 104 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Apis\Templates\ApiTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TextConverter.CamelCase(apiParameter.Id)));
             
             #line default
             #line hidden
             this.Write("\'] = ");
             
-            #line 101 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Apis\Templates\ApiTemplate.tt"
+            #line 104 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Apis\Templates\ApiTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TextConverter.CamelCase(apiParameter.Id)));
             
             #line default
             #line hidden
             this.Write(";\r\n");
             
-            #line 102 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Apis\Templates\ApiTemplate.tt"
+            #line 105 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Apis\Templates\ApiTemplate.tt"
 
                                     }
                                 }
@@ -303,14 +306,14 @@ var model = (SmartAppInfo)Model;
             #line hidden
             this.Write("        return RestApi.put(\'");
             
-            #line 107 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Apis\Templates\ApiTemplate.tt"
+            #line 110 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Apis\Templates\ApiTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(action.Url));
             
             #line default
             #line hidden
             this.Write("\', putData);\r\n");
             
-            #line 108 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Apis\Templates\ApiTemplate.tt"
+            #line 111 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Apis\Templates\ApiTemplate.tt"
 
                         break;
                         case "datadelete":
@@ -320,7 +323,7 @@ var model = (SmartAppInfo)Model;
             #line hidden
             this.Write("        let urlSearchParams = {};\r\n");
             
-            #line 113 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Apis\Templates\ApiTemplate.tt"
+            #line 116 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Apis\Templates\ApiTemplate.tt"
 
                             if (action.Parameters.AsEnumerable() != null && action.Parameters.AsEnumerable().Count() > 0)
                             {
@@ -334,21 +337,21 @@ var model = (SmartAppInfo)Model;
             #line hidden
             this.Write("        urlSearchParams[\'");
             
-            #line 121 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Apis\Templates\ApiTemplate.tt"
+            #line 124 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Apis\Templates\ApiTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TextConverter.CamelCase(apiParameter.Id)));
             
             #line default
             #line hidden
             this.Write("\'] = JSON.stringify(");
             
-            #line 121 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Apis\Templates\ApiTemplate.tt"
+            #line 124 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Apis\Templates\ApiTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TextConverter.CamelCase(apiParameter.Id)));
             
             #line default
             #line hidden
             this.Write(");\r\n");
             
-            #line 122 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Apis\Templates\ApiTemplate.tt"
+            #line 125 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Apis\Templates\ApiTemplate.tt"
 
                                     }
                                 }
@@ -359,14 +362,14 @@ var model = (SmartAppInfo)Model;
             #line hidden
             this.Write("         return RestApi.delete(\'");
             
-            #line 127 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Apis\Templates\ApiTemplate.tt"
+            #line 130 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Apis\Templates\ApiTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(action.Url));
             
             #line default
             #line hidden
             this.Write("\', urlSearchParams);\r\n");
             
-            #line 128 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Apis\Templates\ApiTemplate.tt"
+            #line 131 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Apis\Templates\ApiTemplate.tt"
 
                         break;
                         default: break;
@@ -377,7 +380,7 @@ var model = (SmartAppInfo)Model;
             #line hidden
             this.Write("    }\r\n\r\n");
             
-            #line 135 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Apis\Templates\ApiTemplate.tt"
+            #line 138 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Apis\Templates\ApiTemplate.tt"
 
             }
        }

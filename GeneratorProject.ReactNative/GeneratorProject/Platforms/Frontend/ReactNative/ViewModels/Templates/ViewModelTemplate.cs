@@ -12,8 +12,8 @@ namespace GeneratorProject.Platforms.Frontend.ReactNative
     using System.Linq;
     using System.Text;
     using System.Collections.Generic;
-    using Mobioos.Scaffold.TextTemplating;
-    using Mobioos.Scaffold.Generators.Helpers;
+    using Mobioos.Scaffold.BaseGenerators.TextTemplating;
+    using Mobioos.Scaffold.BaseGenerators.Helpers;
     using Mobioos.Foundation.Jade.Models;
     using Mobioos.Foundation.Jade.Extensions;
     using System;
@@ -22,7 +22,7 @@ namespace GeneratorProject.Platforms.Frontend.ReactNative
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\ViewModels\Templates\ViewModelTemplate.tt"
+    #line 1 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\ViewModels\Templates\ViewModelTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
     public partial class ViewModelTemplate : TemplateBase
     {
@@ -32,14 +32,17 @@ namespace GeneratorProject.Platforms.Frontend.ReactNative
         /// </summary>
         public override string TransformText()
         {
+            this.Write("\r\n");
             
-            #line 1 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\ViewModels\Templates\ViewModelTemplate.tt"
- var model = (EntityInfo)Model; 
+            #line 2 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\ViewModels\Templates\ViewModelTemplate.tt"
+
+    var model = (EntityInfo)Model;
+
             
             #line default
             #line hidden
             
-            #line 2 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\ViewModels\Templates\ViewModelTemplate.tt"
+            #line 5 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\ViewModels\Templates\ViewModelTemplate.tt"
 
     if(_dataModel != null && _dataModel.Id != null)
     {
@@ -57,34 +60,34 @@ namespace GeneratorProject.Platforms.Frontend.ReactNative
             #line hidden
             this.Write("import ");
             
-            #line 14 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\ViewModels\Templates\ViewModelTemplate.tt"
+            #line 17 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\ViewModels\Templates\ViewModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TextConverter.PascalCase(property.Type)));
             
             #line default
             #line hidden
             
-            #line 14 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\ViewModels\Templates\ViewModelTemplate.tt"
+            #line 17 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\ViewModels\Templates\ViewModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_modelSuffix));
             
             #line default
             #line hidden
             this.Write(" from \'../Models/");
             
-            #line 14 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\ViewModels\Templates\ViewModelTemplate.tt"
+            #line 17 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\ViewModels\Templates\ViewModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TextConverter.CamelCase(property.Type)));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 14 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\ViewModels\Templates\ViewModelTemplate.tt"
+            #line 17 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\ViewModels\Templates\ViewModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_modelSuffix.ToLower()));
             
             #line default
             #line hidden
             this.Write("\';\r\n");
             
-            #line 15 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\ViewModels\Templates\ViewModelTemplate.tt"
+            #line 18 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\ViewModels\Templates\ViewModelTemplate.tt"
 
                 }
             }
@@ -102,34 +105,34 @@ namespace GeneratorProject.Platforms.Frontend.ReactNative
             #line hidden
             this.Write("import ");
             
-            #line 27 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\ViewModels\Templates\ViewModelTemplate.tt"
+            #line 30 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\ViewModels\Templates\ViewModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TextConverter.PascalCase(reference.Type)));
             
             #line default
             #line hidden
             
-            #line 27 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\ViewModels\Templates\ViewModelTemplate.tt"
+            #line 30 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\ViewModels\Templates\ViewModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_modelSuffix));
             
             #line default
             #line hidden
             this.Write(" from \'../Models/");
             
-            #line 27 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\ViewModels\Templates\ViewModelTemplate.tt"
+            #line 30 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\ViewModels\Templates\ViewModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TextConverter.CamelCase(reference.Type)));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 27 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\ViewModels\Templates\ViewModelTemplate.tt"
+            #line 30 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\ViewModels\Templates\ViewModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_modelSuffix.ToLower()));
             
             #line default
             #line hidden
             this.Write("\';\r\n");
             
-            #line 28 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\ViewModels\Templates\ViewModelTemplate.tt"
+            #line 31 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\ViewModels\Templates\ViewModelTemplate.tt"
 
                 }
             }
@@ -140,20 +143,20 @@ namespace GeneratorProject.Platforms.Frontend.ReactNative
             #line hidden
             this.Write("\r\nexport class  ");
             
-            #line 34 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\ViewModels\Templates\ViewModelTemplate.tt"
+            #line 37 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\ViewModels\Templates\ViewModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TextConverter.PascalCase(_dataModel.Id)));
             
             #line default
             #line hidden
             
-            #line 34 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\ViewModels\Templates\ViewModelTemplate.tt"
+            #line 37 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\ViewModels\Templates\ViewModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(_viewModelSuffix));
             
             #line default
             #line hidden
             this.Write(" {\r\n\r\n    constructor(\r\n");
             
-            #line 37 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\ViewModels\Templates\ViewModelTemplate.tt"
+            #line 40 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\ViewModels\Templates\ViewModelTemplate.tt"
 
      if (_constructorParametersObj.AsEnumerable() != null && _constructorParametersObj.AsEnumerable().Count() > 0)
             {
@@ -182,14 +185,14 @@ namespace GeneratorProject.Platforms.Frontend.ReactNative
             #line hidden
             this.Write("        ");
             
-            #line 60 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\ViewModels\Templates\ViewModelTemplate.tt"
+            #line 63 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\ViewModels\Templates\ViewModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TextConverter.CamelCase(property.Id) + countConstructor[property.Id]));
             
             #line default
             #line hidden
             this.Write("\r\n");
             
-            #line 61 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\ViewModels\Templates\ViewModelTemplate.tt"
+            #line 64 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\ViewModels\Templates\ViewModelTemplate.tt"
 
                         }
                         else
@@ -200,14 +203,14 @@ namespace GeneratorProject.Platforms.Frontend.ReactNative
             #line hidden
             this.Write("        ");
             
-            #line 66 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\ViewModels\Templates\ViewModelTemplate.tt"
+            #line 69 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\ViewModels\Templates\ViewModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TextConverter.CamelCase(property.Id) + countConstructor[property.Id]));
             
             #line default
             #line hidden
             this.Write(",\r\n");
             
-            #line 67 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\ViewModels\Templates\ViewModelTemplate.tt"
+            #line 70 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\ViewModels\Templates\ViewModelTemplate.tt"
 
                         }
                     }
@@ -220,7 +223,7 @@ namespace GeneratorProject.Platforms.Frontend.ReactNative
             #line hidden
             this.Write("    ) {\r\n\r\n    ");
             
-            #line 76 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\ViewModels\Templates\ViewModelTemplate.tt"
+            #line 79 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\ViewModels\Templates\ViewModelTemplate.tt"
 
             Dictionary<string, int> countObj = new Dictionary<string, int>();
             if (_dataModel.Properties.AsEnumerable() != null)
@@ -239,21 +242,21 @@ namespace GeneratorProject.Platforms.Frontend.ReactNative
             #line hidden
             this.Write("    this.");
             
-            #line 89 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\ViewModels\Templates\ViewModelTemplate.tt"
+            #line 92 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\ViewModels\Templates\ViewModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TextConverter.CamelCase(property.Id)));
             
             #line default
             #line hidden
             this.Write(" = ");
             
-            #line 89 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\ViewModels\Templates\ViewModelTemplate.tt"
+            #line 92 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\ViewModels\Templates\ViewModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TextConverter.CamelCase(property.Id) + countObj[property.Id]));
             
             #line default
             #line hidden
             this.Write(";\r\n");
             
-            #line 90 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\ViewModels\Templates\ViewModelTemplate.tt"
+            #line 93 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\ViewModels\Templates\ViewModelTemplate.tt"
 
                     }
                 }
@@ -275,21 +278,21 @@ namespace GeneratorProject.Platforms.Frontend.ReactNative
             #line hidden
             this.Write("    this.");
             
-            #line 106 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\ViewModels\Templates\ViewModelTemplate.tt"
+            #line 109 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\ViewModels\Templates\ViewModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TextConverter.CamelCase(reference.Id)));
             
             #line default
             #line hidden
             this.Write(" = ");
             
-            #line 106 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\ViewModels\Templates\ViewModelTemplate.tt"
+            #line 109 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\ViewModels\Templates\ViewModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TextConverter.CamelCase(reference.Id) + countObj[reference.Id]));
             
             #line default
             #line hidden
             this.Write(";\r\n");
             
-            #line 107 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\ViewModels\Templates\ViewModelTemplate.tt"
+            #line 110 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\ViewModels\Templates\ViewModelTemplate.tt"
 
                     }
                 }
@@ -300,7 +303,7 @@ namespace GeneratorProject.Platforms.Frontend.ReactNative
             #line hidden
             this.Write("  }\r\n}\r\n");
             
-            #line 114 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\ViewModels\Templates\ViewModelTemplate.tt"
+            #line 117 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\ViewModels\Templates\ViewModelTemplate.tt"
 
     }
 

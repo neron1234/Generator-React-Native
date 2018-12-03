@@ -12,8 +12,8 @@ namespace GeneratorProject.Platforms.Frontend.ReactNative
     using System.Linq;
     using System.Text;
     using System.Collections.Generic;
-    using Mobioos.Scaffold.TextTemplating;
-    using Mobioos.Scaffold.Generators.Helpers;
+    using Mobioos.Scaffold.BaseGenerators.TextTemplating;
+    using Mobioos.Scaffold.BaseGenerators.Helpers;
     using Mobioos.Foundation.Jade.Models;
     using Mobioos.Foundation.Jade.Extensions;
     using System;
@@ -22,7 +22,7 @@ namespace GeneratorProject.Platforms.Frontend.ReactNative
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Containers\Templates\ContainerTemplate.tt"
+    #line 1 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Containers\Templates\ContainerTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
     public partial class ContainerTemplate : TemplateBase
     {
@@ -32,31 +32,31 @@ namespace GeneratorProject.Platforms.Frontend.ReactNative
         /// </summary>
         public override string TransformText()
         {
-            this.Write("import React, { Component } from \'react\';\r\nimport { connect } from \'react-redux\';" +
-                    "\r\nimport { bindActionCreators } from \'redux\';\r\n\r\nimport * as ");
+            this.Write("\r\nimport React, { Component } from \'react\';\r\nimport { connect } from \'react-redux" +
+                    "\';\r\nimport { bindActionCreators } from \'redux\';\r\n\r\nimport * as ");
             
-            #line 6 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Containers\Templates\ContainerTemplate.tt"
+            #line 6 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Containers\Templates\ContainerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TextConverter.PascalCase(_layout.Id)));
             
             #line default
             #line hidden
             this.Write("Actions from \'../../Actions/");
             
-            #line 6 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Containers\Templates\ContainerTemplate.tt"
+            #line 6 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Containers\Templates\ContainerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TextConverter.PascalCase(_concern.Id)));
             
             #line default
             #line hidden
             this.Write("/");
             
-            #line 6 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Containers\Templates\ContainerTemplate.tt"
+            #line 6 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Containers\Templates\ContainerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TextConverter.PascalCase(_layout.Id)));
             
             #line default
             #line hidden
             this.Write("Actions\'; \r\n/*import {\r\n");
             
-            #line 8 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Containers\Templates\ContainerTemplate.tt"
+            #line 8 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Containers\Templates\ContainerTemplate.tt"
 
     foreach(var action in _layout.Actions.AsEnumerable())
     {
@@ -72,14 +72,14 @@ namespace GeneratorProject.Platforms.Frontend.ReactNative
             #line hidden
             this.Write("    ");
             
-            #line 18 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Containers\Templates\ContainerTemplate.tt"
+            #line 18 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Containers\Templates\ContainerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TextConverter.CamelCase(action.Id)));
             
             #line default
             #line hidden
             this.Write(",\r\n");
             
-            #line 19 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Containers\Templates\ContainerTemplate.tt"
+            #line 19 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Containers\Templates\ContainerTemplate.tt"
 
         }
     }
@@ -89,21 +89,21 @@ namespace GeneratorProject.Platforms.Frontend.ReactNative
             #line hidden
             this.Write("    } from \'../../Actions/");
             
-            #line 23 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Containers\Templates\ContainerTemplate.tt"
+            #line 23 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Containers\Templates\ContainerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TextConverter.PascalCase(_concern.Id)));
             
             #line default
             #line hidden
             this.Write("/");
             
-            #line 23 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Containers\Templates\ContainerTemplate.tt"
+            #line 23 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Containers\Templates\ContainerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TextConverter.PascalCase(_layout.Id)));
             
             #line default
             #line hidden
             this.Write("Actions\';*/\r\n\r\n");
             
-            #line 25 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Containers\Templates\ContainerTemplate.tt"
+            #line 25 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Containers\Templates\ContainerTemplate.tt"
 
     if(_layout != null)
     {
@@ -113,14 +113,14 @@ namespace GeneratorProject.Platforms.Frontend.ReactNative
             #line hidden
             this.Write("class ");
             
-            #line 29 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Containers\Templates\ContainerTemplate.tt"
+            #line 29 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Containers\Templates\ContainerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TextConverter.PascalCase(_layout.Id)));
             
             #line default
             #line hidden
             this.Write("Container extends Component {\r\n    componentDidMount() {\r\n");
             
-            #line 31 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Containers\Templates\ContainerTemplate.tt"
+            #line 31 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Containers\Templates\ContainerTemplate.tt"
 
     foreach(var action in _layout.Actions.AsEnumerable())
     {
@@ -132,14 +132,14 @@ namespace GeneratorProject.Platforms.Frontend.ReactNative
             #line hidden
             this.Write("        this.props.");
             
-            #line 37 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Containers\Templates\ContainerTemplate.tt"
+            #line 37 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Containers\Templates\ContainerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TextConverter.CamelCase(action.Id)));
             
             #line default
             #line hidden
             this.Write("();\r\n");
             
-            #line 38 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Containers\Templates\ContainerTemplate.tt"
+            #line 38 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Containers\Templates\ContainerTemplate.tt"
 
         }
     }
@@ -149,7 +149,7 @@ namespace GeneratorProject.Platforms.Frontend.ReactNative
             #line hidden
             this.Write("    }\r\n\r\n");
             
-            #line 44 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Containers\Templates\ContainerTemplate.tt"
+            #line 44 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Containers\Templates\ContainerTemplate.tt"
 
     if(_navigationActions != null && _navigationActions.Count > 0)
     {
@@ -163,21 +163,21 @@ namespace GeneratorProject.Platforms.Frontend.ReactNative
             #line hidden
             this.Write("    on");
             
-            #line 52 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Containers\Templates\ContainerTemplate.tt"
+            #line 52 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Containers\Templates\ContainerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TextConverter.PascalCase(action.Id)));
             
             #line default
             #line hidden
             this.Write(" = () => {\r\n        this.props.navigation.navigate(\'");
             
-            #line 53 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Containers\Templates\ContainerTemplate.tt"
+            #line 53 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Containers\Templates\ContainerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(action.Target));
             
             #line default
             #line hidden
             this.Write("\');\r\n    }\r\n");
             
-            #line 55 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Containers\Templates\ContainerTemplate.tt"
+            #line 55 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Containers\Templates\ContainerTemplate.tt"
 
             }
         }
@@ -199,14 +199,14 @@ namespace GeneratorProject.Platforms.Frontend.ReactNative
         return (
             <");
             
-            #line 71 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Containers\Templates\ContainerTemplate.tt"
+            #line 71 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Containers\Templates\ContainerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TextConverter.PascalCase(_layout.Id)));
             
             #line default
             #line hidden
             this.Write("Screen items={this.props.data} \r\n");
             
-            #line 72 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Containers\Templates\ContainerTemplate.tt"
+            #line 72 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Containers\Templates\ContainerTemplate.tt"
 
     if(_navigationActions != null && _navigationActions.Count > 0)
     {
@@ -220,21 +220,21 @@ namespace GeneratorProject.Platforms.Frontend.ReactNative
             #line hidden
             this.Write("                on");
             
-            #line 80 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Containers\Templates\ContainerTemplate.tt"
+            #line 80 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Containers\Templates\ContainerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TextConverter.PascalCase(action.Id)));
             
             #line default
             #line hidden
             this.Write("={ this.on");
             
-            #line 80 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Containers\Templates\ContainerTemplate.tt"
+            #line 80 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Containers\Templates\ContainerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TextConverter.PascalCase(action.Id)));
             
             #line default
             #line hidden
             this.Write(" }\r\n");
             
-            #line 81 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Containers\Templates\ContainerTemplate.tt"
+            #line 81 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Containers\Templates\ContainerTemplate.tt"
 
             }
         }
@@ -261,7 +261,7 @@ const mapDispatchToProps = (dispatch) => {
     return {
 ");
             
-            #line 102 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Containers\Templates\ContainerTemplate.tt"
+            #line 102 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Containers\Templates\ContainerTemplate.tt"
 
     foreach(var action in _layout.Actions.AsEnumerable())
     {
@@ -273,21 +273,21 @@ const mapDispatchToProps = (dispatch) => {
             #line hidden
             this.Write("        //");
             
-            #line 108 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Containers\Templates\ContainerTemplate.tt"
+            #line 108 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Containers\Templates\ContainerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TextConverter.CamelCase(action.Id)));
             
             #line default
             #line hidden
             this.Write(": () => dispatch(");
             
-            #line 108 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Containers\Templates\ContainerTemplate.tt"
+            #line 108 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Containers\Templates\ContainerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TextConverter.CamelCase(action.Id)));
             
             #line default
             #line hidden
             this.Write("()),\r\n");
             
-            #line 109 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Containers\Templates\ContainerTemplate.tt"
+            #line 109 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Containers\Templates\ContainerTemplate.tt"
 
         }
     }
@@ -297,7 +297,7 @@ const mapDispatchToProps = (dispatch) => {
             #line hidden
             this.Write("        actions:bindActionCreators(");
             
-            #line 113 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Containers\Templates\ContainerTemplate.tt"
+            #line 113 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Containers\Templates\ContainerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TextConverter.PascalCase(_layout.Id)));
             
             #line default
@@ -305,14 +305,14 @@ const mapDispatchToProps = (dispatch) => {
             this.Write("Actions, dispatch)\r\n    };\r\n};\r\n\r\nexport default connect(mapStateToProps, mapDisp" +
                     "atchToProps)(");
             
-            #line 117 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Containers\Templates\ContainerTemplate.tt"
+            #line 117 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Containers\Templates\ContainerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(TextConverter.PascalCase(_layout.Id)));
             
             #line default
             #line hidden
             this.Write("Container);\r\n");
             
-            #line 118 "D:\01 Working\01 RedFabriq\01 working\generators\react-native\generator\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Containers\Templates\ContainerTemplate.tt"
+            #line 118 "D:\Working\Mobioos\Generators new changes\React-Native\GeneratorProject.ReactNative\GeneratorProject\Platforms\Frontend\ReactNative\Containers\Templates\ContainerTemplate.tt"
 
     }
 

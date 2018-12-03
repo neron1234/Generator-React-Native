@@ -1,4 +1,4 @@
-﻿<#@ include file="..\..\Base\Templates\Include.tt"#>
+﻿<#@ include file="..\..\Base\Templates\Include.tt" #>
 <# if(_concern != null && _layout != null &&  _layout.Actions != null && _layout.Actions.Count > 0)
    {
 #>
@@ -13,9 +13,9 @@
                 if(!action.Type.ToLower().Equals("navigation"))
                 {
 #>
-    <#=_concern.Id.ToUpper()#>_<#=action.Id.ToUpper()#>_REQUEST = '<#=_concern.Id.ToUpper()#>_<#=action.Id.ToUpper()#>_REQUEST1';
-    <#=_concern.Id.ToUpper()#>_<#=action.Id.ToUpper()#>_SUCCESS = '<#=_concern.Id.ToUpper()#>_<#=action.Id.ToUpper()#>_SUCCESS1';
-    <#=_concern.Id.ToUpper()#>_<#=action.Id.ToUpper()#>_FAILURE = '<#=_concern.Id.ToUpper()#>_<#=action.Id.ToUpper()#>_FAILURE1';
+    const <#=_concern.Id.ToUpper()#>_<#=action.Id.ToUpper()#>_REQUEST = '<#=_concern.Id.ToUpper()#>_<#=action.Id.ToUpper()#>_REQUEST1';
+    const <#=_concern.Id.ToUpper()#>_<#=action.Id.ToUpper()#>_SUCCESS = '<#=_concern.Id.ToUpper()#>_<#=action.Id.ToUpper()#>_SUCCESS1';
+    const <#=_concern.Id.ToUpper()#>_<#=action.Id.ToUpper()#>_FAILURE = '<#=_concern.Id.ToUpper()#>_<#=action.Id.ToUpper()#>_FAILURE1';
 
 <#
                 }

@@ -1,14 +1,11 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-
-using Mobioos.Scaffold.Core.Runtime.Attributes;
+﻿using Mobioos.Foundation.Jade.Extensions;
 using Mobioos.Foundation.Jade.Models;
-using Mobioos.Scaffold.TextTemplating;
-using Mobioos.Foundation.Jade.Extensions;
+using Mobioos.Scaffold.BaseGenerators.TextTemplating;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace GeneratorProject.Platforms.Frontend.ReactNative
 {
-    [Generator(ActivityName = Constants.ViewModelActivityName, Order = 2)]
     public partial class ViewModelTemplate : TemplateBase
     {
         private EntityInfo _dataModel { get; set; }

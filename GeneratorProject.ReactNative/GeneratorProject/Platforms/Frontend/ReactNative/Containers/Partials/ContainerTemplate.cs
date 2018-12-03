@@ -1,15 +1,10 @@
-﻿using System.Linq;
+﻿using Mobioos.Foundation.Jade.Models;
+using Mobioos.Scaffold.BaseGenerators.TextTemplating;
 using System.Collections.Generic;
-
-using Mobioos.Scaffold.Core.Runtime.Attributes;
-using Mobioos.Foundation.Jade.Models;
-using Mobioos.Scaffold.TextTemplating;
-using Mobioos.Scaffold.Generators.Helpers;
-using Mobioos.Foundation.Jade.Extensions;
+using System.Linq;
 
 namespace GeneratorProject.Platforms.Frontend.ReactNative
 {
-    [Generator(ActivityName = Constants.FeaturesActivityName, Order = 24)]
     public partial class ContainerTemplate : TemplateBase
     {
         private ConcernInfo _concern { get; set; }
@@ -24,7 +19,6 @@ namespace GeneratorProject.Platforms.Frontend.ReactNative
             _navigationActions = _layout.Actions.Where(r => r.Type.ToLower()
                                     .Equals("navigation")).ToList<ActionInfo>();
         }
-
 
 
         public override string OutputPath => "App\\Containers";
