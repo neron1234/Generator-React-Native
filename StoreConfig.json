@@ -1,0 +1,16 @@
+{
+  "platforms": [
+"frontend"
+],
+  "name": "React Native",
+  "version": "1.0.0.0",
+  "tags" : [
+    "react","react native", ".net", "Dotnet",
+    "frontend"
+  ],
+  "Description": "A React Native generator",
+  "LongDescription": XXXXXXXXXXXXXXXX (Markdown content format),
+  "assemblyName": "Mobioos.Generators.AspNetCore",
+  "audiences": "public"
+  "Icon": XXXX (SVG text format),
+}
