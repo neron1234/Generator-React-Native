@@ -5,11 +5,11 @@
   "name": "React Native",
   "version": "1.0.0.0",
   "tags" : [
-    "react","react native", ".net", "Dotnet",
-    "frontend"
+    "frontend", "react-native", "react native", "react", "native"
   ],
   "Description": "A React Native generator",
-  "LongDescription": XXXXXXXXXXXXXXXX (Markdown content format),
+  "LongDescription": "Generates React-Native version 0.56 code. Generated Framework is designed based on Redux pattern using Redux.js. Generated code has Screens, Actions, State Stores and Reducers. It consumes REST API using Axion.
+",
   "assemblyName": "Mobioos.Generators.AspNetCore",
   "audiences": "public"
   "Icon": XXXX (SVG text format),
