@@ -28,28 +28,28 @@
 - *General project's structure* :
 <img src="https://github.com/Mobioos/Generator-React-Native/wiki/images/ReactNative_structure.jpg"  alt="General project's structure" style="width:369px;height:421px"/>
 
-- *Container* :
+- *Containers* :
 <img src="https://github.com/Mobioos/Generator-React-Native/wiki/images/ReactNative_containers.jpg"  alt="Containers" style="width:277px;height:313px"/>
 
-- *Navigation* :
+- *Navigations* :
 <img src="https://github.com/Mobioos/Generator-React-Native/wiki/images/ReactNative_navigation.jpg"  alt="Navigation" style="width:267px;height:333px"/>
 
 - *API* :
 <img src="https://github.com/Mobioos/Generator-React-Native/wiki/images/ReactNative_api.jpg"  alt="API" style="width:263px;height:186px"/>
 
-- *Action* :
+- *Actions* :
 <img src="https://github.com/Mobioos/Generator-React-Native/wiki/images/ReactNative_actions.jpg"  alt="Actions" style="width:274px;height:313px"/>
 
-- *Reducer* :
+- *Reducers* :
 <img src="https://github.com/Mobioos/Generator-React-Native/wiki/images/ReactNative_reducers.jpg"  alt="Reducers" style="width:273px;height:350px"/>
 
-- *Screen* :
+- *Screens* :
 <img src="https://github.com/Mobioos/Generator-React-Native/wiki/images/ReactNative_screens.jpg"  alt="Screens" style="width:279px;height:355px"/>
 
-- *Model* :
+- *Models* :
 <img src="https://github.com/Mobioos/Generator-React-Native/wiki/images/ReactNative_models.jpg"  alt="Models" style="width:269px;height:247px"/>
 
-- *ViewModel* :
+- *ViewModels* :
 <img src="https://github.com/Mobioos/Generator-React-Native/wiki/images/ReactNative_viewModels.jpg"  alt="ViewModels" style="width:362px;height:336px"/>
 
 ### Generated React-Native project's specifications
