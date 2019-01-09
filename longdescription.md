@@ -23,7 +23,7 @@
 
 ## Generated code's architecture
 
-### Generated Angular project's structure
+### Generated React-Native project's structure
 
 - *General project's structure* :
 <img src="https://github.com/Mobioos/Generator-React-Native/wiki/images/ReactNative_structure.jpg"  alt="General project's structure" style="width:369px;height:421px"/>
