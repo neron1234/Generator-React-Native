@@ -1,0 +1,6 @@
+/packages
+GeneratorProject.ReactNative/GeneratorProject/bin
+GeneratorProject.ReactNative/GeneratorProject/obj
+GeneratorProject.ReactNative/GeneratorProject.Tests/bin
+GeneratorProject.ReactNative/GeneratorProject.Tests/obj
+.vs

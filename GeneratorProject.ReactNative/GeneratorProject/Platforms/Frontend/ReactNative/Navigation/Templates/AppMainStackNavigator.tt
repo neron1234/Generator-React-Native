@@ -1,0 +1,42 @@
+﻿<#@ include file="..\..\Base\Templates\Include.tt"#>
+<#
+    SmartAppInfo smartApp = (SmartAppInfo)Model;
+#>
+import { createStackNavigator} from 'react-navigation';
+
+<#
+if(smartApp != null && smartApp.Concerns != null && smartApp.Concerns.Count > 0)
+{
+    foreach(ConcernInfo concern in smartApp.Concerns)
+    {
+#>
+import <#=TextConverter.PascalCase(concern.Id)#>StackNavigator from './<#=TextConverter.PascalCase(concern.Id)#>StackNavigator';
+<#
+    }
+#>
+
+export default createStackNavigator({
+<#
+    foreach(ConcernInfo concern in smartApp.Concerns)
+    {
+#>
+    <#=TextConverter.PascalCase(concern.Id)#>: <#=TextConverter.PascalCase(concern.Id)#>StackNavigator,
+<#
+    }
+#>
+},
+  {
+    navigationOptions:{
+     headerStyle: {
+            backgroundColor: '#f4511e',
+        },
+        headerTintColor: '#fff',
+        headerTitleStyle: {
+            fontWeight: 'bold',
+        }
+    }
+  }
+);
+<#
+}
+#>

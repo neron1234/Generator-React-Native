@@ -1,0 +1,166 @@
+﻿<#@ include file="..\..\Base\Templates\Include.tt" #>
+import React from 'react';
+import { 
+  Image,
+  Text,
+  Button,
+  View,
+  ScrollView
+} from 'react-native';
+
+// Styles
+import styles from '../Styles/StyleSheet';
+
+export default class <#=TextConverter.PascalCase(_layout.Id)#>Screen extends React.Component {
+    static navigationOptions = {
+        title:'<#=TextConverter.PascalCase(_layout.Title)#> Screen'
+    };
+
+    constructor(props) {
+        super(props);
+    }
+<#
+  if(_layout.Actions.AsEnumerable() != null)
+  {
+    foreach(var action in _layout.Actions.AsEnumerable())
+    {
+         switch (action.Type.ToLower())
+                {
+                    case "navigation":
+                        if(action.Target != null)
+                        {
+                            string[] actionTargetSplitted = action.Target.Split('.');
+                            string targetedConcern = TextConverter.PascalCase(actionTargetSplitted[0]);
+                            string targetedLayout = TextConverter.PascalCase(actionTargetSplitted[1]);
+#>
+
+    <#=TextConverter.CamelCase(action.Id)#> = () => {
+        this.props.on<#=TextConverter.PascalCase(action.Id)#>();
+    }
+<#
+                        }
+                        break;
+                    case "method":
+#>
+
+    <#=TextConverter.CamelCase(action.Id)#> = () => {
+        //TODO
+    }
+<#
+                        break;
+                    case "dataget": case "datalist": case "datacreate": case "dataupdate": case "datadelete":
+                        if (action.Api != null && _api != null)
+                        {
+                            string[] actionSplitted = action.Api.Split('.');
+                            string apiService = actionSplitted[0];
+                            string apiAction = actionSplitted[1];
+
+                            foreach (ApiInfo api in _api.AsEnumerable())
+                            {
+                                if (api.Id.ToLower().Equals(apiService.ToLower()) && api.Actions.AsEnumerable() != null)
+                                {
+                                    foreach (ApiActionInfo apiA in api.Actions.AsEnumerable())
+                                    {
+                                        if (apiA.Id.ToLower().Equals(apiAction.ToLower()))
+                                        {
+#>
+
+    <#=TextConverter.CamelCase(action.Id)#> = (
+<#
+                                            if (apiA.Parameters.AsEnumerable() != null && apiA.Parameters.AsEnumerable().Count() > 0)
+                                            {
+                                                ApiParameterInfo last = apiA.Parameters.AsEnumerable().Last();
+                                                foreach (ApiParameterInfo apiParameter in apiA.Parameters.AsEnumerable())
+                                                {
+                                                    if (apiParameter.Id != null)
+                                                    {
+                                                       // string type = apiParameter.TypeScriptType();
+                                                       // type = IsModelBool(type) ? type  + _viewModelSuffix : type;
+                                                        if (apiParameter.Equals(last))
+                                                        {
+#>
+        <#= TextConverter.CamelCase(apiParameter.Id) #>
+<#
+                                                        }
+                                                        else
+                                                        {
+#>
+        <#= TextConverter.CamelCase(apiParameter.Id) #>,
+<#
+                                                        }
+                                                    }
+                                                }
+                                            }
+#>
+    ) => {
+        return this._<#= TextConverter.CamelCase(api.Id) + _apiSuffix #>.<#= TextConverter.CamelCase(apiA.Id) #>(
+<#
+                                            if (apiA.Parameters.AsEnumerable() != null && apiA.Parameters.AsEnumerable().Count() > 0)
+                                            {
+                                                ApiParameterInfo last = apiA.Parameters.AsEnumerable().Last();
+                                                foreach (ApiParameterInfo apiParameter in apiA.Parameters.AsEnumerable())
+                                                {
+                                                    if (apiParameter.Id != null && apiParameter.Equals(last))
+                                                    {
+#>
+            <#= TextConverter.CamelCase(apiParameter.Id) #>
+<#
+                                                    }
+                                                    else
+                                                    {
+#>
+            <#= TextConverter.CamelCase(apiParameter.Id) #>,
+<#
+                                                    }
+                                                }
+                                            }
+#>
+        );
+    }
+<#
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        break;
+                }
+        }
+  }
+#>
+
+    render() {
+        return (
+          <View style={styles.container}>
+           <ScrollView>
+                <View>
+<#
+    foreach(var action in _layout.Actions.AsEnumerable())
+    {
+        if(action.Type.ToLower().Equals("navigation"))
+        {
+#>
+                    <Button title="<#=Helper.WordSeperator(TextConverter.PascalCase(action.Id))#>" onPress={this.<#=TextConverter.CamelCase(action.Id)#>}/>
+<#
+        }
+    }
+#>
+                </View>
+                <View>
+<#
+    foreach(var action in _layout.Actions.AsEnumerable())
+    {
+        if(action.Type.ToLower().Equals("method"))
+        {
+#>
+                    <Button title="<#=Helper.WordSeperator(TextConverter.PascalCase(action.Id))#>" onPress={this.<#=TextConverter.CamelCase(action.Id)#>}/>
+<#
+        }
+    }
+#>
+                </View>
+             </ScrollView>
+          </View>
+          );
+    }
+}

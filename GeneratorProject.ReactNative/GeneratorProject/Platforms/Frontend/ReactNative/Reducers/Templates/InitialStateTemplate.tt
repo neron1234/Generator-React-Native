@@ -1,0 +1,24 @@
+﻿<#@ include file="..\..\Base\Templates\Include.tt"#>
+<#
+    var model = (SmartAppInfo)Model;
+#>
+<#
+    if(model !=null && model.Concerns != null && model.Concerns.Count > 0)
+    {
+#>
+export default {
+<#
+         foreach(ConcernInfo concern in model.Concerns)
+        {
+            foreach(LayoutInfo layout in concern.Layouts)
+            {
+#>
+    <#=TextConverter.PascalCase(concern.Id)#><#=TextConverter.PascalCase(layout.Id)#>:[],
+<#
+            }
+        }
+#>
+}
+<#
+    }
+#>

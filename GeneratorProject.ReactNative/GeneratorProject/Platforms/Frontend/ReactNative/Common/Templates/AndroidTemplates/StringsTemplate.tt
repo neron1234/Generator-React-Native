@@ -1,0 +1,7 @@
+﻿<#@ include file="..\..\..\Base\Templates\Include.tt" #>
+<#
+    var model = (SmartAppInfo)Model;
+#>
+<resources>
+    <string name="app_name"><#=TextConverter.PascalCase(model.Id)#></string>
+</resources>

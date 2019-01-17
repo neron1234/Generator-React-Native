@@ -1,0 +1,197 @@
+{
+  "id": "Highlights",
+  "title": "Highlights ",
+  "description": "Highlights concern",
+  "mandatory": false,
+  "layouts": [
+    {
+      "id": "main",
+      "title": "Highlights",
+      "description": "Highlights",
+      "isVisibleInMenu": false,
+      "isRoot": false,
+      "actions": [
+        {
+          "id": "getBestPost",
+          "type": "DataGet",
+          "target": "",
+          "api": "Highlights.getBestIdea"
+        },
+        {
+          "id": "toPosts",
+          "type": "Navigation",
+          "target": "Posts.main",
+          "api": ""
+        }
+      ],
+      "dataModel": {
+        "id": "Report",
+        "isAbstract": false,
+        "isEnum": false,
+        "properties": [],
+        "references": [
+          {
+            "id": "reporting",
+            "foreignKey": "Id",
+            "type": "Reporting",
+            "isCollection": false,
+            "isRequired": false
+          }
+        ],
+        "values": []
+      }
+    },
+    {
+      "id": "topPosts",
+      "title": "latestIdeas",
+      "description": "latestIdeas",
+      "isVisibleInMenu": false,
+      "isRoot": false,
+      "actions": [
+        {
+          "id": "showCard",
+          "type": "Method",
+          "target": "",
+          "api": ""
+        },
+        {
+          "id": "getTopPosts",
+          "type": "DataList",
+          "target": "",
+          "api": "Highlights.GetTopPosts"
+        }
+      ],
+      "dataModel": {
+        "id": "Cards",
+        "isAbstract": false,
+        "isEnum": false,
+        "properties": [],
+        "references": [
+          {
+            "id": "cards",
+            "foreignKey": "Id",
+            "type": "Card",
+            "isCollection": true,
+            "isRequired": false
+          }
+        ],
+        "values": []
+      }
+    },
+    {
+      "id": "BestContributor",
+      "title": "BestContributor",
+      "description": "BestContributor",
+      "isVisibleInMenu": false,
+      "isRoot": false,
+      "actions": [
+        {
+          "id": "getBestContributor",
+          "type": "DataGet",
+          "target": "",
+          "api": "Highlights.getBestContributor"
+        }
+      ],
+      "dataModel": {
+        "id": "User",
+        "isAbstract": false,
+        "isEnum": false,
+        "properties": [
+          {
+            "id": "firstname",
+            "type": "string",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": ""
+          },
+          {
+            "id": "lastname",
+            "type": "string",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": ""
+          },
+          {
+            "id": "pictureUrl",
+            "type": "string",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": ""
+          },
+          {
+            "id": "facebookId",
+            "type": "string",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": ""
+          }
+        ],
+        "references": [
+          {
+            "id": "user",
+            "foreignKey": "Id",
+            "type": "UserProfile",
+            "isCollection": false,
+            "isRequired": false
+          }
+        ],
+        "values": []
+      }
+    },
+    {
+      "id": "topPostDetails",
+      "title": "top-post-details",
+      "description": "Details of a top post in highlights",
+      "isVisibleInMenu": false,
+      "isRoot": false,
+      "actions": [
+        {
+          "id": "agree",
+          "type": "DataCreate",
+          "target": "",
+          "api": "Answer.create"
+        },
+        {
+          "id": "disagree",
+          "type": "DataCreate",
+          "target": "",
+          "api": "Answer.create"
+        },
+        {
+          "id": "checkAlreadyVoted",
+          "type": "DataGet",
+          "target": "",
+          "api": "Answer.AnsweredCard"
+        }
+      ],
+      "dataModel": {
+        "id": "Card",
+        "isAbstract": false,
+        "isEnum": false,
+        "properties": [],
+        "references": [
+          {
+            "id": "card",
+            "foreignKey": "Id",
+            "type": "Card",
+            "isCollection": false,
+            "isRequired": false
+          }
+        ],
+        "values": []
+      }
+    }
+  ]
+}
