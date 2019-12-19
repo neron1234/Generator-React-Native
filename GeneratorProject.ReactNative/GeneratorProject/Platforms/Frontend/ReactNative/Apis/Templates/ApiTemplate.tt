@@ -2,18 +2,18 @@
 <#
     var model = (SmartAppInfo)Model;
 #>
-import RestApi from './RestApi';
+import Rest<#=_apiSuffix#> from './Rest<#=_apiSuffix#>';
 
-export default class <#=_api.Id#>Api{
+export default class <#=_api.Id#>{
 
-<# if(_api.Actions != null && _api.Actions.Count > 0)
+<# if(_api.Actions != null && _api.Actions.Count() > 0)
    {
        foreach(ApiActionInfo action in _api.Actions)
        {
            if (action.Id != null && action.Url != null && action.Type != null)
             {
 #>
-    <#= TextConverter.CamelCase(action.Id) #>(
+    <#= action.Id.ToCamelCase() #>(
 <#
             if (action.Parameters.AsEnumerable() != null && action.Parameters.AsEnumerable().Count() > 0)
                     {
@@ -25,19 +25,16 @@ export default class <#=_api.Id#>Api{
                                 if (apiParameter.Equals(last))
                                 {
 #>
-        <#= TextConverter.CamelCase(apiParameter.Id) #>
+        <#= apiParameter.Id.ToCamelCase() #>
 <#
-                                }
-                                else
-                                {
+                                }else{
 #>
-        <#= TextConverter.CamelCase(apiParameter.Id) #>,
+        <#= apiParameter.Id.ToCamelCase() #>,
 <#
                                 }
                             }
                         }
                     }
-                   
 #>
     ) {
 <#
@@ -55,18 +52,18 @@ export default class <#=_api.Id#>Api{
                                     if (apiParameter.Id != null)
                                     {
 #>
-        urlSearchParams['<#=TextConverter.CamelCase(apiParameter.Id)#>'] = JSON.stringify(<#=TextConverter.CamelCase(apiParameter.Id)#>);
+        urlSearchParams['<#=apiParameter.Id.ToCamelCase()#>'] = JSON.stringify(<#=apiParameter.Id.ToCamelCase()#>);
 <#
                                     }
                                 }
 #>
-        return RestApi.get('<#=action.Url#>', urlSearchParams) ;
+        return Rest<#=_apiSuffix#>.get('<#=action.Url#>', urlSearchParams) ;
 <#
                             }
                             else
                             {
 #>
-        return RestApi.get('<#=action.Url#>');
+        return Rest<#=_apiSuffix#>.get('<#=action.Url#>');
 <#
                             }
                         break;
@@ -81,13 +78,13 @@ export default class <#=_api.Id#>Api{
                                     if (apiParameter.Id != null)
                                     {
 #>
-        postData['<#=TextConverter.CamelCase(apiParameter.Id)#>'] = <#=TextConverter.CamelCase(apiParameter.Id)#>;
+        postData['<#=apiParameter.Id.ToCamelCase()#>'] = <#=apiParameter.Id.ToCamelCase()#>;
 <#
                                     }
                                 }
                             }
 #>
-        return RestApi.post('<#=action.Url#>', postData);
+        return Rest<#=_apiSuffix#>.post('<#=action.Url#>', postData);
 <#
                         break;
                         case "dataupdate":
@@ -101,13 +98,13 @@ export default class <#=_api.Id#>Api{
                                     if (apiParameter.Id != null)
                                     {
 #>
-        putData['<#=TextConverter.CamelCase(apiParameter.Id)#>'] = <#=TextConverter.CamelCase(apiParameter.Id)#>;
+        putData['<#=apiParameter.Id.ToCamelCase()#>'] = <#=apiParameter.Id.ToCamelCase()#>;
 <#
                                     }
                                 }
                             }
 #>
-        return RestApi.put('<#=action.Url#>', putData);
+        return Rest<#=_apiSuffix#>.put('<#=action.Url#>', putData);
 <#
                         break;
                         case "datadelete":
@@ -121,13 +118,13 @@ export default class <#=_api.Id#>Api{
                                     if (apiParameter.Id != null)
                                     {
 #>
-        urlSearchParams['<#= TextConverter.CamelCase(apiParameter.Id) #>'] = JSON.stringify(<#= TextConverter.CamelCase(apiParameter.Id) #>);
+        urlSearchParams['<#= apiParameter.Id.ToCamelCase() #>'] = JSON.stringify(<#= apiParameter.Id.ToCamelCase() #>);
 <#
                                     }
                                 }
                             }
 #>
-         return RestApi.delete('<#=action.Url#>', urlSearchParams);
+         return Rest<#=_apiSuffix#>.delete('<#=action.Url#>', urlSearchParams);
 <#
                         break;
                         default: break;

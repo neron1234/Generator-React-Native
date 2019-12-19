@@ -3,7 +3,6 @@ using Mobioos.Foundation.Prompt.Infrastructure;
 using Mobioos.Scaffold.BaseInfrastructure.Contexts;
 using Mobioos.Scaffold.BaseInfrastructure.Notifiers;
 using Mobioos.Scaffold.BaseInfrastructure.Services.GeneratorsServices;
-using Mobioos.Scaffold.BaseGenerators.Helpers;
 using Mobioos.Foundation.Prompt;
 using WorkflowCore.Interface;
 using WorkflowCore.Models;
@@ -13,6 +12,7 @@ using System.IO;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 using System.Linq;
+using Common.Generator.Framework.Extensions;
 
 namespace GeneratorProject.Platforms.Frontend.ReactNative
 {
@@ -46,43 +46,34 @@ namespace GeneratorProject.Platforms.Frontend.ReactNative
             return Task.FromResult(ExecutionResult.Next());
         }
 
-        private void TransformViewModels(SmartAppInfo manifest)
+        private void TransformViewModels(SmartAppInfo smartApp)
         {
-            if (manifest != null)
+           if (smartApp != null)
             {
                 string modelSuffix = GetModelSuffix();
                 string viewModelSuffix = GetViewModelSuffix();
 
-                List<EntityInfo> alreadyCreated = new List<EntityInfo>();
-
-                manifest.Api.ToList()
+                smartApp.Api.ToList()
                     .ForEach(api => api.Actions.ToList()
                     .ForEach(action =>
                     {
-                        if (action.ReturnType != null && !alreadyCreated.Contains(action.ReturnType))
-                        {
-                            alreadyCreated.Add(action.ReturnType);
-                            TransformViewModel(action.ReturnType, viewModelSuffix, modelSuffix);
-                        }
-                        action.Parameters.ToList()
-                        .ForEach(parameter =>
-                        {
-                            if (parameter.DataModel != null && !alreadyCreated.Contains(parameter.DataModel))
-                            {
-                                alreadyCreated.Add(parameter.DataModel);
-                                TransformViewModel(parameter.DataModel, viewModelSuffix, modelSuffix);
-                            }
-                        });
+                        List<EntityInfo> viewmodels = action.GetApiActionViewModelsEntities();
+                        TransformViewModel(viewmodels, viewModelSuffix, modelSuffix);
+
                     }));
-            }
+           }
+
         }
 
-        private void TransformViewModel(EntityInfo dataModel, string viewModelSuffix, string modelSuffix)
+        private void TransformViewModel(List<EntityInfo> dataModel, string viewModelSuffix, string modelSuffix)
         {
             if (dataModel != null)
             {
-                ViewModelTemplate viewModelTemplate = new ViewModelTemplate(dataModel, viewModelSuffix, modelSuffix);
-                _writingService.WriteFile(Path.Combine(_context.BasePath, viewModelTemplate.OutputPath, TextConverter.PascalCase(dataModel.Id) + "." + TextConverter.PascalCase(viewModelSuffix) + ".js"), viewModelTemplate.TransformText());
+                dataModel.ForEach(model =>
+                {
+                    ViewModelTemplate viewModelTemplate = new ViewModelTemplate(model, viewModelSuffix, modelSuffix);
+                    _writingService.WriteFile(Path.Combine(_context.BasePath, viewModelTemplate.OutputPath, model.Id.ToPascalCase() + "." + viewModelSuffix.ToPascalCase() + ".js"), viewModelTemplate.TransformText());
+                });
             }
         }
 

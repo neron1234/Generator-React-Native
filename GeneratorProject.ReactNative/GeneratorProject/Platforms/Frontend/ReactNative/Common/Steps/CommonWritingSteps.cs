@@ -94,6 +94,9 @@ namespace GeneratorProject.Platforms.Frontend.ReactNative
 
                 StringsTemplate stringsTemplate = new StringsTemplate(smartApp);
                 _writingService.WriteFile(Path.Combine(_context.BasePath, stringsTemplate.OutputPath), stringsTemplate.TransformText());
+
+                BuildGradleTemplate buildGradleTemplate = new BuildGradleTemplate(smartApp);
+                _writingService.WriteFile(Path.Combine(_context.BasePath, buildGradleTemplate.OutputPath), buildGradleTemplate.TransformText());
             }
         }
 

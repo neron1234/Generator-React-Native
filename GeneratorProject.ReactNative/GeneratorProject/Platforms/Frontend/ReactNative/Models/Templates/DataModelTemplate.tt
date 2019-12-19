@@ -1,126 +1,79 @@
 ﻿<#@ include file="..\..\Base\Templates\Include.tt" #>
 <#
     var model = (EntityInfo)Model;
-#>
-<# 
-    if(model.BaseEntity != null)
+     if(model.BaseEntity != null)
     {
 #>
-import <#=TextConverter.PascalCase(model.Extends)#><#=_modelsuffix#> from './<#=TextConverter.CamelCase(model.Extends)#>.<#=_modelsuffix.ToLower()#>';
-<#
-    }
-#>
-<#
-    foreach (ReferenceInfo reference in model.References.AsEnumerable())
-    {
-#>
-import <#=reference.Type#><#=_modelsuffix#> from './<#=TextConverter.CamelCase(reference.Type)#>.<#=_modelsuffix.ToLower()#>';
+import <#=model.Extends.ToPascalCase()#><#=_modelsuffix#> from './<#=model.Extends.ToPascalCase()#><#=_modelsuffix.ToPascalCase()#>';
 <#
     }
 #>
 
-export default <# if (model.IsAbstract) {#>abstract<#}#>class <#=TextConverter.PascalCase(model.Id)#><#=_modelsuffix#><#if(model.BaseEntity != null){#> extends <#=TextConverter.PascalCase(model.Extends)#><#=_modelsuffix#><#}#>{
+export default class <#=model.Id.ToPascalCase()#><#=_modelsuffix#><#if(model.BaseEntity != null){#> extends <#=model.Extends.ToPascalCase()#><#=_modelsuffix#><#}#>{
 
-    constructor(
+        constructor(
 <#
-    var count=model.AllProperties().Count(); 
-    var counter = 0;
-    foreach(var property in model.AllProperties())
+    if(allProperties != null && allProperties.Count() > 0)
     {
-      if(counter<count-1)
-      {
+    PropertyInfo last = allProperties.AsEnumerable().Last();
+    foreach(PropertyInfo property in allProperties)
+    {	
+	 if (property.Equals(last))
+     {
 #>
-        <#=property.Id#>1,
+            <#=property.Id#><#if(Helper.IsModelBool(property.Type)){#><#=_modelsuffix#><#}#>1
 <#
-      }
-      else
-      {
+		}
+		else
+		{
 #>
-        <#=property.Id#>1<#if(model.References.Count() > 0){#>,<#}#>
+            <#=property.Id#><#if(Helper.IsModelBool(property.Type)){#><#=_modelsuffix#><#}#>1,
 <#
-      }
-    counter++;
-   }
-
-    if(model.References.Count() > 0)
-    {
-#>
-
-<#
-        counter = 0;
-        foreach (ReferenceInfo reference in model.References.AsEnumerable())
-        {
-            if(counter < model.References.Count() -1)
-              {
-#>
-        <#=reference.Id#><#=_modelsuffix#>1,
-<#
-              }
-              else
-              {
-#>
-        <#=reference.Id#><#=_modelsuffix#>1
-<#
-            }
-     counter++;
         }
-    }
-#>
+	}
+        }
+#>	
+        ){	
 
-    ){
 <#
-    foreach(var property in model.AllProperties())
-    {
-        if(property.IsKey && model.BaseEntity != null)
+      if(_superProperties != null && _superProperties.Count() > 0)
         {
+		 PropertyInfo last = _superProperties.AsEnumerable().Last();
 #>
         super(
 <#
-            if(_superProperties.Count == 0)
-            {
+          foreach(var property in _superProperties)
+          {
+		  if (property.Equals(last))
+          {
 #>
-            <#=property.Id#>1
+            <#=property.Id#><#if(Helper.IsModelBool(property.Type)){#><#=_modelsuffix#><#}#>1
 <#
-            }
-            else
-            {
-            counter = 0;
-            foreach(var reference in _superProperties)
-            {
-                if(counter < _superProperties.Count -1)
-                {
+		  }
+		 else
+		 {
 #>
-            <#=reference.Id#>1,
+            <#=property.Id#><#if(Helper.IsModelBool(property.Type)){#><#=_modelsuffix#><#}#>1,
 <#
-                }
-                else
-                {
-#>
-            <#=reference.Id#>1
-<#
-                }
-                counter++;
-            }
-            }
+        }
+          }
 #>
         );
-
 <#
         }
-        else
-        {
-#>
-        this.<#=property.Id#> = <#=property.Id#>1;
-<#
-        }
-    }
-
-    foreach (ReferenceInfo reference in model.References.AsEnumerable())
+     if (allProperties != null && allProperties.Count() > 0)
     {
+        foreach(PropertyInfo property in allProperties)
+        {
+               if(!_superProperties.AsEnumerable().Contains(property))
+                {
 #>
-        this.<#=reference.Id#> = <#=reference.Id#><#=_modelsuffix#>1;
+            this.<#=property.Id#> = <#=property.Id#><#if(Helper.IsModelBool(property.Type)){#><#=_modelsuffix#><#}#>1;
 <#
-    }
+               }
+          }
+       }
 #>
     }
 }
+

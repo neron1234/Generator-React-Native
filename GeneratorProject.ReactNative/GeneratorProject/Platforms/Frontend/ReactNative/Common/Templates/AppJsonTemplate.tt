@@ -8,7 +8,7 @@
     if(model.Title != null)
     {
 #>
-  "displayName": "<#=TextConverter.PascalCase(model.Title)#>",
+  "displayName": "<#=model.Title.ToPascalCase()#>",
 <#
     }
     else

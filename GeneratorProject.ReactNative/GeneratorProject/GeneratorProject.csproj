@@ -1,18 +1,26 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <!--/-:cnd -->
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
     <None Remove="Platforms\Frontend\ReactNative\Common\Templates\android\app\.classpath" />
     <None Remove="Platforms\Frontend\ReactNative\Common\Templates\android\app\.project" />
     <None Remove="Platforms\Frontend\ReactNative\Common\Templates\android\app\BUCK" />
-    <None Remove="Platforms\Frontend\ReactNative\Common\Templates\android\app\build.gradle" />
+    <None Remove="Platforms\Frontend\ReactNative\Common\Templates\android\app\build_defs.bzl" />
+    <None Remove="Platforms\Frontend\ReactNative\Common\Templates\android\app\debug.keystore" />
     <None Remove="Platforms\Frontend\ReactNative\Common\Templates\android\app\proguard-rules.pro" />
+    <None Remove="Platforms\Frontend\ReactNative\Common\Templates\android\app\src\debug\AndroidManifest.xml" />
     <None Remove="Platforms\Frontend\ReactNative\Common\Templates\android\app\src\main\res\mipmap-hdpi\ic_launcher.png" />
+    <None Remove="Platforms\Frontend\ReactNative\Common\Templates\android\app\src\main\res\mipmap-hdpi\ic_launcher_round.png" />
     <None Remove="Platforms\Frontend\ReactNative\Common\Templates\android\app\src\main\res\mipmap-mdpi\ic_launcher.png" />
+    <None Remove="Platforms\Frontend\ReactNative\Common\Templates\android\app\src\main\res\mipmap-mdpi\ic_launcher_round.png" />
     <None Remove="Platforms\Frontend\ReactNative\Common\Templates\android\app\src\main\res\mipmap-xhdpi\ic_launcher.png" />
+    <None Remove="Platforms\Frontend\ReactNative\Common\Templates\android\app\src\main\res\mipmap-xhdpi\ic_launcher_round.png" />
     <None Remove="Platforms\Frontend\ReactNative\Common\Templates\android\app\src\main\res\mipmap-xxhdpi\ic_launcher.png" />
+    <None Remove="Platforms\Frontend\ReactNative\Common\Templates\android\app\src\main\res\mipmap-xxhdpi\ic_launcher_round.png" />
+    <None Remove="Platforms\Frontend\ReactNative\Common\Templates\android\app\src\main\res\mipmap-xxxhdpi\ic_launcher.png" />
+    <None Remove="Platforms\Frontend\ReactNative\Common\Templates\android\app\src\main\res\mipmap-xxxhdpi\ic_launcher_round.png" />
     <None Remove="Platforms\Frontend\ReactNative\Common\Templates\android\app\src\main\res\values\styles.xml" />
     <None Remove="Platforms\Frontend\ReactNative\Common\Templates\android\build.gradle" />
     <None Remove="Platforms\Frontend\ReactNative\Common\Templates\android\gradle.properties" />
@@ -20,10 +28,7 @@
     <None Remove="Platforms\Frontend\ReactNative\Common\Templates\android\gradlew.bat" />
     <None Remove="Platforms\Frontend\ReactNative\Common\Templates\android\gradle\wrapper\gradle-wrapper.jar" />
     <None Remove="Platforms\Frontend\ReactNative\Common\Templates\android\gradle\wrapper\gradle-wrapper.properties" />
-    <None Remove="Platforms\Frontend\ReactNative\Common\Templates\android\keystores\BUCK" />
-    <None Remove="Platforms\Frontend\ReactNative\Common\Templates\android\keystores\debug.keystore.properties" />
     <None Remove="Platforms\Frontend\ReactNative\Common\Templates\App.js" />
-    <None Remove="Platforms\Frontend\ReactNative\Common\Templates\App\Navigation\AppNavigator.js" />
     <None Remove="Platforms\Frontend\ReactNative\Common\Templates\App\Screens\Auth\AuthLoadingScreen.js" />
     <None Remove="Platforms\Frontend\ReactNative\Common\Templates\App\Store\ConfigureStore.js" />
     <None Remove="Platforms\Frontend\ReactNative\Common\Templates\App\Themes\ApplicationStyles.js" />
@@ -34,31 +39,49 @@
     <None Remove="Platforms\Frontend\ReactNative\Common\Templates\App\Themes\Metrics.js" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Platforms\Frontend\ReactNative\Common\Templates\android\app\.classpath">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Platforms\Frontend\ReactNative\Common\Templates\android\app\.project">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="Platforms\Frontend\ReactNative\Common\Templates\android\app\BUCK">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Platforms\Frontend\ReactNative\Common\Templates\android\app\build.gradle">
+    <Content Include="Platforms\Frontend\ReactNative\Common\Templates\android\app\build_defs.bzl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Platforms\Frontend\ReactNative\Common\Templates\android\app\debug.keystore">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Platforms\Frontend\ReactNative\Common\Templates\android\app\proguard-rules.pro">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Platforms\Frontend\ReactNative\Common\Templates\android\app\src\debug\AndroidManifest.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Platforms\Frontend\ReactNative\Common\Templates\android\app\src\main\res\mipmap-hdpi\ic_launcher.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Platforms\Frontend\ReactNative\Common\Templates\android\app\src\main\res\mipmap-hdpi\ic_launcher_round.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Platforms\Frontend\ReactNative\Common\Templates\android\app\src\main\res\mipmap-mdpi\ic_launcher.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Platforms\Frontend\ReactNative\Common\Templates\android\app\src\main\res\mipmap-mdpi\ic_launcher_round.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Platforms\Frontend\ReactNative\Common\Templates\android\app\src\main\res\mipmap-xhdpi\ic_launcher.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Platforms\Frontend\ReactNative\Common\Templates\android\app\src\main\res\mipmap-xhdpi\ic_launcher_round.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Platforms\Frontend\ReactNative\Common\Templates\android\app\src\main\res\mipmap-xxhdpi\ic_launcher.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Platforms\Frontend\ReactNative\Common\Templates\android\app\src\main\res\mipmap-xxhdpi\ic_launcher_round.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Platforms\Frontend\ReactNative\Common\Templates\android\app\src\main\res\mipmap-xxxhdpi\ic_launcher.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Platforms\Frontend\ReactNative\Common\Templates\android\app\src\main\res\mipmap-xxxhdpi\ic_launcher_round.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Platforms\Frontend\ReactNative\Common\Templates\android\app\src\main\res\values\styles.xml">
@@ -80,15 +103,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Platforms\Frontend\ReactNative\Common\Templates\android\gradle\wrapper\gradle-wrapper.properties">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Platforms\Frontend\ReactNative\Common\Templates\android\keystores\BUCK">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Platforms\Frontend\ReactNative\Common\Templates\android\keystores\debug.keystore.properties">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Platforms\Frontend\ReactNative\Common\Templates\App\Navigation\AppNavigator.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
@@ -122,12 +136,8 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Mobioos.Foundation.Jade" Version="1.0.0" />
-    <PackageReference Include="Mobioos.Foundation.Prompt" Version="1.0.2" />
-    <PackageReference Include="Mobioos.Foundation.Prompt.Infrastructure" Version="1.0.1" />
-    <PackageReference Include="Mobioos.Scaffold.BaseGenerators" Version="1.0.2" />
-    <PackageReference Include="Mobioos.Scaffold.BaseInfrastructure" Version="1.0.2" />
-    <PackageReference Include="WorkflowCore" Version="1.0.0" />
+    <PackageReference Include="Common.Generator.Framework" Version="1.0.0" />
+    <PackageReference Include="Mobioos.Scaffold.BaseGenerators" Version="1.0.5" />
   </ItemGroup>
 
   <ItemGroup>
@@ -221,11 +231,6 @@
       <LastGenOutput>ActionsTemplate.cs</LastGenOutput>
       <CustomToolNamespace>GeneratorProject.Platforms.Frontend.ReactNative</CustomToolNamespace>
     </None>
-    <None Update="Platforms\Frontend\ReactNative\Actions\Templates\ActionTypesTemplate.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>ActionTypesTemplate.cs</LastGenOutput>
-      <CustomToolNamespace>GeneratorProject.Platforms.Frontend.ReactNative</CustomToolNamespace>
-    </None>
     <None Update="Platforms\Frontend\ReactNative\Base\Templates\Include.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>Include.cs</LastGenOutput>
@@ -234,6 +239,11 @@
     <None Update="Platforms\Frontend\ReactNative\Common\Templates\AndroidTemplates\AndroidManifestTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>AndroidManifestTemplate.cs</LastGenOutput>
+      <CustomToolNamespace>GeneratorProject.Platforms.Frontend.ReactNative</CustomToolNamespace>
+    </None>
+    <None Update="Platforms\Frontend\ReactNative\Common\Templates\AndroidTemplates\BuildGradleTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>BuildGradleTemplate.cs</LastGenOutput>
       <CustomToolNamespace>GeneratorProject.Platforms.Frontend.ReactNative</CustomToolNamespace>
     </None>
     <None Update="Platforms\Frontend\ReactNative\Common\Templates\AndroidTemplates\MainActivityTemplate.tt">
@@ -361,6 +371,11 @@
       <LastGenOutput>AppMainStackNavigator.cs</LastGenOutput>
       <CustomToolNamespace>GeneratorProject.Platforms.Frontend.ReactNative</CustomToolNamespace>
     </None>
+    <None Update="Platforms\Frontend\ReactNative\Navigation\Templates\AppNavigator.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>AppNavigator.cs</LastGenOutput>
+      <CustomToolNamespace>GeneratorProject.Platforms.Frontend.ReactNative</CustomToolNamespace>
+    </None>
     <None Update="Platforms\Frontend\ReactNative\Navigation\Templates\AuthStackNavigator.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>AuthStackNavigator.cs</LastGenOutput>
@@ -379,11 +394,6 @@
     <None Update="Platforms\Frontend\ReactNative\Reducers\Templates\InitialStateTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>InitialStateTemplate.cs</LastGenOutput>
-      <CustomToolNamespace>GeneratorProject.Platforms.Frontend.ReactNative</CustomToolNamespace>
-    </None>
-    <None Update="Platforms\Frontend\ReactNative\Reducers\Templates\InitialStateTemplate_old.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>InitialStateTemplate_old.cs</LastGenOutput>
       <CustomToolNamespace>GeneratorProject.Platforms.Frontend.ReactNative</CustomToolNamespace>
     </None>
     <None Update="Platforms\Frontend\ReactNative\Reducers\Templates\ReducersTemplate.tt">
@@ -428,10 +438,15 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>ActionsTemplate.tt</DependentUpon>
     </Compile>
-    <Compile Update="Platforms\Frontend\ReactNative\Actions\Templates\ActionTypesTemplate.cs">
+    <Compile Update="Platforms\Frontend\ReactNative\Apis\Templates\ApiTemplate.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
-      <DependentUpon>ActionTypesTemplate.tt</DependentUpon>
+      <DependentUpon>ApiTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Platforms\Frontend\ReactNative\Apis\Templates\RestApiTemplate.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>RestApiTemplate.tt</DependentUpon>
     </Compile>
     <Compile Update="Platforms\Frontend\ReactNative\Base\Templates\Include.cs">
       <DesignTime>True</DesignTime>
@@ -442,6 +457,11 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>AndroidManifestTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Platforms\Frontend\ReactNative\Common\Templates\AndroidTemplates\BuildGradleTemplate.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>BuildGradleTemplate.tt</DependentUpon>
     </Compile>
     <Compile Update="Platforms\Frontend\ReactNative\Common\Templates\AndroidTemplates\MainActivityTemplate.cs">
       <DesignTime>True</DesignTime>
@@ -568,6 +588,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>AppMainStackNavigator.tt</DependentUpon>
     </Compile>
+    <Compile Update="Platforms\Frontend\ReactNative\Navigation\Templates\AppNavigator.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>AppNavigator.tt</DependentUpon>
+    </Compile>
     <Compile Update="Platforms\Frontend\ReactNative\Navigation\Templates\AuthStackNavigator.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -588,25 +613,10 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>InitialStateTemplate.tt</DependentUpon>
     </Compile>
-    <Compile Update="Platforms\Frontend\ReactNative\Reducers\Templates\InitialStateTemplate_old.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>InitialStateTemplate_old.tt</DependentUpon>
-    </Compile>
     <Compile Update="Platforms\Frontend\ReactNative\Reducers\Templates\ReducersTemplate.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>ReducersTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Update="Platforms\Frontend\ReactNative\Apis\Templates\RestApiTemplate.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>RestApiTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Update="Platforms\Frontend\ReactNative\Apis\Templates\ApiTemplate.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>ApiTemplate.tt</DependentUpon>
     </Compile>
     <Compile Update="Platforms\Frontend\ReactNative\ViewModels\Templates\ViewModelTemplate.cs">
       <DesignTime>True</DesignTime>

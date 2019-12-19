@@ -1,4 +1,4 @@
-﻿using Mobioos.Scaffold.BaseGenerators.Helpers;
+﻿using Common.Generator.Framework.Extensions;
 using System.Text.RegularExpressions;
 
 namespace GeneratorProject.Platforms.Frontend.ReactNative
@@ -10,7 +10,7 @@ namespace GeneratorProject.Platforms.Frontend.ReactNative
         /// </summary>
         public static string WordSeperator(string input)
         {
-            return Regex.Replace(TextConverter.PascalCase(input), "([A-Z])", " $1", RegexOptions.Compiled).Trim();
+            return Regex.Replace(input.ToPascalCase(), "([A-Z])", " $1", RegexOptions.Compiled).Trim();
         }
 
         public static string GetHtmlType(string type)
@@ -23,6 +23,21 @@ namespace GeneratorProject.Platforms.Frontend.ReactNative
             }
 
             return htmlType;
+        }
+
+        public static bool IsModelBool(string type)
+        {
+            bool result = false;
+            switch (type.ToLower())
+            {
+                case "date": break;
+                case "string": break;
+                case "number": break;
+                case "boolean": break;
+                case "integer": break;
+                default: result = true; break;
+            }
+            return result;
         }
     }
 }

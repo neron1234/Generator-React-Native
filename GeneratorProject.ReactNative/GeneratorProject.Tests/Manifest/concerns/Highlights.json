@@ -1,50 +1,28 @@
 {
   "id": "Highlights",
-  "title": "Highlights ",
+  "title": "Highlights",
   "description": "Highlights concern",
   "mandatory": false,
   "layouts": [
     {
       "id": "main",
-      "title": "Highlights",
-      "description": "Highlights",
+      "title": "highlights-main",
+      "description": "Highlights concern main layout (contains topPosts, bestContributor and take care of the Best Post)",
       "isVisibleInMenu": false,
       "isRoot": false,
       "actions": [
         {
-          "id": "getBestPost",
-          "type": "DataGet",
+          "id": "refresh",
+          "type": "Method",
           "target": "",
-          "api": "Highlights.getBestIdea"
-        },
-        {
-          "id": "toPosts",
-          "type": "Navigation",
-          "target": "Posts.main",
           "api": ""
         }
-      ],
-      "dataModel": {
-        "id": "Report",
-        "isAbstract": false,
-        "isEnum": false,
-        "properties": [],
-        "references": [
-          {
-            "id": "reporting",
-            "foreignKey": "Id",
-            "type": "Reporting",
-            "isCollection": false,
-            "isRequired": false
-          }
-        ],
-        "values": []
-      }
+      ]
     },
     {
       "id": "topPosts",
-      "title": "latestIdeas",
-      "description": "latestIdeas",
+      "title": "highlights-topPosts",
+      "description": "Highlights concern topPosts layout (top posts list in Highlight page)",
       "isVisibleInMenu": false,
       "isRoot": false,
       "actions": [
@@ -62,15 +40,126 @@
         }
       ],
       "dataModel": {
-        "id": "Cards",
+        "id": "Card",
         "isAbstract": false,
         "isEnum": false,
-        "properties": [],
+        "properties": [
+          {
+            "id": "id",
+            "type": "integer",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": "Card.Id"
+          },
+          {
+            "id": "linkedCardId",
+            "type": "integer",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": "Card.Id"
+          },
+          {
+            "id": "content",
+            "type": "string",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": "Card.Content"
+          },
+          {
+            "id": "targetGroups",
+            "type": "string",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": ""
+          },
+          {
+            "id": "publicationDate",
+            "type": "date",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": "Card.PublicationDate"
+          },
+          {
+            "id": "endDate",
+            "type": "date",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": "Card.EndDate"
+          },
+          {
+            "id": "author",
+            "type": "string",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": ""
+          },
+          {
+            "id": "type",
+            "type": "string",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": "Card.Type"
+          },
+          {
+            "id": "views",
+            "type": "integer",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": "Reporting.Views"
+          },
+          {
+            "id": "answers",
+            "type": "integer",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": "Reporting.Answers"
+          },
+          {
+            "id": "picture",
+            "type": "string",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": "Picture.PicBase64"
+          }
+        ],
         "references": [
           {
-            "id": "cards",
+            "id": "results",
             "foreignKey": "Id",
-            "type": "Card",
+            "type": "Result",
             "isCollection": true,
             "isRequired": false
           }
@@ -79,9 +168,193 @@
       }
     },
     {
-      "id": "BestContributor",
-      "title": "BestContributor",
-      "description": "BestContributor",
+      "id": "topPostsCardModal",
+      "title": "highlights-topPostCardModal",
+      "description": "Highlights concern topPostsCard modal (to open on the click on one of the top posts list element)",
+      "isVisibleInMenu": false,
+      "isRoot": false,
+      "actions": [
+        {
+          "id": "cardAnswered",
+          "type": "Method",
+          "target": "",
+          "api": ""
+        },
+        {
+          "id": "checkForAnswer",
+          "type": "DataGet",
+          "target": "",
+          "api": "Answer.AnsweredCard"
+        },
+        {
+          "id": "agree",
+          "type": "DataCreate",
+          "target": "",
+          "api": "Answer.Create"
+        },
+        {
+          "id": "disagree",
+          "type": "DataCreate",
+          "target": "",
+          "api": "Answer.Create"
+        },
+        {
+          "id": "checkAlreadyVoted",
+          "type": "Method",
+          "target": "",
+          "api": ""
+        },
+        {
+          "id": "closeModal",
+          "type": "Method",
+          "target": "",
+          "api": ""
+        },
+        {
+          "id": "initialiseChart",
+          "type": "Method",
+          "target": "",
+          "api": ""
+        },
+        {
+          "id": "displayChart",
+          "type": "Method",
+          "target": "",
+          "api": ""
+        }
+      ],
+      "dataModel": {
+        "id": "Card",
+        "isAbstract": false,
+        "isEnum": false,
+        "properties": [
+          {
+            "id": "id",
+            "type": "integer",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": "Card.Id"
+          },
+          {
+            "id": "linkedCardId",
+            "type": "integer",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": "Card.Id"
+          },
+          {
+            "id": "content",
+            "type": "string",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": "Card.Content"
+          },
+          {
+            "id": "targetGroups",
+            "type": "string",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": ""
+          },
+          {
+            "id": "publicationDate",
+            "type": "date",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": "Card.PublicationDate"
+          },
+          {
+            "id": "endDate",
+            "type": "date",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": "Card.EndDate"
+          },
+          {
+            "id": "author",
+            "type": "string",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": ""
+          },
+          {
+            "id": "type",
+            "type": "string",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": "Card.Type"
+          },
+          {
+            "id": "views",
+            "type": "integer",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": "Reporting.Views"
+          },
+          {
+            "id": "answers",
+            "type": "integer",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": "Reporting.Answers"
+          },
+          {
+            "id": "picture",
+            "type": "string",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": "Picture.PicBase64"
+          }
+        ],
+        "references": [
+          {
+            "id": "results",
+            "foreignKey": "Id",
+            "type": "Result",
+            "isCollection": true,
+            "isRequired": false
+          }
+        ],
+        "values": []
+      }
+    },
+    {
+      "id": "bestContributor",
+      "title": "highlights-bestContributor",
+      "description": "Highlights concern bestContributor layout",
       "isVisibleInMenu": false,
       "isRoot": false,
       "actions": [
@@ -89,14 +362,44 @@
           "id": "getBestContributor",
           "type": "DataGet",
           "target": "",
-          "api": "Highlights.getBestContributor"
+          "api": "Highlights.GetBestContributor"
         }
       ],
       "dataModel": {
-        "id": "User",
+        "id": "BestContributor",
         "isAbstract": false,
         "isEnum": false,
         "properties": [
+          {
+            "id": "posts",
+            "type": "integer",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": ""
+          },
+          {
+            "id": "answers",
+            "type": "number",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": ""
+          },
+          {
+            "id": "pictureUrl",
+            "type": "string",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": ""
+          },
           {
             "id": "firstname",
             "type": "string",
@@ -118,7 +421,99 @@
             "modelProperty": ""
           },
           {
-            "id": "pictureUrl",
+            "id": "department",
+            "type": "string",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": "UserProfile.Department"
+          },
+          {
+            "id": "city",
+            "type": "string",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": "UserProfile.City"
+          },
+          {
+            "id": "country",
+            "type": "string",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": "UserProfile.Country"
+          }
+        ],
+        "references": [],
+        "values": []
+      }
+    },
+    {
+      "id": "bestPost",
+      "title": "highlights-bestPost",
+      "description": "Highlights concern bestPost layout",
+      "isVisibleInMenu": false,
+      "isRoot": false,
+      "actions": [
+        {
+          "id": "toPosts",
+          "type": "Navigation",
+          "target": "Posts.main",
+          "api": ""
+        },
+        {
+          "id": "getBestPost",
+          "type": "DataGet",
+          "target": "",
+          "api": "Highlights.GetBestPost"
+        },
+        {
+          "id": "initialiseChart",
+          "type": "Method",
+          "target": "",
+          "api": ""
+        },
+        {
+          "id": "displayChart",
+          "type": "Method",
+          "target": "",
+          "api": ""
+        }
+      ],
+      "dataModel": {
+        "id": "Report",
+        "isAbstract": false,
+        "isEnum": false,
+        "properties": [
+          {
+            "id": "id",
+            "type": "integer",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": "Reporting.Id"
+          },
+          {
+            "id": "content",
+            "type": "string",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": "Reporting.Content"
+          },
+          {
+            "id": "author",
             "type": "string",
             "isKey": false,
             "isCollection": false,
@@ -128,65 +523,32 @@
             "modelProperty": ""
           },
           {
-            "id": "facebookId",
-            "type": "string",
+            "id": "views",
+            "type": "integer",
             "isKey": false,
             "isCollection": false,
             "isRequired": false,
             "minimum": 0,
             "maximum": 0,
-            "modelProperty": ""
+            "modelProperty": "Reporting.Views"
+          },
+          {
+            "id": "answers",
+            "type": "integer",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": "Reporting.Answers"
           }
         ],
         "references": [
           {
-            "id": "user",
+            "id": "results",
             "foreignKey": "Id",
-            "type": "UserProfile",
-            "isCollection": false,
-            "isRequired": false
-          }
-        ],
-        "values": []
-      }
-    },
-    {
-      "id": "topPostDetails",
-      "title": "top-post-details",
-      "description": "Details of a top post in highlights",
-      "isVisibleInMenu": false,
-      "isRoot": false,
-      "actions": [
-        {
-          "id": "agree",
-          "type": "DataCreate",
-          "target": "",
-          "api": "Answer.create"
-        },
-        {
-          "id": "disagree",
-          "type": "DataCreate",
-          "target": "",
-          "api": "Answer.create"
-        },
-        {
-          "id": "checkAlreadyVoted",
-          "type": "DataGet",
-          "target": "",
-          "api": "Answer.AnsweredCard"
-        }
-      ],
-      "dataModel": {
-        "id": "Card",
-        "isAbstract": false,
-        "isEnum": false,
-        "properties": [],
-        "references": [
-          {
-            "id": "card",
-            "foreignKey": "Id",
-            "type": "Card",
-            "isCollection": false,
+            "type": "Result",
+            "isCollection": true,
             "isRequired": false
           }
         ],

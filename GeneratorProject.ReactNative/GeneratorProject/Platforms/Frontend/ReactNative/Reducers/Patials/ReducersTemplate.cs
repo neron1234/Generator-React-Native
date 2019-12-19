@@ -5,13 +5,11 @@ namespace GeneratorProject.Platforms.Frontend.ReactNative
 {
     public partial class ReducersTemplate : TemplateBase
     {
-        private ConcernInfo _concern { get; set; }
-        private LayoutInfo _layout { get; set; }
+        private ApiInfo _api { get; set; }
 
-        public ReducersTemplate(ConcernInfo concern, LayoutInfo layout)
+        public ReducersTemplate(SmartAppInfo smartApp, ApiInfo api)
         {
-            _concern = concern;
-            _layout = layout;
+            _api = api;
         }
 
         public override string OutputPath => "App\\Reducers";

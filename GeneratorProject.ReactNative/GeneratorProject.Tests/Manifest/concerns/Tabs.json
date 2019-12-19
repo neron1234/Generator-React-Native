@@ -1,21 +1,21 @@
 {
   "id": "Tabs",
   "title": "Tabs",
-  "description": "Tabs",
+  "description": "Tabs Concern",
   "mandatory": false,
   "layouts": [
     {
       "id": "main",
-      "title": "Tabs",
-      "description": "Tabs",
+      "title": "tabs-main",
+      "description": "Tabs concern main layout",
       "isVisibleInMenu": false,
-      "isRoot": true,
+      "isRoot": false,
       "actions": [
         {
-          "id": "getIdUser",
-          "type": "DataGet",
+          "id": "refresh",
+          "type": "Method",
           "target": "",
-          "api": "User.get"
+          "api": ""
         }
       ]
     }

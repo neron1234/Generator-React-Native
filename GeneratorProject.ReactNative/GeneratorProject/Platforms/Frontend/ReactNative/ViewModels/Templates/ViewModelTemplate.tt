@@ -1,118 +1,46 @@
-﻿<#@ include file="..\..\Base\Templates\Include.tt" #>
-<#
-    var model = (EntityInfo)Model;
-#>
+﻿<#@ include file="..\..\Base\Templates\Include.tt"#>
 <#
     if(_dataModel != null && _dataModel.Id != null)
     {
-        List<string> alreadyImported = new List<string>();
-        if(_constructorParametersObj.AsEnumerable() != null)
-        {
-            foreach(var property in _constructorParametersObj.AsEnumerable())
-            {
-                if (property.Target != null && property.Type != null && !alreadyImported.AsEnumerable().Contains(property.Type))
-                {
-                     alreadyImported.Add(property.Type);
 #>
-import <#= TextConverter.PascalCase(property.Type) #><#=_modelSuffix#> from '../Models/<#= TextConverter.CamelCase(property.Type) #>.<#=_modelSuffix.ToLower()#>';
-<#
-                }
-            }
-        }
-     if (_dataModel.References.AsEnumerable() != null)
-        {
-             foreach (ReferenceInfo reference in _dataModel.References.AsEnumerable())
-            {
-                if (reference.Target != null && reference.Type != null && !alreadyImported.AsEnumerable().Contains(reference.Type))
-                {
-                    alreadyImported.Add(reference.Type);
-#>
-import <#= TextConverter.PascalCase(reference.Type) #><#=_modelSuffix#> from '../Models/<#= TextConverter.CamelCase(reference.Type) #>.<#=_modelSuffix.ToLower()#>';
-<#
-                }
-            }
-        }
-#>
-
-export class  <#= TextConverter.PascalCase(_dataModel.Id) #><#=_viewModelSuffix#> {
+export class  <#= _dataModel.Id.ToPascalCase() #><#=_viewModelSuffix#> {
 
     constructor(
 <#
-     if (_constructorParametersObj.AsEnumerable() != null && _constructorParametersObj.AsEnumerable().Count() > 0)
-            {
-                int count = _constructorParametersObj.AsEnumerable().Count() - 1;
-                int counter = 0;
-                Dictionary<string, int> countConstructor = new Dictionary<string, int>();
-                foreach (PropertyInfo property in _constructorParametersObj.AsEnumerable())
-                {
-                    if (property.Id != null && property.TypeScriptType() != null)
-                    {
-                        string propertyIsModel = IsModel(property);
-                        if (!countConstructor.ContainsKey(property.Id))
-                            countConstructor.Add(property.Id, 1);
-                        else
-                            countConstructor[property.Id] = countConstructor[property.Id] + 1;
-                        string type =  property.TypeScriptType();
-                        if (!propertyIsModel.Equals(""))
-                        {
-                            type = TextConverter.PascalCase(type);
-                        }
-                        if (counter == count)
-                        {
+    if(_constructorParametersObj.AsEnumerable() != null && _constructorParametersObj.AsEnumerable().Count() > 0)
+    {
+    PropertyInfo last = _constructorParametersObj.AsEnumerable().Last();
+    foreach(PropertyInfo property in _constructorParametersObj.AsEnumerable())
+    {	
+	 if (property.Equals(last))
+     {
 #>
-        <#= TextConverter.CamelCase(property.Id) + countConstructor[property.Id] #>
+        <#=property.Id.ToCamelCase()#>1
 <#
-                        }
-                        else
-                        {
+		}
+		else
+		{
 #>
-        <#= TextConverter.CamelCase(property.Id) + countConstructor[property.Id] #>,
+        <#=property.Id.ToCamelCase()#>1,
 <#
-                        }
-                    }
-                    counter++;
-                }
-            }
-#>
-    ) {
-
-    <#
-            Dictionary<string, int> countObj = new Dictionary<string, int>();
-            if (_dataModel.Properties.AsEnumerable() != null)
-            {
-                foreach (PropertyInfo property in _dataModel.Properties.AsEnumerable())
-                {
-                    if (property.Id != null)
-                    {
-                        if (!countObj.ContainsKey(property.Id))
-                            countObj.Add(property.Id, 1);
-                        else
-                            countObj[property.Id] = countObj[property.Id] + 1;
-#>
-    this.<#= TextConverter.CamelCase(property.Id) #> = <#= TextConverter.CamelCase(property.Id) + countObj[property.Id] #>;
+        }
+	}
+        }
+#>	
+    ){
 <#
-                    }
-                }
-            }
-
-            if (_dataModel.References.AsEnumerable() != null)
-            {
-                foreach (ReferenceInfo reference in _dataModel.References.AsEnumerable())
-                {
-                    if (reference.Id != null)
-                    {
-                        if (!countObj.ContainsKey(reference.Id))
-                            countObj.Add(reference.Id, 1);
-                        else
-                            countObj[reference.Id] = countObj[reference.Id] + 1;
+    if(_constructorParametersObj.AsEnumerable() != null && _constructorParametersObj.AsEnumerable().Count() > 0)
+    {
+    PropertyInfo last = _constructorParametersObj.AsEnumerable().Last();
+    foreach(PropertyInfo property in _constructorParametersObj.AsEnumerable())
+    {	
 #>
-    this.<#= TextConverter.CamelCase(reference.Id) #> = <#= TextConverter.CamelCase(reference.Id) + countObj[reference.Id] #>;
+        this.<#=property.Id.ToCamelCase()#> = <#=property.Id.ToCamelCase()#>1;
 <#
-                    }
-                }
-            }
+	}
+        }
 #>
-  }
+    }
 }
 <#
     }

@@ -1,21 +1,181 @@
 {
   "id": "Account",
   "title": "Account",
-  "description": "Account",
+  "description": "Account concern",
   "mandatory": false,
   "layouts": [
     {
-      "id": "main",
-      "title": "Account",
-      "description": "Account ",
+      "id": "editProfile",
+      "title": "Edit Profile",
+      "description": "Profile informations edition layout",
       "isVisibleInMenu": false,
       "isRoot": false,
       "actions": [
         {
+          "id": "updateUser",
+          "type": "DataUpdate",
+          "target": "",
+          "api": "User.Update"
+        },
+        {
+          "id": "selectImageSource",
+          "type": "Method",
+          "target": "",
+          "api": ""
+        },
+        {
+          "id": "captureImage",
+          "type": "Method",
+          "target": "",
+          "api": ""
+        },
+        {
+          "id": "checkChanges",
+          "type": "Method",
+          "target": "",
+          "api": ""
+        },
+        {
+          "id": "toChangePassword",
+          "type": "Navigation",
+          "target": "Account.changePassword",
+          "api": ""
+        },
+        {
+          "id": "return",
+          "type": "Method",
+          "target": "",
+          "api": ""
+        }
+      ],
+      "dataModel": {
+        "id": "FullUser",
+        "isAbstract": false,
+        "isEnum": false,
+        "properties": [
+          {
+            "id": "firstname",
+            "type": "string",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": ""
+          },
+          {
+            "id": "lastname",
+            "type": "string",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": ""
+          },
+          {
+            "id": "picture",
+            "type": "string",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": "Picture.PicBase64"
+          },
+          {
+            "id": "phoneNumber",
+            "type": "string",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": ""
+          },
+          {
+            "id": "email",
+            "type": "string",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": ""
+          },
+          {
+            "id": "country",
+            "type": "string",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": "UserProfile.Country"
+          },
+          {
+            "id": "city",
+            "type": "string",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": "UserProfile.City"
+          },
+          {
+            "id": "job",
+            "type": "string",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": "UserProfile.Job"
+          },
+          {
+            "id": "userProfileId",
+            "type": "integer",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": "UserProfile.Id"
+          },
+          {
+            "id": "Department",
+            "type": "string",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": "UserProfile.Department"
+          }
+        ],
+        "references": [],
+        "values": []
+      }
+    },
+    {
+      "id": "main",
+      "title": "Account-main",
+      "description": "Account concern main layout",
+      "isVisibleInMenu": false,
+      "isRoot": false,
+      "actions": [
+        {
+          "id": "signOut",
+          "type": "Method",
+          "target": "",
+          "api": ""
+        },
+        {
           "id": "getUser",
           "type": "DataGet",
           "target": "",
-          "api": "User.get"
+          "api": "User.GetFullInfos"
         },
         {
           "id": "toEditProfile",
@@ -34,21 +194,145 @@
           "type": "Navigation",
           "target": "Settings.main",
           "api": ""
+        }
+      ],
+      "dataModel": {
+        "id": "FullUser",
+        "isAbstract": false,
+        "isEnum": false,
+        "properties": [
+          {
+            "id": "firstname",
+            "type": "string",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": ""
+          },
+          {
+            "id": "lastname",
+            "type": "string",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": ""
+          },
+          {
+            "id": "picture",
+            "type": "string",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": "Picture.PicBase64"
+          },
+          {
+            "id": "phoneNumber",
+            "type": "string",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": ""
+          },
+          {
+            "id": "email",
+            "type": "string",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": ""
+          },
+          {
+            "id": "country",
+            "type": "string",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": "UserProfile.Country"
+          },
+          {
+            "id": "city",
+            "type": "string",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": "UserProfile.City"
+          },
+          {
+            "id": "job",
+            "type": "string",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": "UserProfile.Job"
+          },
+          {
+            "id": "userProfileId",
+            "type": "integer",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": "UserProfile.Id"
+          },
+          {
+            "id": "Department",
+            "type": "string",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": "UserProfile.Department"
+          }
+        ],
+        "references": [],
+        "values": []
+      }
+    },
+    {
+      "id": "changePassword",
+      "title": "account-changePassword",
+      "description": "Change Password layout",
+      "isVisibleInMenu": false,
+      "isRoot": false,
+      "actions": [
+        {
+          "id": "updatePassword",
+          "type": "DataUpdate",
+          "target": "",
+          "api": "User.UpdatePassword"
         },
         {
-          "id": "signOut",
+          "id": "return",
           "type": "Method",
           "target": "",
           "api": ""
         }
       ],
       "dataModel": {
-        "id": "User",
+        "id": "UpdatePassword",
         "isAbstract": false,
         "isEnum": false,
         "properties": [
           {
-            "id": "firstname",
+            "id": "email",
             "type": "string",
             "isKey": false,
             "isCollection": false,
@@ -58,7 +342,7 @@
             "modelProperty": ""
           },
           {
-            "id": "lastname",
+            "id": "currentPassword",
             "type": "string",
             "isKey": false,
             "isCollection": false,
@@ -68,7 +352,7 @@
             "modelProperty": ""
           },
           {
-            "id": "pictureUrl",
+            "id": "password",
             "type": "string",
             "isKey": false,
             "isCollection": false,
@@ -78,7 +362,7 @@
             "modelProperty": ""
           },
           {
-            "id": "facebookId",
+            "id": "confirmPassword",
             "type": "string",
             "isKey": false,
             "isCollection": false,
@@ -88,87 +372,7 @@
             "modelProperty": ""
           }
         ],
-        "references": [
-          {
-            "id": "user",
-            "foreignKey": "Id",
-            "type": "UserProfile",
-            "isCollection": false,
-            "isRequired": false
-          }
-        ],
-        "values": []
-      }
-    },
-    {
-      "id": "editProfile",
-      "title": "editprofile",
-      "description": "editprofile ",
-      "isVisibleInMenu": false,
-      "isRoot": false,
-      "actions": [
-        {
-          "id": "updateUser",
-          "type": "DataUpdate",
-          "target": "",
-          "api": "User.update"
-        }
-      ],
-      "dataModel": {
-        "id": "User",
-        "isAbstract": false,
-        "isEnum": false,
-        "properties": [
-          {
-            "id": "firstname",
-            "type": "string",
-            "isKey": false,
-            "isCollection": false,
-            "isRequired": false,
-            "minimum": 0,
-            "maximum": 0,
-            "modelProperty": ""
-          },
-          {
-            "id": "lastname",
-            "type": "string",
-            "isKey": false,
-            "isCollection": false,
-            "isRequired": false,
-            "minimum": 0,
-            "maximum": 0,
-            "modelProperty": ""
-          },
-          {
-            "id": "pictureUrl",
-            "type": "string",
-            "isKey": false,
-            "isCollection": false,
-            "isRequired": false,
-            "minimum": 0,
-            "maximum": 0,
-            "modelProperty": ""
-          },
-          {
-            "id": "facebookId",
-            "type": "string",
-            "isKey": false,
-            "isCollection": false,
-            "isRequired": false,
-            "minimum": 0,
-            "maximum": 0,
-            "modelProperty": ""
-          }
-        ],
-        "references": [
-          {
-            "id": "user",
-            "foreignKey": "Id",
-            "type": "UserProfile",
-            "isCollection": false,
-            "isRequired": false
-          }
-        ],
+        "references": [],
         "values": []
       }
     }

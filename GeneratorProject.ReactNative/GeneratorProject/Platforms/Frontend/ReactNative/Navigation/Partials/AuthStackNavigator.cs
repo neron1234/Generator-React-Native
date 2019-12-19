@@ -19,11 +19,11 @@ namespace GeneratorProject.Platforms.Frontend.ReactNative
 
         private void SetRootScreen(SmartAppInfo smartApp)
         {
-            if(smartApp != null && smartApp.Concerns != null && smartApp.Concerns.Count > 0)
+            if(smartApp != null && smartApp.Concerns != null && smartApp.Concerns.Any())
             {
                 foreach(ConcernInfo concern in smartApp.Concerns)
                 {
-                    var layout = concern.Layouts.FirstOrDefault(l => l.IsRoot == true);
+                    var layout = concern.Layouts.FirstOrDefault(l => l.IsRoot);
                     if(layout != null)
                     {
                         _rootScreen = layout.Id;

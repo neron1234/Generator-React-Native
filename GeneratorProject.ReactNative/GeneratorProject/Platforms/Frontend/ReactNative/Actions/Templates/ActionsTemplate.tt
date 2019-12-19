@@ -1,58 +1,46 @@
-﻿<#@ include file="..\..\Base\Templates\Include.tt" #>
-<# if(_concern != null && _layout != null &&  _layout.Actions != null && _layout.Actions.Count > 0)
+﻿<#@ include file="..\..\Base\Templates\Include.tt"#>
+<# if(_api.Actions.AsEnumerable()!= null && _api.Actions.AsEnumerable().Count() > 0)
    {
 #>
+import { <#=_api.Id.ToPascalCase()#><#= _apiSuffix.ToPascalCase() #> } from '../Api/<#=_api.Id.ToPascalCase()#><#= _apiSuffix.ToPascalCase() #>';
+
 /**
- * Constants for action: <#=_concern.Id#>Actions
+ * Constants for action: <#=_api.Id#><#= _apiSuffix.ToPascalCase() #>Actions
 */
 <#
-        foreach(ActionInfo action in _layout.Actions.AsEnumerable())
+        foreach(ApiActionInfo action in _api.Actions.AsEnumerable())
         {
             if (action.Id != null && action.Type != null)
             {
-                if(!action.Type.ToLower().Equals("navigation"))
-                {
 #>
-    const <#=_concern.Id.ToUpper()#>_<#=action.Id.ToUpper()#>_REQUEST = '<#=_concern.Id.ToUpper()#>_<#=action.Id.ToUpper()#>_REQUEST1';
-    const <#=_concern.Id.ToUpper()#>_<#=action.Id.ToUpper()#>_SUCCESS = '<#=_concern.Id.ToUpper()#>_<#=action.Id.ToUpper()#>_SUCCESS1';
-    const <#=_concern.Id.ToUpper()#>_<#=action.Id.ToUpper()#>_FAILURE = '<#=_concern.Id.ToUpper()#>_<#=action.Id.ToUpper()#>_FAILURE1';
+    const <#=_api.Id.ToUpper()#>_<#=action.Id.ToUpper()#>_REQUEST = '<#=_api.Id.ToUpper()#>_<#=action.Id.ToUpper()#>_REQUEST1';
+    const <#=_api.Id.ToUpper()#>_<#=action.Id.ToUpper()#>_SUCCESS = '<#=_api.Id.ToUpper()#>_<#=action.Id.ToUpper()#>_SUCCESS1';
+    const <#=_api.Id.ToUpper()#>_<#=action.Id.ToUpper()#>_FAILURE = '<#=_api.Id.ToUpper()#>_<#=action.Id.ToUpper()#>_FAILURE1';
 
 <#
-                }
-                else
-                {
-                    string a = "Navigation";
-                }
             }
         }
 
-       foreach(ActionInfo action in _layout.Actions.AsEnumerable())
+       foreach(ApiActionInfo action in _api.Actions.AsEnumerable())
        {
            if (action.Id != null && action.Type != null)
             {
-                if(!action.Type.ToLower().Equals("navigation"))
-                {
-                    if(action.Id.ToLower().Equals("delete"))
-                    {
-                        action.Id = TextConverter.CamelCase(action.Id)+TextConverter.PascalCase(_concern.Id);
-                    } 
 #>
-export function <#= TextConverter.CamelCase(action.Id) #>(){
+export function to<#= action.Id.ToPascalCase() #>(){
     return function(dispatch){
-        dispatch({ type:  <#=_concern.Id.ToUpper()#>_<#=action.Id.ToUpper()#>_REQUEST, isLoading: true});
+        dispatch({ type:  <#=_api.Id.ToUpper()#>_<#=action.Id.ToUpper()#>_REQUEST, isLoading: true});
 
-        return <#=TextConverter.PascalCase(_concern.Id)#>Api.<#= TextConverter.CamelCase(action.Id) #>()
+        return <#=_api.Id.ToPascalCase()#><#= _apiSuffix.ToPascalCase() #>.<#= action.Id.ToCamelCase() #>()
             .then(response => response.json())
             .then(data =>{
-                dispatch({ type: <#=_concern.Id.ToUpper()#>_<#=action.Id.ToUpper()#>_SUCCESS, <#=TextConverter.CamelCase(_layout.Id)#>: data, isLoading: false });
+                dispatch({ type: <#=_api.Id.ToUpper()#>_<#=action.Id.ToUpper()#>_SUCCESS, <#=action.Id.ToCamelCase()#>: data, isLoading: false });
             })
             .catch(error => {
-                dispatch({ type: <#=_concern.Id.ToUpper()#>_<#=action.Id.ToUpper()#>_FAILURE, error: error, isLoading: false });
+                dispatch({ type: <#=_api.Id.ToUpper()#>_<#=action.Id.ToUpper()#>_FAILURE, error: error, isLoading: false });
             });
     };
 }
 <#
-                }
             }
        }
    }

@@ -1,5 +1,5 @@
-﻿using Mobioos.Foundation.Jade.Models;
-using Mobioos.Scaffold.BaseGenerators.Helpers;
+﻿using Common.Generator.Framework.Extensions;
+using Mobioos.Foundation.Jade.Models;
 using Mobioos.Scaffold.BaseGenerators.TextTemplating;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,12 +9,14 @@ namespace GeneratorProject.Platforms.Frontend.ReactNative
     public partial class DataModelTemplate : TemplateBase
     {
         private List<PropertyInfo> _superProperties { get; set; }
+        private List<PropertyInfo> allProperties { get; set; }
         private string _modelsuffix { get; set; }
 
         public DataModelTemplate(EntityInfo model, string appliationId, string modelsuffix) : base(model, appliationId)
         {
             _superProperties = GetSuperClassReferences(model.BaseEntity);
-            _modelsuffix = TextConverter.PascalCase(modelsuffix);
+            _modelsuffix = modelsuffix.ToPascalCase();
+            allProperties = model.GetProperties();
         }
 
         private List<PropertyInfo> GetSuperClassReferences(EntityInfo entity)
@@ -36,7 +38,6 @@ namespace GeneratorProject.Platforms.Frontend.ReactNative
             }
             return result;
         }
-
         public override string OutputPath => "App\\Models";
     }
 }

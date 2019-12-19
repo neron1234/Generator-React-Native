@@ -3,31 +3,24 @@
     var model = (SmartAppInfo)Model;
 #>
 import { combineReducers } from 'redux';
-
 <# 
-    if(model !=null && model.Concerns != null && model.Concerns.Count > 0)
+    if(model !=null && model.Api != null && model.Api.Count() > 0)
     {
-        foreach(ConcernInfo concern in model.Concerns)
+         foreach(ApiInfo api in model.Api)
         {
-            foreach(LayoutInfo layout in concern.Layouts)
-            {
 #>
-import <#=TextConverter.PascalCase(concern.Id)#><#=TextConverter.PascalCase(layout.Id)#> from './<#=TextConverter.PascalCase(concern.Id)#>/<#=TextConverter.PascalCase(layout.Id)#>Reducer';
+import <#=api.Id.ToPascalCase()#>Reducer from './<#=api.Id.ToPascalCase()#>Reducer';
 <#
-             }
         }
 #>
 
 const RootReducer = combineReducers({
 <#
-       foreach(ConcernInfo concern in model.Concerns)
+       foreach(ApiInfo api in model.Api)
         {
-            foreach(LayoutInfo layout in concern.Layouts)
-            {
 #>
-    <#=TextConverter.PascalCase(concern.Id)#><#=TextConverter.PascalCase(layout.Id)#>,
+    <#=api.Id.ToPascalCase()#>Reducer,
 <#
-            }
         }
 #>
 });

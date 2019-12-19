@@ -3,7 +3,6 @@ using Mobioos.Foundation.Prompt.Infrastructure;
 using Mobioos.Scaffold.BaseInfrastructure.Contexts;
 using Mobioos.Scaffold.BaseInfrastructure.Notifiers;
 using Mobioos.Scaffold.BaseInfrastructure.Services.GeneratorsServices;
-using Mobioos.Scaffold.BaseGenerators.Helpers;
 using Mobioos.Foundation.Prompt;
 using WorkflowCore.Interface;
 using WorkflowCore.Models;
@@ -13,6 +12,7 @@ using System.IO;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 using System.Linq;
+using Common.Generator.Framework.Extensions;
 
 namespace GeneratorProject.Platforms.Frontend.ReactNative
 {
@@ -59,7 +59,7 @@ namespace GeneratorProject.Platforms.Frontend.ReactNative
                     if (entity != null)
                     {
                         DataModelTemplate template = new DataModelTemplate(entity, manifest.Id, modelSuffix);
-                        _writingService.WriteFile(Path.Combine(_context.BasePath, template.OutputPath, TextConverter.PascalCase(entity.Id) + "." + modelSuffix + ".js"), template.TransformText());
+                        _writingService.WriteFile(Path.Combine(_context.BasePath, template.OutputPath, entity.Id.ToPascalCase() + modelSuffix.ToPascalCase() + ".js"), template.TransformText());
                       
                     }
                 }

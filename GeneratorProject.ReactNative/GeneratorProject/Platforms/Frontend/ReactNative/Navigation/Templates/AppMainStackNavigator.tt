@@ -2,15 +2,14 @@
 <#
     SmartAppInfo smartApp = (SmartAppInfo)Model;
 #>
-import { createStackNavigator} from 'react-navigation';
-
+import { createStackNavigator} from 'react-navigation-stack';
 <#
 if(smartApp != null && smartApp.Concerns != null && smartApp.Concerns.Count > 0)
 {
     foreach(ConcernInfo concern in smartApp.Concerns)
     {
 #>
-import <#=TextConverter.PascalCase(concern.Id)#>StackNavigator from './<#=TextConverter.PascalCase(concern.Id)#>StackNavigator';
+import <#=concern.Id.ToPascalCase()#>StackNavigator from './<#=concern.Id.ToPascalCase()#>StackNavigator';
 <#
     }
 #>
@@ -20,7 +19,7 @@ export default createStackNavigator({
     foreach(ConcernInfo concern in smartApp.Concerns)
     {
 #>
-    <#=TextConverter.PascalCase(concern.Id)#>: <#=TextConverter.PascalCase(concern.Id)#>StackNavigator,
+    <#=concern.Id.ToPascalCase()#>: <#=concern.Id.ToPascalCase()#>StackNavigator,
 <#
     }
 #>

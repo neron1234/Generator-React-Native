@@ -1,43 +1,44 @@
 {
-  "id": "MeteoMeter",
-  "title": "MeteoMeter",
-  "smallTitle": "MeteoMeter",
-  "description": "MeteoMeter SmartApp",
+  "id": "Hive",
+  "title": "Hive",
+  "smallTitle": "Hive",
+  "description": "Hive application, Open Source POC version",
   "platforms": [
-    "BackEnd",
-    "FrontEnd"
+    "Android",
+    "IOS"
   ],
   "version": "1.0.0.0",
   "themes": [
-    "Dark",
-    "Light"
+    "Light",
+    "Dark"
   ],
   "languages": [
-    "fr",
-    "en"
+    "en",
+    "fr"
   ],
-  "$schema": "http://meteometer.com",
+  "$schema": "https://meteometer.",
   "addons": "addons.json",
   "api": [
-    "api/Group.json",
-    "api/Idea.json",
-    "api/User.json",
-    "api/Post.json",
+    "api/Answer.json",
     "api/Flow.json",
+    "api/Group.json",
     "api/Highlights.json",
-    "api/Answer.json"
+    "api/Idea.json",
+    "api/Picture.json",
+    "api/Post.json",
+    "api/User.json"
   ],
   "concerns": [
     "concerns/Idea.json",
-    "concerns/Report.json",
+    "concerns/Reporting.json",
     "concerns/Account.json",
     "concerns/ManageGroups.json",
+    "concerns/Settings.json",
     "concerns/Flow.json",
     "concerns/Highlights.json",
     "concerns/Posts.json",
     "concerns/Login.json",
-    "concerns/Tabs.json",
-    "concerns/Settings.json"
+    "concerns/Tabs.json"
   ],
   "configurations": [
     {

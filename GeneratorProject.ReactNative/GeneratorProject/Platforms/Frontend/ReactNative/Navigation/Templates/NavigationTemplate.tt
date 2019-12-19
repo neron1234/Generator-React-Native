@@ -1,16 +1,15 @@
 ﻿<#@ include file="..\..\Base\Templates\Include.tt" #>
-import { createStackNavigator } from 'react-navigation';
-
+import { createStackNavigator } from 'react-navigation-stack';
 <#
 if(_concernInfo != null)
 {
-    string concernId = TextConverter.PascalCase(_concernInfo.Id);
+    string concernId = _concernInfo.Id.ToPascalCase();
     if(_concernInfo.Layouts != null &&  _concernInfo.Layouts.Count > 0)
     {
         foreach(var layout in _concernInfo.Layouts)
         {
-            string containerName = string.Format("{0}Container", TextConverter.PascalCase(layout.Id));
-            //string navName = string.Format("{0}{1}", concernId, TextConverter.PascalCase(layout.Id));
+            string containerName = string.Format("{0}Container", layout.Id.ToPascalCase());
+            //string navName = string.Format("{0}{1}", concernId, layout.Id.ToPascalCase());
 #>
 import <#=containerName#> from '../Containers/<#=_concernInfo.Id#>/<#=containerName#>';
 <#
@@ -18,14 +17,14 @@ import <#=containerName#> from '../Containers/<#=_concernInfo.Id#>/<#=containerN
     }
 #>
 
-export default <#=_concernInfo.Id#>StackNavigator = createStackNavigator({
+const <#=_concernInfo.Id#>StackNavigator = createStackNavigator({
 <#
     if(_concernInfo.Layouts != null &&  _concernInfo.Layouts.Count > 0)
     {
         foreach(var layout in _concernInfo.Layouts)
         {
-            string containerName = string.Format("{0}Container", TextConverter.PascalCase(layout.Id));
-             string navName = string.Format("{0}{1}", concernId, TextConverter.PascalCase(layout.Id));
+            string containerName = string.Format("{0}Container", layout.Id.ToPascalCase());
+             string navName = string.Format("{0}{1}", concernId, layout.Id.ToPascalCase());
 #>
         <#=navName#>: <#=containerName#>,
 <#
@@ -47,3 +46,4 @@ export default <#=_concernInfo.Id#>StackNavigator = createStackNavigator({
 <#
 }
 #>
+export default <#=_concernInfo.Id#>StackNavigator;

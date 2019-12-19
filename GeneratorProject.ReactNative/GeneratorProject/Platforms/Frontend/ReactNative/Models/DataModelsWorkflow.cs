@@ -4,18 +4,19 @@ using WorkflowCore.Interface;
 
 namespace GeneratorProject.Platforms.Frontend.ReactNative
 {
-    [WorkFlow(Id = "DataModelsWorkflowId", Order = 5)]
+    [Workflow(Id = "DataModelsWorkflowId", Order = 5)]
     public class DataModelsWorkflow : IWorkflow
     {
         public string Id => "DataModelsWorkflowId";
         public int Version => 1;
-
-        public void Build(IWorkflowBuilder builder)
+        public void Build(IWorkflowBuilder<object> builder)
         {
             builder.StartWith<DataModelsPromptingSteps>()
-                 .WaitForAnswers(nameof(DataModelsPromptingSteps))
-                 .Then<DataModelsWritingSteps>()
-                 .Then<WorkFlowEndStepBase>();
+                .WaitFor(
+                   nameof(DataModelsPromptingSteps),
+                   data => nameof(DataModelsPromptingSteps))
+                .Then<DataModelsWritingSteps>()
+                .Then<WorkflowEndStepBase>();
         }
     }
 }

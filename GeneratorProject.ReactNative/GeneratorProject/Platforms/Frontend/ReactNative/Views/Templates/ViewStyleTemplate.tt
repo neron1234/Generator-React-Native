@@ -1,6 +1,6 @@
 ﻿<#@ include file="..\..\Base\Templates\Include.tt" #>
 import {StyleSheet} from 'react-native';
-import {ApplicationStyles, Fonts, Metrics, Colors} from '../../Themes';
+import {ApplicationStyles, Colors} from '../../Themes';
 
 export default StyleSheet.create({
     ...ApplicationStyles.screen,

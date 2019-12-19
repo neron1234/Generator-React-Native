@@ -18,11 +18,11 @@
 #define TIMEOUT_SECONDS 600
 #define TEXT_TO_LOOK_FOR @"Welcome to React Native!"
 
-@interface <#=TextConverter.PascalCase(model.Id)#>Tests : XCTestCase
+@interface <#=model.Id.ToPascalCase()#>Tests : XCTestCase
 
 @end
 
-@implementation <#=TextConverter.PascalCase(model.Id)#>Tests
+@implementation <#=model.Id.ToPascalCase()#>Tests
 
 - (BOOL)findSubviewInView:(UIView *)view matching:(BOOL(^)(UIView *view))test
 {

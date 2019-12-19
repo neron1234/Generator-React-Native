@@ -1,12 +1,13 @@
-﻿import { createSwitchNavigator } from 'react-navigation';
+﻿<#@ include file="..\..\Base\Templates\Include.tt" #>
+import { createSwitchNavigator } from 'react-navigation';
 
 import AuthLoadingScreen from '../Screens/Auth/AuthLoadingScreen';
-import AuthStackNavigator from './AuthStackNavigator';
+import <#=_rootScreen.ToPascalCase()#>StackNavigator from './<#=_rootScreen.ToPascalCase()#>StackNavigator';
 import AppMainStackNavigator from './AppMainStackNavigator';
 
 export default createSwitchNavigator({
     AuthLoading: AuthLoadingScreen,
-    Auth: AuthStackNavigator,
+    Auth: <#=_rootScreen.ToPascalCase()#>StackNavigator,
     App: AppMainStackNavigator
 },
   {

@@ -1,55 +1,49 @@
 ﻿<#@ include file="..\..\Base\Templates\Include.tt" #>
-import initialState from '../InitialState';
+import initialState from './InitialState';
 <# 
-    if(_concern != null && _layout != null &&  _layout.Actions != null && _layout.Actions.Count > 0)
+    if(_api.Actions.AsEnumerable()!= null && _api.Actions.AsEnumerable().Count() > 0)
     {
 #>
 import {
 <#
-        foreach(ActionInfo action in _layout.Actions.AsEnumerable())
+        foreach(ApiActionInfo action in _api.Actions.AsEnumerable())
         {
             if (action.Id != null && action.Type != null)
             {
-                if(!action.Type.ToLower().Equals("navigation"))
-                {
 #>
-    <#=_concern.Id.ToUpper()#>_<#=action.Id.ToUpper()#>_REQUEST,
-    <#=_concern.Id.ToUpper()#>_<#=action.Id.ToUpper()#>_SUCCESS,
-    <#=_concern.Id.ToUpper()#>_<#=action.Id.ToUpper()#>_FAILURE,
+    <#=_api.Id.ToUpper()#>_<#=action.Id.ToUpper()#>_REQUEST,
+    <#=_api.Id.ToUpper()#>_<#=action.Id.ToUpper()#>_SUCCESS,
+    <#=_api.Id.ToUpper()#>_<#=action.Id.ToUpper()#>_FAILURE,
 <#
-                }
             }
         }
 #>
-} from '../../Actions/<#=TextConverter.PascalCase(_concern.Id)#>/<#=TextConverter.PascalCase(_layout.Id)#>Actions';
+} from '../Actions/<#=_api.Id.ToPascalCase()#>Actions';
 
-export default function <#=TextConverter.CamelCase(_layout.Id)#>Reducer(state = null, action) {
+export default function <#=_api.Id.ToCamelCase()#>Reducer(state = initialState, action  ) {
     switch (action.type) {
 <#
-        foreach(ActionInfo action in _layout.Actions.AsEnumerable())
+        foreach(ApiActionInfo action in _api.Actions.AsEnumerable())
         {
             if (action.Id != null && action.Type != null)
             {
-                if(!action.Type.ToLower().Equals("navigation"))
-                {
 #>
-        case <#=_concern.Id.ToUpper()#>_<#=action.Id.ToUpper()#>_REQUEST:
+        case <#=_api.Id.ToUpper()#>_<#=action.Id.ToUpper()#>_REQUEST:
             return action.isLoading;
 
-        case <#=_concern.Id.ToUpper()#>_<#=action.Id.ToUpper()#>_SUCCESS:
+        case <#=_api.Id.ToUpper()#>_<#=action.Id.ToUpper()#>_SUCCESS:
             return[
                 ...state,
-                Object.assign({}, action.<#=TextConverter.CamelCase(_layout.Id)#>)
+                Object.assign({}, action.<#=action.Id.ToCamelCase()#>)
             ];
 
-        case <#=_concern.Id.ToUpper()#>_<#=action.Id.ToUpper()#>_FAILURE:
+        case <#=_api.Id.ToUpper()#>_<#=action.Id.ToUpper()#>_FAILURE:
              return [
                 ...state,
                 Object.assign({}, { isLoading: false }, action.error)
             ];
 
 <#
-                }
             }
         }
 #>

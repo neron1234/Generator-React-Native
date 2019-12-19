@@ -3,7 +3,6 @@ using Mobioos.Foundation.Prompt.Infrastructure;
 using Mobioos.Scaffold.BaseInfrastructure.Contexts;
 using Mobioos.Scaffold.BaseInfrastructure.Notifiers;
 using Mobioos.Scaffold.BaseInfrastructure.Services.GeneratorsServices;
-using Mobioos.Scaffold.BaseGenerators.Helpers;
 using WorkflowCore.Interface;
 using WorkflowCore.Models;
 
@@ -11,6 +10,9 @@ using System;
 using System.IO;
 using System.Threading.Tasks;
 using System.Linq;
+using Common.Generator.Framework.Extensions;
+using System.Collections.Generic;
+using Mobioos.Foundation.Prompt;
 
 namespace GeneratorProject.Platforms.Frontend.ReactNative
 {
@@ -45,21 +47,23 @@ namespace GeneratorProject.Platforms.Frontend.ReactNative
 
         private void TransformActions(SmartAppInfo smartApp)
         {
-            if (smartApp != null && smartApp.Concerns != null && smartApp.Concerns.Count > 0)
+            if (smartApp != null && smartApp.Api != null && smartApp.Api.Any())
             {
-                foreach (var concern in smartApp.Concerns)
+                string apiSuffix = GetApiSuffix();
+
+                foreach (var api in smartApp.Api)
                 {
-                    foreach (LayoutInfo layout in concern.Layouts.AsEnumerable())
-                    {
-
-                        ActionsTemplate actionsTemplate = new ActionsTemplate(concern, layout);
-
-                        string path = Path.Combine(_context.BasePath, actionsTemplate.OutputPath, TextConverter.PascalCase(concern.Id));
-
-                        _writingService.WriteFile(Path.Combine(path, TextConverter.PascalCase(layout.Id) + "Actions.js"), actionsTemplate.TransformText());
-                    }
+                    ActionsTemplate actionsTemplate = new ActionsTemplate(smartApp, api, apiSuffix);
+                  _writingService.WriteFile(Path.Combine(_context.BasePath, actionsTemplate.OutputPath, api.Id.ToPascalCase() + apiSuffix  + "Actions.js"), actionsTemplate.TransformText());
                 }
             }
+        }
+
+        private string GetApiSuffix()
+        {
+            var apiSuffix = ((IDictionary<string, object>)_context.DynamicContext).ContainsKey("ApiSuffix") ? _context.DynamicContext.ApiSuffix as List<Answer> : new List<Answer>();
+
+            return (apiSuffix != null && apiSuffix.Count > 0) ? apiSuffix.FirstOrDefault().Value : "Service";
         }
     }
 }

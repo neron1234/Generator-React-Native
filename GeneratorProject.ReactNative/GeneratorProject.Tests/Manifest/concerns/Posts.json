@@ -1,21 +1,315 @@
 {
   "id": "Posts",
   "title": "Posts",
-  "description": "Posts",
+  "description": "Posts concern",
   "mandatory": false,
   "layouts": [
     {
-      "id": "postDetails",
-      "title": "postDetails",
-      "description": "postDetails",
+      "id": "main",
+      "title": "posts-main",
+      "description": "Posts concern main layout",
       "isVisibleInMenu": false,
       "isRoot": false,
       "actions": [
         {
+          "id": "confirmDelete",
+          "type": "Method",
+          "target": "",
+          "api": ""
+        },
+        {
+          "id": "toChooseNewPostCategory",
+          "type": "Navigation",
+          "target": "Posts.chooseNewPostCategory",
+          "api": ""
+        },
+        {
+          "id": "getLatestPosts",
+          "type": "DataList",
+          "target": "",
+          "api": "Post.GetLatestPosts"
+        },
+        {
+          "id": "delete",
+          "type": "DataDelete",
+          "target": "",
+          "api": "Post.Delete"
+        },
+        {
+          "id": "presentOptionsMenu",
+          "type": "Method",
+          "target": "",
+          "api": ""
+        },
+        {
+          "id": "showEditPostModal",
+          "type": "Method",
+          "target": "",
+          "api": ""
+        },
+        {
+          "id": "showPostDetailsModal",
+          "type": "Method",
+          "target": "",
+          "api": ""
+        },
+        {
+          "id": "doInfinite",
+          "type": "Method",
+          "target": "",
+          "api": ""
+        },
+        {
+          "id": "getStatus",
+          "type": "Method",
+          "target": "",
+          "api": ""
+        }
+      ],
+      "dataModel": {
+        "id": "Post",
+        "isAbstract": false,
+        "isEnum": false,
+        "properties": [
+          {
+            "id": "id",
+            "type": "integer",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": "Card.Id"
+          },
+          {
+            "id": "content",
+            "type": "string",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": "Card.Content"
+          },
+          {
+            "id": "publicationDate",
+            "type": "date",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": "Card.PublicationDate"
+          },
+          {
+            "id": "endDate",
+            "type": "date",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": "Card.EndDate"
+          },
+          {
+            "id": "status",
+            "type": "string",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": ""
+          },
+          {
+            "id": "type",
+            "type": "string",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": ""
+          }
+        ],
+        "references": [],
+        "values": []
+      }
+    },
+    {
+      "id": "topPosts",
+      "title": "Top Posts",
+      "description": "Posts concern topPosts layout",
+      "isVisibleInMenu": false,
+      "isRoot": false,
+      "actions": [
+        {
+          "id": "getTopPosts",
+          "type": "DataList",
+          "target": "",
+          "api": "Post.GetTopPostsByUser"
+        },
+        {
+          "id": "showPostDetailsModal",
+          "type": "Method",
+          "target": "",
+          "api": ""
+        },
+        {
+          "id": "getStatus",
+          "type": "Method",
+          "target": "",
+          "api": ""
+        }
+      ],
+      "dataModel": {
+        "id": "TopPost",
+        "isAbstract": false,
+        "isEnum": false,
+        "properties": [
+          {
+            "id": "id",
+            "type": "integer",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": "Card.Id"
+          },
+          {
+            "id": "content",
+            "type": "string",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": "Card.Content"
+          },
+          {
+            "id": "publicationDate",
+            "type": "date",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": "Card.PublicationDate"
+          },
+          {
+            "id": "endDate",
+            "type": "date",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": "Card.EndDate"
+          },
+          {
+            "id": "picture",
+            "type": "string",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": "Picture.PicBase64"
+          },
+          {
+            "id": "status",
+            "type": "string",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": ""
+          },
+          {
+            "id": "type",
+            "type": "string",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": ""
+          },
+          {
+            "id": "views",
+            "type": "integer",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": "Reporting.Views"
+          },
+          {
+            "id": "answers",
+            "type": "integer",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": "Reporting.Answers"
+          }
+        ],
+        "references": [],
+        "values": []
+      }
+    },
+    {
+      "id": "postDetailsModal",
+      "title": "Post Details",
+      "description": "Posts concern postDetails modal to show on click on a post (in the list or in the carousel)",
+      "isVisibleInMenu": false,
+      "isRoot": false,
+      "actions": [
+        {
+          "id": "showEditPostModal",
+          "type": "Method",
+          "target": "",
+          "api": ""
+        },
+        {
           "id": "getPostDetails",
           "type": "DataGet",
           "target": "",
-          "api": "Post.get"
+          "api": "Post.GetPostDetails"
+        },
+        {
+          "id": "delete",
+          "type": "DataDelete",
+          "target": "",
+          "api": "Post.Delete"
+        },
+        {
+          "id": "presentOptionsMenu",
+          "type": "Method",
+          "target": "",
+          "api": ""
+        },
+        {
+          "id": "confirmDelete",
+          "type": "Method",
+          "target": "",
+          "api": ""
+        },
+        {
+          "id": "closeModal",
+          "type": "Method",
+          "target": "",
+          "api": ""
+        },
+        {
+          "id": "getType",
+          "type": "Method",
+          "target": "",
+          "api": ""
         },
         {
           "id": "checkPostStatus",
@@ -24,132 +318,135 @@
           "api": ""
         },
         {
-          "id": "toEditPost",
-          "type": "Navigation",
-          "target": "Posts.editPost",
-          "api": ""
-        },
-        {
-          "id": "delete",
+          "id": "getResultName",
           "type": "Method",
           "target": "",
           "api": ""
         },
         {
-          "id": "getConcernedCard",
-          "type": "DataGet",
+          "id": "initialiseChart",
+          "type": "Method",
           "target": "",
-          "api": "Post.get"
+          "api": ""
+        },
+        {
+          "id": "displayChart",
+          "type": "Method",
+          "target": "",
+          "api": ""
         }
       ],
       "dataModel": {
-        "id": "Card",
+        "id": "PostDetails",
         "isAbstract": false,
         "isEnum": false,
-        "properties": [],
-        "references": [
+        "properties": [
           {
-            "id": "card",
-            "foreignKey": "Id",
-            "type": "Card",
+            "id": "id",
+            "type": "integer",
+            "isKey": false,
             "isCollection": false,
-            "isRequired": false
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": "Card.Id"
+          },
+          {
+            "id": "content",
+            "type": "string",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": "Card.Content"
+          },
+          {
+            "id": "type",
+            "type": "string",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": "Card.Type"
+          },
+          {
+            "id": "publicationDate",
+            "type": "date",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": "Card.PublicationDate"
+          },
+          {
+            "id": "endDate",
+            "type": "date",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": "Card.EndDate"
+          },
+          {
+            "id": "views",
+            "type": "integer",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": "Reporting.Views"
+          },
+          {
+            "id": "answers",
+            "type": "integer",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": "Reporting.Answers"
+          },
+          {
+            "id": "picture",
+            "type": "string",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": "Picture.PicBase64"
+          },
+          {
+            "id": "targetGroups",
+            "type": "string",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": ""
+          },
+          {
+            "id": "status",
+            "type": "string",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": ""
           }
         ],
-        "values": []
-      }
-    },
-    {
-      "id": "topPosts",
-      "title": "Topposts",
-      "description": "Topposts",
-      "isVisibleInMenu": false,
-      "isRoot": false,
-      "actions": [
-        {
-          "id": "toPostDetails",
-          "type": "Navigation",
-          "target": "Posts.postDetails",
-          "api": ""
-        },
-        {
-          "id": "getTopPosts",
-          "type": "DataList",
-          "target": "",
-          "api": "Post.getTopPostsByUser"
-        },
-        {
-          "id": "reload",
-          "type": "Method",
-          "target": "",
-          "api": ""
-        }
-      ],
-      "dataModel": {
-        "id": "Cards",
-        "isAbstract": false,
-        "isEnum": false,
-        "properties": [],
         "references": [
           {
-            "id": "cards",
+            "id": "results",
             "foreignKey": "Id",
-            "type": "Card",
-            "isCollection": true,
-            "isRequired": false
-          }
-        ],
-        "values": []
-      }
-    },
-    {
-      "id": "main",
-      "title": "Posts",
-      "description": "Posts",
-      "isVisibleInMenu": false,
-      "isRoot": false,
-      "actions": [
-        {
-          "id": "toChooseNewPostCategory",
-          "type": "Navigation",
-          "target": "Posts.chooseNewPostCategory",
-          "api": ""
-        },
-        {
-          "id": "toPostDetails",
-          "type": "Navigation",
-          "target": "Posts.postDetails",
-          "api": ""
-        },
-        {
-          "id": "getLatestPosts",
-          "type": "DataList",
-          "target": "",
-          "api": "Post.getLatestsPostsByUser"
-        },
-        {
-          "id": "deletePost",
-          "type": "DataDelete",
-          "target": "",
-          "api": "Post.delete"
-        },
-        {
-          "id": "editPost",
-          "type": "Method",
-          "target": "",
-          "api": ""
-        }
-      ],
-      "dataModel": {
-        "id": "Cards",
-        "isAbstract": false,
-        "isEnum": false,
-        "properties": [],
-        "references": [
-          {
-            "id": "cards",
-            "foreignKey": "Id",
-            "type": "Card",
+            "type": "Result",
             "isCollection": true,
             "isRequired": false
           }
@@ -159,15 +456,15 @@
     },
     {
       "id": "chooseNewPostCategory",
-      "title": "chooseNewPostCategory",
-      "description": "chooseNewPostCategory",
+      "title": "Choose New Post Category",
+      "description": "Posts concern chooseNewPostCategory layout",
       "isVisibleInMenu": false,
       "isRoot": false,
       "actions": [
         {
-          "id": "toCreateIdea",
-          "type": "Navigation",
-          "target": "Idea.createIdeaQuestion",
+          "id": "showCreateModal",
+          "type": "Method",
+          "target": "",
           "api": ""
         },
         {
@@ -177,55 +474,6 @@
           "api": ""
         }
       ]
-    },
-    {
-      "id": "editPost",
-      "title": "editPost",
-      "description": "editPost",
-      "isVisibleInMenu": false,
-      "isRoot": false,
-      "actions": [
-        {
-          "id": "editPost",
-          "type": "DataUpdate",
-          "target": "",
-          "api": "Post.update"
-        },
-        {
-          "id": "getGroups",
-          "type": "DataList",
-          "target": "",
-          "api": "Group.list"
-        },
-        {
-          "id": "checkSelectedGroups",
-          "type": "Method",
-          "target": "",
-          "api": ""
-        },
-        {
-          "id": "checkDates",
-          "type": "Method",
-          "target": "",
-          "api": ""
-        }
-      ],
-      "dataModel": {
-        "id": "Card",
-        "isAbstract": false,
-        "isEnum": false,
-        "properties": [],
-        "references": [
-          {
-            "id": "card",
-            "foreignKey": "Id",
-            "type": "Card",
-            "isCollection": false,
-            "isRequired": false
-          }
-        ],
-        "values": []
-      }
     }
   ]
 }

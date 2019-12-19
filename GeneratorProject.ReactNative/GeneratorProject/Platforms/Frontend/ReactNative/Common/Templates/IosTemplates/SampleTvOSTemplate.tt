@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-               BuildableName = "<#=TextConverter.PascalCase(model.Id)#>-tvOS.app"
-               BlueprintName = "<#=TextConverter.PascalCase(model.Id)#>-tvOS"
-               ReferencedContainer = "container:<#=TextConverter.PascalCase(model.Id)#>.xcodeproj">
+               BuildableName = "<#=model.Id.ToPascalCase()#>-tvOS.app"
+               BlueprintName = "<#=model.Id.ToPascalCase()#>-tvOS"
+               ReferencedContainer = "container:<#=model.Id.ToPascalCase()#>.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -47,9 +47,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2D02E48F1E0B4A5D006451C7"
-               BuildableName = "<#=TextConverter.PascalCase(model.Id)#>-tvOSTests.xctest"
-               BlueprintName = "<#=TextConverter.PascalCase(model.Id)#>-tvOSTests"
-               ReferencedContainer = "container:<#=TextConverter.PascalCase(model.Id)#>.xcodeproj">
+               BuildableName = "<#=model.Id.ToPascalCase()#>-tvOSTests.xctest"
+               BlueprintName = "<#=model.Id.ToPascalCase()#>-tvOSTests"
+               ReferencedContainer = "container:<#=model.Id.ToPascalCase()#>.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -65,9 +65,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2D02E48F1E0B4A5D006451C7"
-               BuildableName = "<#=TextConverter.PascalCase(model.Id)#>-tvOSTests.xctest"
-               BlueprintName = "<#=TextConverter.PascalCase(model.Id)#>-tvOSTests"
-               ReferencedContainer = "container:<#=TextConverter.PascalCase(model.Id)#>.xcodeproj">
+               BuildableName = "<#=model.Id.ToPascalCase()#>-tvOSTests.xctest"
+               BlueprintName = "<#=model.Id.ToPascalCase()#>-tvOSTests"
+               ReferencedContainer = "container:<#=model.Id.ToPascalCase()#>.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -75,9 +75,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-            BuildableName = "<#=TextConverter.PascalCase(model.Id)#>-tvOS.app"
-            BlueprintName = "<#=TextConverter.PascalCase(model.Id)#>-tvOS"
-            ReferencedContainer = "container:<#=TextConverter.PascalCase(model.Id)#>.xcodeproj">
+            BuildableName = "<#=model.Id.ToPascalCase()#>-tvOS.app"
+            BlueprintName = "<#=model.Id.ToPascalCase()#>-tvOS"
+            ReferencedContainer = "container:<#=model.Id.ToPascalCase()#>.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -98,9 +98,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-            BuildableName = "<#=TextConverter.PascalCase(model.Id)#>-tvOS.app"
-            BlueprintName = "<#=TextConverter.PascalCase(model.Id)#>-tvOS"
-            ReferencedContainer = "container:<#=TextConverter.PascalCase(model.Id)#>.xcodeproj">
+            BuildableName = "<#=model.Id.ToPascalCase()#>-tvOS.app"
+            BlueprintName = "<#=model.Id.ToPascalCase()#>-tvOS"
+            ReferencedContainer = "container:<#=model.Id.ToPascalCase()#>.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -117,9 +117,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-            BuildableName = "<#=TextConverter.PascalCase(model.Id)#>-tvOS.app"
-            BlueprintName = "<#=TextConverter.PascalCase(model.Id)#>-tvOS"
-            ReferencedContainer = "container:<#=TextConverter.PascalCase(model.Id)#>.xcodeproj">
+            BuildableName = "<#=model.Id.ToPascalCase()#>-tvOS.app"
+            BlueprintName = "<#=model.Id.ToPascalCase()#>-tvOS"
+            ReferencedContainer = "container:<#=model.Id.ToPascalCase()#>.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

@@ -1,20 +1,26 @@
 ﻿<#@ include file="..\..\Base\Templates\Include.tt" #>
-import { createStackNavigator } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation-stack';
 <#
     if(_rootScreen == string.Empty || _rootScreenFolder == string.Empty)
     {
 #>
-import MainScreen from '../Screens/SignIn/MainScreen';
+import MainScreen from '../Screens/<#=_rootScreenFolder.ToPascalCase()#>/<#=_rootScreen.ToPascalCase()#>Screen';
+
+const AuthStackNavigator = createStackNavigator({
+    LoginMainScreen: MainScreen
+});
 <#
     }
     else
     {
 #>
-import MainScreen from '../Screens/<#=TextConverter.PascalCase(_rootScreenFolder)#>/<#=TextConverter.PascalCase(_rootScreen)#>Screen';
+import MainContainer from '../Containers/<#=_rootScreenFolder.ToPascalCase()#>/<#=_rootScreen.ToPascalCase()#>Container';
+
+const AuthStackNavigator = createStackNavigator({
+    LoginMainScreen: MainContainer
+});
 <#
     }
 #>
+export default AuthStackNavigator;
 
-export default AuthStackNavigator = createStackNavigator({
-    LoginMainScreen: MainScreen
-});

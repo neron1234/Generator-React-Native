@@ -1,14 +1,11 @@
-﻿<#@ include file="..\..\Base\Templates\Include.tt"#>
-<#
-    var model = (SmartAppInfo)Model;
-#>
+﻿<#@ include file="..\..\Base\Templates\Include.tt"#><#var model = (SmartAppInfo)Model;#>
 import { create } from 'apisauce';
 
 const BASE_URL = 'https://api.github.com';
 const TIMEOUT = 20000; //20 seconds
 const TOKEN = "abc";
 
-export default class RestApi {
+export default class Rest<#=_apiSuffix#> {
   constructor() {
     const api = create({
       baseURL: BASE_URL,
@@ -21,23 +18,23 @@ export default class RestApi {
     })
   }
 
-  getAll(path) {
+  async getAll(path) {
     return await api.get(path);
   }
 
-  get(path) {
+  async get(path) {
     return await api.get(path);
   }
 
-  post(path, data) {
+  async post(path, data) {
     return await api.post(path, data);
   }
 
-  put(path, data) {
+  async put(path, data) {
     return await api.put(path, data);
   }
 
-  patch(path, data) {
+  async patch(path, data) {
     return await api.patch(path, data);
   }
 }

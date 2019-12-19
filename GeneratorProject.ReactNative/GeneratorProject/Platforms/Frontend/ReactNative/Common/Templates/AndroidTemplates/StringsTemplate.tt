@@ -3,5 +3,5 @@
     var model = (SmartAppInfo)Model;
 #>
 <resources>
-    <string name="app_name"><#=TextConverter.PascalCase(model.Id)#></string>
+    <string name="app_name"><#=model.Id.ToPascalCase()#></string>
 </resources>

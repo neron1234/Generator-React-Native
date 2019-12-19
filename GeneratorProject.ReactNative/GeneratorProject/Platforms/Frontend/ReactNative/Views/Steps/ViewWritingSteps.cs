@@ -3,7 +3,6 @@ using Mobioos.Foundation.Prompt.Infrastructure;
 using Mobioos.Scaffold.BaseInfrastructure.Contexts;
 using Mobioos.Scaffold.BaseInfrastructure.Notifiers;
 using Mobioos.Scaffold.BaseInfrastructure.Services.GeneratorsServices;
-using Mobioos.Scaffold.BaseGenerators.Helpers;
 using Mobioos.Foundation.Prompt;
 using WorkflowCore.Interface;
 using WorkflowCore.Models;
@@ -13,6 +12,7 @@ using System.IO;
 using System.Threading.Tasks;
 using System.Linq;
 using System.Collections.Generic;
+using Common.Generator.Framework.Extensions;
 
 namespace GeneratorProject.Platforms.Frontend.ReactNative
 {
@@ -61,9 +61,9 @@ namespace GeneratorProject.Platforms.Frontend.ReactNative
 
                         ViewTemplate viewTemplate = new ViewTemplate(smartApp.Title, concern, layout, smartApp.Languages, smartApp.Api, apiSuffix, viewModelSuffix);
 
-                        string path = Path.Combine(_context.BasePath, viewTemplate.OutputPath, TextConverter.PascalCase(concern.Id));
+                        string path = Path.Combine(_context.BasePath, viewTemplate.OutputPath, concern.Id.ToPascalCase());
 
-                        _writingService.WriteFile(Path.Combine(path, TextConverter.PascalCase(layout.Id) + "Screen.js"), viewTemplate.TransformText());
+                        _writingService.WriteFile(Path.Combine(path, layout.Id.ToPascalCase() + "Screen.js"), viewTemplate.TransformText());
                     }
                 }
             }

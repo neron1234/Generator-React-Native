@@ -4,16 +4,15 @@ using WorkflowCore.Interface;
 
 namespace GeneratorProject.Platforms.Frontend.ReactNative
 {
-    [WorkFlow(Id = "ReducersWorkflowId", Order = 7)]
+    [Workflow(Id = "ReducersWorkflowId", Order = 7)]
     public class ReducersWorkflow : IWorkflow
     {
         public string Id => "ReducersWorkflowId";
         public int Version => 1;
-
-        public void Build(IWorkflowBuilder builder)
+        public void Build(IWorkflowBuilder<object> builder)
         {
             builder.StartWith<ReducersWritingSteps>()
-                .Then<WorkFlowEndStepBase>();
+                .Then<WorkflowEndStepBase>();
         }
     }
 }

@@ -4,16 +4,15 @@ using WorkflowCore.Interface;
 
 namespace GeneratorProject.Platforms.Frontend.ReactNative
 {
-    [WorkFlow(Id = "CommonWorkflowId", Order = 3)]
+    [Workflow(Id = "CommonWorkflowId", Order = 3)]
     public class CommonWorkflow : IWorkflow
     {
         public string Id => "CommonWorkflowId";
         public int Version => 1;
-
-        public void Build(IWorkflowBuilder builder)
+        public void Build(IWorkflowBuilder<object> builder)
         {
             builder.StartWith<CommonWritingSteps>()
-                .Then<WorkFlowEndStepBase>();
+                .Then<WorkflowEndStepBase>();
         }
     }
 }

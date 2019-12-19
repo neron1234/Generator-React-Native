@@ -3,13 +3,13 @@ using Mobioos.Foundation.Prompt.Infrastructure;
 using Mobioos.Scaffold.BaseInfrastructure.Contexts;
 using Mobioos.Scaffold.BaseInfrastructure.Notifiers;
 using Mobioos.Scaffold.BaseInfrastructure.Services.GeneratorsServices;
-using Mobioos.Scaffold.BaseGenerators.Helpers;
 using WorkflowCore.Interface;
 using WorkflowCore.Models;
 
 using System;
 using System.IO;
 using System.Threading.Tasks;
+using Common.Generator.Framework.Extensions;
 
 namespace GeneratorProject.Platforms.Frontend.ReactNative
 { 
@@ -40,7 +40,7 @@ namespace GeneratorProject.Platforms.Frontend.ReactNative
                 TransformNavigations(smartApp);
                 TransformMainStackNavigator(smartApp);
                 TransformAuthStackNavigator(smartApp);
-
+                TransformAppNavigator(smartApp);
             }
         return Task.FromResult(ExecutionResult.Next());
     }
@@ -53,7 +53,7 @@ namespace GeneratorProject.Platforms.Frontend.ReactNative
                     {
                         NavigationTemplate navigationTemplate = new NavigationTemplate(smartApp, concern);
 
-                        string filename = TextConverter.PascalCase(concern.Id) + "StackNavigator.js";
+                        string filename = concern.Id.ToPascalCase() + "StackNavigator.js";
 
                         _writingService.WriteFile(Path.Combine(_context.BasePath, navigationTemplate.OutputPath, filename), navigationTemplate.TransformText());
                     }
@@ -75,6 +75,15 @@ namespace GeneratorProject.Platforms.Frontend.ReactNative
             {
                 AuthStackNavigator authStackNavigator = new AuthStackNavigator(smartApp);
                 _writingService.WriteFile(Path.Combine(_context.BasePath, authStackNavigator.OutputPath), authStackNavigator.TransformText());
+            }
+        }
+
+        private void TransformAppNavigator(SmartAppInfo smartApp)
+        {
+            if (smartApp != null)
+            {
+                AppNavigator appNavigator = new AppNavigator(smartApp);
+                _writingService.WriteFile(Path.Combine(_context.BasePath, appNavigator.OutputPath), appNavigator.TransformText());
             }
         }
     }

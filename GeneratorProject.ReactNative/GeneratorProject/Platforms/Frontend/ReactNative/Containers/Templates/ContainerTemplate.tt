@@ -1,32 +1,28 @@
-﻿<#@ include file="..\..\Base\Templates\Include.tt" #>
+﻿<#@ include file="..\..\Base\Templates\Include.tt"#>
 import React, { Component } from 'react';
+<#
+    if(_layout != null && apiIds.AsEnumerable() != null && apiIds.AsEnumerable().Count() > 0 ){
+     string apiId = apiIds.AsEnumerable().FirstOrDefault(); 
+#>
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-
-import * as <#=TextConverter.PascalCase(_layout.Id)#>Actions from '../../Actions/<#=TextConverter.PascalCase(_concern.Id)#>/<#=TextConverter.PascalCase(_layout.Id)#>Actions'; 
-/*import {
+import * as <#=apiId.ToPascalCase()#>Actions from '../../Actions/<#=apiId.ToPascalCase()#>Actions'; 
+import { withNavigation } from 'react-navigation';
 <#
-    foreach(var action in _layout.Actions.AsEnumerable())
-    {
-        if(!action.Type.ToLower().Equals("navigation"))
-        {
-            if(action.Id.ToLower().Equals("delete"))
-            {
-                action.Id = TextConverter.CamelCase(action.Id)+TextConverter.PascalCase(_concern.Id);
-            }
-#>
-    <#=TextConverter.CamelCase(action.Id)#>,
-<#
-        }
     }
 #>
-    } from '../../Actions/<#=TextConverter.PascalCase(_concern.Id)#>/<#=TextConverter.PascalCase(_layout.Id)#>Actions';*/
-
+import  <#=_layout.Id.ToPascalCase()#>Screen  from '../../Screens/<#=_concern.Id.ToPascalCase()#>/<#=_layout.Id.ToPascalCase()#>Screen';
 <#
     if(_layout != null)
     {
 #>
-class <#=TextConverter.PascalCase(_layout.Id)#>Container extends Component {
+
+class <#=_layout.Id.ToPascalCase()#>Container extends Component {
+
+    constructor(props) {
+        super(props);
+    }
+
     componentDidMount() {
 <#
     foreach(var action in _layout.Actions.AsEnumerable())
@@ -34,7 +30,7 @@ class <#=TextConverter.PascalCase(_layout.Id)#>Container extends Component {
         if(action.Type.ToLower().Equals("datalist"))
         {
 #>
-        this.props.<#=TextConverter.CamelCase(action.Id)#>();
+        this.props.<#=action.Id.ToCamelCase()#>();
 <#
         }
     }
@@ -42,22 +38,22 @@ class <#=TextConverter.PascalCase(_layout.Id)#>Container extends Component {
     }
 
 <#
-    if(_navigationActions != null && _navigationActions.Count > 0)
+    if(_navigationActions != null && _navigationActions.Count() > 0)
     {
         foreach(var action in _layout.Actions.AsEnumerable())
         {
             if(action.Type.ToLower().Equals("navigation"))
             {
+                string[] targetSplitted = action.Target.Split('.');
 #>
-    on<#=TextConverter.PascalCase(action.Id)#> = () => {
-        this.props.navigation.navigate('<#=action.Target#>');
+    on<#=action.Id.ToPascalCase()#> = () => {
+        this.props.navigation.navigate('<#=targetSplitted[0].ToPascalCase()#><#=targetSplitted[1].ToPascalCase()#>');
     }
 <#
             }
         }
     }
 #>
-
     render() {
         if (this.props.hasErrored) {
             return <p>Sorry! There was an error loading the items</p>;
@@ -68,16 +64,16 @@ class <#=TextConverter.PascalCase(_layout.Id)#>Container extends Component {
         }
 
         return (
-            <<#=TextConverter.PascalCase(_layout.Id)#>Screen items={this.props.data} 
+            <<#=_layout.Id.ToPascalCase()#>Screen items={this.props.data} 
 <#
-    if(_navigationActions != null && _navigationActions.Count > 0)
+    if(_navigationActions != null && _navigationActions.Count() > 0)
     {
         foreach(var action in _layout.Actions.AsEnumerable())
         {
             if(action.Type.ToLower().Equals("navigation"))
             {
 #>
-                on<#=TextConverter.PascalCase(action.Id)#>={ this.on<#=TextConverter.PascalCase(action.Id)#> }
+                on<#=action.Id.ToPascalCase()#>={ this.on<#=action.Id.ToPascalCase()#> }
 <#
             }
         }
@@ -88,9 +84,12 @@ class <#=TextConverter.PascalCase(_layout.Id)#>Container extends Component {
   }
 }
 
+<#
+    if(_layout != null && apiIds.AsEnumerable() != null && apiIds.AsEnumerable().Count() > 0 ){
+     string apiId = apiIds.AsEnumerable().FirstOrDefault(); 
+#>
 const mapStateToProps = (state) => {
     return {
-        navigation: state.navigation,
         data: state.data,
         hasErrored: state.itemsHasErrored,
         isLoading: state.itemsIsLoading
@@ -99,22 +98,17 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-<#
-    foreach(var action in _layout.Actions.AsEnumerable())
-    {
-        if(!action.Type.ToLower().Equals("navigation"))
-        {
-#>
-        //<#=TextConverter.CamelCase(action.Id)#>: () => dispatch(<#=TextConverter.CamelCase(action.Id)#>()),
-<#
-        }
-    }
-#>
-        actions:bindActionCreators(<#=TextConverter.PascalCase(_layout.Id)#>Actions, dispatch)
+        actions:bindActionCreators(<#=apiId.ToPascalCase()#>Actions, dispatch)
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(<#=TextConverter.PascalCase(_layout.Id)#>Container);
+export default withNavigation(connect(mapStateToProps, mapDispatchToProps)(<#=_layout.Id.ToPascalCase()#>Container));
 <#
+        }
+        else{
+#>
+export default <#=_layout.Id.ToPascalCase()#>Container;
+<#
+        }
     }
 #>

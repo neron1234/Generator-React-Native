@@ -3,7 +3,6 @@ using Mobioos.Foundation.Prompt.Infrastructure;
 using Mobioos.Scaffold.BaseInfrastructure.Contexts;
 using Mobioos.Scaffold.BaseInfrastructure.Notifiers;
 using Mobioos.Scaffold.BaseInfrastructure.Services.GeneratorsServices;
-using Mobioos.Scaffold.BaseGenerators.Helpers;
 using WorkflowCore.Interface;
 using WorkflowCore.Models;
 
@@ -11,6 +10,7 @@ using System;
 using System.IO;
 using System.Threading.Tasks;
 using System.Linq;
+using Common.Generator.Framework.Extensions;
 
 namespace GeneratorProject.Platforms.Frontend.ReactNative
 {
@@ -55,9 +55,9 @@ namespace GeneratorProject.Platforms.Frontend.ReactNative
 
                         ContainerTemplate containerTemplate = new ContainerTemplate(concern, layout);
 
-                        string path = Path.Combine(_context.BasePath, containerTemplate.OutputPath, TextConverter.PascalCase(concern.Id));
+                        string path = Path.Combine(_context.BasePath, containerTemplate.OutputPath, concern.Id.ToPascalCase());
 
-                        _writingService.WriteFile(Path.Combine(path, TextConverter.PascalCase(layout.Id) + "Container.js"), containerTemplate.TransformText());
+                        _writingService.WriteFile(Path.Combine(path, layout.Id.ToPascalCase() + "Container.js"), containerTemplate.TransformText());
                     }
                 }
             }

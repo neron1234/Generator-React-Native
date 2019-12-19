@@ -3,7 +3,6 @@ using Mobioos.Foundation.Prompt.Infrastructure;
 using Mobioos.Scaffold.BaseInfrastructure.Contexts;
 using Mobioos.Scaffold.BaseInfrastructure.Notifiers;
 using Mobioos.Scaffold.BaseInfrastructure.Services.GeneratorsServices;
-using Mobioos.Scaffold.BaseGenerators.Helpers;
 using WorkflowCore.Interface;
 using WorkflowCore.Models;
 
@@ -11,6 +10,7 @@ using System;
 using System.IO;
 using System.Threading.Tasks;
 using System.Linq;
+using Common.Generator.Framework.Extensions;
 
 namespace GeneratorProject.Platforms.Frontend.ReactNative
 {
@@ -48,19 +48,12 @@ namespace GeneratorProject.Platforms.Frontend.ReactNative
 
         private void TransformReducers(SmartAppInfo smartApp)
         {
-            if (smartApp != null && smartApp.Concerns != null && smartApp.Concerns.Count > 0)
+            if (smartApp != null && smartApp.Api != null && smartApp.Api.Any())
             {
-                foreach (var concern in smartApp.Concerns)
+                foreach (var api in smartApp.Api)
                 {
-                    foreach (LayoutInfo layout in concern.Layouts.AsEnumerable())
-                    {
-
-                        ReducersTemplate reducersTemplate = new ReducersTemplate(concern, layout);
-
-                        string path = Path.Combine(_context.BasePath, reducersTemplate.OutputPath, TextConverter.PascalCase(concern.Id));
-
-                        _writingService.WriteFile(Path.Combine(path, TextConverter.PascalCase(layout.Id) + "Reducer.js"), reducersTemplate.TransformText());
-                    }
+                    ReducersTemplate reducersTemplate = new ReducersTemplate(smartApp, api);
+                    _writingService.WriteFile(Path.Combine(_context.BasePath, reducersTemplate.OutputPath, api.Id.ToPascalCase() + "Reducer.js"), reducersTemplate.TransformText());
                 }
             }
         }

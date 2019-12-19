@@ -1,60 +1,116 @@
 {
   "id": "Post",
-  "description": "Post",
+  "description": "Post API",
   "actions": [
     {
-      "id": "uploadPicture",
+      "id": "GetLatestPosts",
       "parameters": [
         {
-          "id": "picture",
-          "type": "Picture",
+          "id": "paging",
+          "type": "Paging",
           "dataModel": {
-            "id": "Picture",
+            "id": "Paging",
             "isAbstract": false,
             "isEnum": false,
             "properties": [
               {
-                "id": "url",
-                "type": "string",
+                "id": "step",
+                "type": "integer",
                 "isKey": false,
                 "isCollection": false,
                 "isRequired": false,
                 "minimum": 0,
                 "maximum": 0,
-                "modelProperty": "Photo.Url"
+                "modelProperty": ""
+              },
+              {
+                "id": "lastId",
+                "type": "integer",
+                "isKey": false,
+                "isCollection": false,
+                "isRequired": false,
+                "minimum": 0,
+                "maximum": 0,
+                "modelProperty": ""
               }
             ],
             "references": [],
             "values": []
           }
+        },
+        {
+          "id": "userProfileId",
+          "type": "integer"
         }
       ],
-      "type": "datacreate",
-      "url": "/api/post/uploadPicture",
-      "allowAnonymous": false,
-      "allowedRoles": []
-    },
-    {
-      "id": "getDefaultPicture",
-      "parameters": [],
-      "type": "dataget",
-      "url": "/api/post/getDefaultPicture",
+      "type": "datalist",
+      "url": "/api/posts/getLatestPosts",
       "allowAnonymous": false,
       "allowedRoles": [],
       "returnType": {
-        "id": "Picture",
+        "id": "Post",
         "isAbstract": false,
         "isEnum": false,
         "properties": [
           {
-            "id": "url",
+            "id": "id",
+            "type": "integer",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": "Card.Id"
+          },
+          {
+            "id": "content",
             "type": "string",
             "isKey": false,
             "isCollection": false,
             "isRequired": false,
             "minimum": 0,
             "maximum": 0,
-            "modelProperty": "Photo.Url"
+            "modelProperty": "Card.Content"
+          },
+          {
+            "id": "publicationDate",
+            "type": "date",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": "Card.PublicationDate"
+          },
+          {
+            "id": "endDate",
+            "type": "date",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": "Card.EndDate"
+          },
+          {
+            "id": "status",
+            "type": "string",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": ""
+          },
+          {
+            "id": "type",
+            "type": "string",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": ""
           }
         ],
         "references": [],
@@ -62,56 +118,128 @@
       }
     },
     {
-      "id": "get",
+      "id": "GetPostDetails",
       "parameters": [
         {
-          "id": "id",
+          "id": "postId",
           "type": "integer"
         }
       ],
       "type": "dataget",
-      "url": "/api/post/get",
+      "url": "/api/posts/getPostDetails",
       "allowAnonymous": false,
       "allowedRoles": [],
       "returnType": {
-        "id": "Card",
+        "id": "PostDetails",
         "isAbstract": false,
         "isEnum": false,
-        "properties": [],
-        "references": [
+        "properties": [
           {
-            "id": "card",
-            "foreignKey": "Id",
-            "type": "Card",
+            "id": "id",
+            "type": "integer",
+            "isKey": false,
             "isCollection": false,
-            "isRequired": false
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": "Card.Id"
+          },
+          {
+            "id": "content",
+            "type": "string",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": "Card.Content"
+          },
+          {
+            "id": "type",
+            "type": "string",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": "Card.Type"
+          },
+          {
+            "id": "publicationDate",
+            "type": "date",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": "Card.PublicationDate"
+          },
+          {
+            "id": "endDate",
+            "type": "date",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": "Card.EndDate"
+          },
+          {
+            "id": "views",
+            "type": "integer",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": "Reporting.Views"
+          },
+          {
+            "id": "answers",
+            "type": "integer",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": "Reporting.Answers"
+          },
+          {
+            "id": "picture",
+            "type": "string",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": "Picture.PicBase64"
+          },
+          {
+            "id": "targetGroups",
+            "type": "string",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": ""
+          },
+          {
+            "id": "status",
+            "type": "string",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": ""
           }
         ],
-        "values": []
-      }
-    },
-    {
-      "id": "getLatestsPostsByUser",
-      "parameters": [
-        {
-          "id": "idUser",
-          "type": "integer"
-        }
-      ],
-      "type": "datalist",
-      "url": "/api/post/listByUser",
-      "allowAnonymous": false,
-      "allowedRoles": [],
-      "returnType": {
-        "id": "Cards",
-        "isAbstract": false,
-        "isEnum": false,
-        "properties": [],
         "references": [
           {
-            "id": "cards",
+            "id": "results",
             "foreignKey": "Id",
-            "type": "Card",
+            "type": "Result",
             "isCollection": true,
             "isRequired": false
           }
@@ -120,104 +248,244 @@
       }
     },
     {
-      "id": "update",
+      "id": "GetTopPostsByUser",
       "parameters": [
         {
-          "id": "post",
-          "type": "Card",
+          "id": "paging",
+          "type": "Paging",
           "dataModel": {
-            "id": "Card",
+            "id": "Paging",
             "isAbstract": false,
             "isEnum": false,
-            "properties": [],
-            "references": [
+            "properties": [
               {
-                "id": "card",
-                "foreignKey": "Id",
-                "type": "Card",
+                "id": "step",
+                "type": "integer",
+                "isKey": false,
                 "isCollection": false,
-                "isRequired": false
+                "isRequired": false,
+                "minimum": 0,
+                "maximum": 0,
+                "modelProperty": ""
+              },
+              {
+                "id": "lastId",
+                "type": "integer",
+                "isKey": false,
+                "isCollection": false,
+                "isRequired": false,
+                "minimum": 0,
+                "maximum": 0,
+                "modelProperty": ""
               }
             ],
+            "references": [],
             "values": []
           }
-        }
-      ],
-      "type": "dataupdate",
-      "url": "/api/post/update",
-      "allowAnonymous": false,
-      "allowedRoles": []
-    },
-    {
-      "id": "getTopPostsByUser",
-      "parameters": [
+        },
         {
-          "id": "idUser",
+          "id": "userProfileId",
           "type": "integer"
         }
       ],
       "type": "datalist",
-      "url": "/api/post/listTopByUser",
+      "url": "/api/posts/getTopPosts",
       "allowAnonymous": false,
       "allowedRoles": [],
       "returnType": {
-        "id": "Cards",
+        "id": "TopPost",
         "isAbstract": false,
         "isEnum": false,
-        "properties": [],
-        "references": [
+        "properties": [
           {
-            "id": "cards",
-            "foreignKey": "Id",
-            "type": "Card",
-            "isCollection": true,
-            "isRequired": false
+            "id": "id",
+            "type": "integer",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": "Card.Id"
+          },
+          {
+            "id": "content",
+            "type": "string",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": "Card.Content"
+          },
+          {
+            "id": "publicationDate",
+            "type": "date",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": "Card.PublicationDate"
+          },
+          {
+            "id": "endDate",
+            "type": "date",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": "Card.EndDate"
+          },
+          {
+            "id": "picture",
+            "type": "string",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": "Picture.PicBase64"
+          },
+          {
+            "id": "status",
+            "type": "string",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": ""
+          },
+          {
+            "id": "type",
+            "type": "string",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": ""
+          },
+          {
+            "id": "views",
+            "type": "integer",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": "Reporting.Views"
+          },
+          {
+            "id": "answers",
+            "type": "integer",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": "Reporting.Answers"
           }
         ],
+        "references": [],
         "values": []
       }
     },
     {
-      "id": "delete",
+      "id": "Get",
       "parameters": [
         {
-          "id": "id",
+          "id": "postId",
+          "type": "integer"
+        }
+      ],
+      "type": "dataget",
+      "url": "/api/posts/get",
+      "allowAnonymous": false,
+      "allowedRoles": [],
+      "returnType": {
+        "id": "Post",
+        "isAbstract": false,
+        "isEnum": false,
+        "properties": [
+          {
+            "id": "id",
+            "type": "integer",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": "Card.Id"
+          },
+          {
+            "id": "content",
+            "type": "string",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": "Card.Content"
+          },
+          {
+            "id": "publicationDate",
+            "type": "date",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": "Card.PublicationDate"
+          },
+          {
+            "id": "endDate",
+            "type": "date",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": "Card.EndDate"
+          },
+          {
+            "id": "status",
+            "type": "string",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": ""
+          },
+          {
+            "id": "type",
+            "type": "string",
+            "isKey": false,
+            "isCollection": false,
+            "isRequired": false,
+            "minimum": 0,
+            "maximum": 0,
+            "modelProperty": ""
+          }
+        ],
+        "references": [],
+        "values": []
+      }
+    },
+    {
+      "id": "Delete",
+      "parameters": [
+        {
+          "id": "postId",
           "type": "integer"
         }
       ],
       "type": "datadelete",
-      "url": "/api/post/delete",
+      "url": "/api/posts/delete",
       "allowAnonymous": false,
       "allowedRoles": []
-    },
-    {
-      "id": "getPostDetails",
-      "parameters": [
-        {
-          "id": "idCard",
-          "type": "integer"
-        }
-      ],
-      "type": "dataget",
-      "url": "/api/post/getPostDetails",
-      "allowAnonymous": false,
-      "allowedRoles": [],
-      "returnType": {
-        "id": "Report",
-        "isAbstract": false,
-        "isEnum": false,
-        "properties": [],
-        "references": [
-          {
-            "id": "reporting",
-            "foreignKey": "Id",
-            "type": "Reporting",
-            "isCollection": false,
-            "isRequired": false
-          }
-        ],
-        "values": []
-      }
     }
   ]
 }

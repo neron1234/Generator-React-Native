@@ -1,5 +1,5 @@
-﻿using Mobioos.Foundation.Jade.Models;
-using Mobioos.Scaffold.BaseGenerators.Helpers;
+﻿using Common.Generator.Framework.Extensions;
+using Mobioos.Foundation.Jade.Models;
 using Mobioos.Scaffold.BaseGenerators.TextTemplating;
 
 namespace GeneratorProject.Platforms.Frontend.ReactNative
@@ -13,6 +13,6 @@ namespace GeneratorProject.Platforms.Frontend.ReactNative
             _smartAppInfo = smartApp;
         }
 
-        public override string OutputPath => string.Format(@"ios\{0}\Images.xcassets\AppIcon.appiconset\Contents.json", TextConverter.PascalCase(_smartAppInfo.Id));
+        public override string OutputPath => string.Format(@"ios\{0}\Images.xcassets\AppIcon.appiconset\Contents.json", _smartAppInfo.Id.ToPascalCase());
     }
 }
